@@ -3,7 +3,7 @@ function Input(props) {
     <div className="main">
       <select
         onChange={(event) => props.handleclick(event)}
-        class="form-select"
+        className="form-select"
         aria-label="Default select example"
       >
         <option>Select Category</option>
@@ -14,7 +14,7 @@ function Input(props) {
         ))}
       </select>
       <select
-        class="form-select"
+        className="form-select"
         aria-label="Default select example"
         onChange={(event) => props.showdata(event)}
       >

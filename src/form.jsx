@@ -7,11 +7,11 @@ function Form() {
   const [rent, rentstate] = useState();
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
-  const district = useRef();
-  const name = useRef();
-  const gam = useRef();
-  const taluko = useRef();
-  const date = useRef();
+  const district = useRef("");
+  const name = useRef("");
+  const gam = useRef("");
+  const taluko = useRef("");
+  const date = useRef("");
   const d = new Date();
   let year = d.getFullYear();
 
@@ -21,10 +21,43 @@ function Form() {
     console.log(taluko.current.value);
     console.log(gam.current.value);
     console.log(date.current.value);
+
+    // console.log(arr);
   }
 
+  const handleSubmit = async (e) => {
+    const arr = [
+      {
+        district: district.current.value,
+        name: name.current.value,
+        taluko: taluko.current.value,
+        gam: gam.current.value,
+        date: date.current.value,
+      },
+    ];
+    try {
+      const senddata = await fetch(
+        `http://localhost:5000/contactForm/dataform`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(arr),
+        }
+      );
+
+      if (senddata.ok) {
+        name = "";
+      }
+    } catch (error) {
+      console.log("error");
+      console.log(error);
+    }
+  };
+
   return (
-    <div className="form ">
+    <form onSubmit={handleSubmit()} className="form ">
       <center>
         <div className="head">
           <h1>
@@ -1706,17 +1739,11 @@ function Form() {
         </div>
       </div>
       <center>
-        <button
-          type="button"
-          onClick={() => {
-            print();
-          }}
-          className="btn btn-primary"
-        >
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </center>
-    </div>
+    </form>
   );
 }
 

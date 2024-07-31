@@ -12,8 +12,19 @@ function Form() {
   let gam = useRef("");
   let taluko = useRef("");
   let date = useRef("");
+<<<<<<< HEAD
   let d = new Date();
+=======
+  const d = new Date();
+>>>>>>> mihir
   let year = d.getFullYear();
+  const [arr, setarr] = useState({
+    name: "",
+    gam: "",
+    taluko: "",
+    date: "",
+    ditrict: "",
+  });
 
   function print() {
     console.log(district.current.value);
@@ -25,16 +36,15 @@ function Form() {
     // console.log(arr);
   }
 
-  const handleSubmit = async (e) => {
-    const arr = [
-      {
-        district: district.current.value,
-        name: name.current.value,
-        taluko: taluko.current.value,
-        gam: gam.current.value,
-        date: date.current.value,
-      },
-    ];
+  const handleSubmit = async () => {
+    setarr({
+      name: name.current.value,
+      gam: gam.current.value,
+      taluko: taluko.current.value,
+      date: date.current.value,
+      district: district.current.value,
+    });
+    console.log(arr);
     try {
       const senddata = await fetch(
         `http://localhost:5000/contactForm/dataform`,
@@ -53,7 +63,7 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit()} className="form ">
+    <div className="form ">
       <center>
         <div className="head">
           <h1>
@@ -1735,11 +1745,15 @@ function Form() {
         </div>
       </div>
       <center>
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="button"
+          onClick={() => handleSubmit()}
+          className="btn btn-primary"
+        >
           Submit
         </button>
       </center>
-    </form>
+    </div>
   );
 }
 

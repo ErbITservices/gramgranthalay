@@ -50,7 +50,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label">
-            પિન :
+            પિન 
           </label>
         </div>
         <div class="col">
@@ -63,7 +63,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label">
-            તાલુકો :
+            તાલુકો 
           </label>
         </div>
         <div class="col">
@@ -76,7 +76,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label">
-            જીલો :
+            જિલ્લો
           </label>
         </div>
         <div class="col">
@@ -91,7 +91,7 @@ function Form() {
       <div class="row mb-3 col-sm-13 align-items-center">
         <div class="col">
           <label for="inputPassword6" class="col-form-label col-sm-10">
-            સ્થાપના તારીખ:
+            સ્થાપના તારીખ
           </label>
         </div>
         <div class="col">
@@ -104,7 +104,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label ">
-            વસ્તી : પુરશો
+            વસ્તી : પુ
           </label>
         </div>
         <div class="col">
@@ -117,7 +117,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label ">
-            સ્ત્રી :
+            સ્ત્રી 
           </label>
         </div>
         <div class="col">
@@ -130,7 +130,7 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label ">
-            કુલ :
+            કુલ 
           </label>
         </div>
         <div class="col">
@@ -145,7 +145,7 @@ function Form() {
       <div class="row mb-1 col-sm-13 align-items-center">
         <div class="col-sm-2">
           <label for="inputPassword6" class="col-form-label ">
-            ભણેલાઓ ની સાંખ્ય :
+            ભણેલાઓની સાંખ્ય 
           </label>
         </div>
         <div class="col">
@@ -158,20 +158,7 @@ function Form() {
         </div>
         <div class="col">
           <label for="inputPassword6" class="col-form-label ">
-            સભ્ય સંખ્યા : પુરુષ
-          </label>
-        </div>
-        <div class="col">
-          <input
-            type="number"
-            id="inputPassword6"
-            class="form-control"
-            aria-describedby="passwordHelpInline"
-          />
-        </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
-            સ્ત્રી :
+            સભ્ય સંખ્યા : પુ
           </label>
         </div>
         <div class="col">
@@ -184,7 +171,20 @@ function Form() {
         </div>
         <div class="col-1">
           <label for="inputPassword6" class="col-form-label ">
-            બાળકો :
+            સ્ત્રી 
+          </label>
+        </div>
+        <div class="col">
+          <input
+            type="number"
+            id="inputPassword6"
+            class="form-control"
+            aria-describedby="passwordHelpInline"
+          />
+        </div>
+        <div class="col-1">
+          <label for="inputPassword6" class="col-form-label ">
+            બાળકો 
           </label>
         </div>
         <div class="col">
@@ -215,7 +215,7 @@ function Form() {
       <div class="row mb-3 col-sm-13 align-items-center">
         <div class="col-sm-3">
           <label for="inputPassword6" class="col-form-label ">
-            સબ્યો પાસેથી લવાજમ લેવામા આવે છે? :
+            સભ્યો પાસેથી લવાજમ લેવામાં આવે છે? :
           </label>
         </div>
 
@@ -236,7 +236,7 @@ function Form() {
           <>
             <div class="col-2">
               <label for="inputPassword6" class="col-form-label ">
-                વાર્ષિક :
+                વાર્ષિક 
               </label>
             </div>
             <div class="col-2">
@@ -254,7 +254,7 @@ function Form() {
       <div class="row mb-3 col-sm-13 align-items-center">
         <div class="col-3">
           <label for="inputPassword6" class="col-form-label col-sm-10">
-            કામકાજના કલાકો: પુસ્તક આપ લે વિભાગ :
+            કામકાજના કલાકો : પુસ્તક આપ-લે વિભાગ 
           </label>
         </div>
         <div class="col-2">
@@ -267,7 +267,7 @@ function Form() {
         </div>
         <div class="col-2">
           <label for="inputPassword6" class="col-form-label col-sm-10">
-            વાંચનાલય :
+            વાંચનાલય 
           </label>
         </div>
         <div class="col-2">
@@ -282,7 +282,7 @@ function Form() {
       <div class="row mb-3 col-sm-13 align-items-center">
         <div class="col-3">
           <label for="inputPassword6" class="col-form-label col-sm-10">
-            ગ્રંથાલયનુ વ્યાવસ્થાતંત્ર : પંચાયત/સંસ્થા/મંડળ/શાળા/અન્ય સંચાલિત
+          ગ્રંથાલયનું વ્યાવસ્થાતંત્ર : પંચાયત/સંસ્થા/મંડળ/શાળા/અન્ય સંચાલિત
           </label>
         </div>
         <div class="col-2">
@@ -302,7 +302,7 @@ function Form() {
         </div>
         <div class="col-4">
           <label for="inputPassword6" class="col-form-label col-sm-10">
-            વ્યાવસ્થાતંત્ર રજીસ્ટર હોય તો નોંધણી ક્રમાંક :
+            વ્યાવસ્થાતંત્ર રજિસ્ટર્ડ હોય તો નોંધણી ક્રમાંક 
           </label>
         </div>
         <div class="col-2">
@@ -317,7 +317,7 @@ function Form() {
       <div className="row mb-3 col-sm-13 align-items-center">
         <div class=" col-3">
           <label for="inputPassword" class="col-sm-10 col-form-label">
-            પત્ર વ્યાહાર માટે જવાબદાર વ્યક્તિનુ નામ :
+            પત્ર વ્યાહાર માટે જવાબદાર વ્યક્તિનું નામ 
           </label>
         </div>
         <div class="col-9">
@@ -330,7 +330,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             class="col-sm-10 col-form-label"
           >
-            હોદો આને પૂરું સરનામું :
+            હોદો આને પુરૂ સરનામું :
           </label>
         </div>
         <div class="col-9">

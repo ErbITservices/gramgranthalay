@@ -84,3 +84,7 @@ input[type="number"] {
   border: 1px solid black;
   border-radius: 5px;
 }
+.icon {
+  margin: 0px 20px 0px 20px;
+  font-size: 45px;
+}

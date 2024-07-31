@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import { BiBook, BiBookOpen } from "react-icons/bi";
+import { GiPoliceBadge } from "react-icons/gi";
 function Form() {
   const [fees, feesstate] = useState();
   const [rent, rentstate] = useState();
@@ -9,7 +11,15 @@ function Form() {
     <div className="form ">
       <center>
         <div className="head">
-          <h1>ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સાને : 2024-2025</h1>
+          <h1>
+            <span className="icon">
+              <BiBookOpen />
+            </span>{" "}
+            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સન : 2024-2025
+            <span className="icon">
+              <BiBookOpen />
+            </span>{" "}
+          </h1>
         </div>
       </center>
       <div className="row mb-3 col-sm-13 align-items-center">

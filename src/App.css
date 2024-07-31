@@ -1,0 +1,86 @@
+.main {
+  max-width: 800px;
+}
+.tablec {
+  border-radius: 10px;
+  background-color: black;
+}
+.form {
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.form input {
+  border: 1px solid black;
+  transition: 0.5s;
+  /* box-shadow: 3px 3px 20px black; */
+}
+.form input:hover {
+  /* border: 1px solid black; */
+  box-shadow: 3px 3px 20px black;
+  transition: 0.5s;
+}
+.form select {
+  border: 1px solid black;
+}
+.form select:hover {
+  box-shadow: 3px 3px 20px black;
+  transition: 0.5s;
+}
+.form textarea {
+  border: 1px solid black;
+}
+.form textarea:hover {
+  box-shadow: 3px 3px 20px black;
+  transition: 0.5s;
+}
+.form label {
+  color: black;
+  font-size: 18px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.highlight {
+  font-weight: 500;
+  border-bottom: 2px solid grey;
+}
+.extrahighlight {
+  display: inline-block;
+  font-weight: 700;
+  border-bottom: 2px solid black;
+}
+.th {
+  width: 20%;
+}
+.tab {
+  text-indent: 30px;
+}
+.tab2 {
+  text-indent: 60px;
+}
+.head {
+  background-color: lightblue;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 2px, solid gray;
+}
+.form .teablehead {
+  background-color: lightblue;
+  text-align: center;
+}
+.form table {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.form tbody {
+  border: 1px solid black;
+  border-radius: 5px;
+}

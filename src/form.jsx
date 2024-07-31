@@ -7,13 +7,20 @@ function Form() {
   const [rent, rentstate] = useState();
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
-  const district = useRef("");
-  const name = useRef("");
-  const gam = useRef("");
-  const taluko = useRef("");
-  const date = useRef("");
+  let district = useRef("");
+  let name = useRef("");
+  let gam = useRef("");
+  let taluko = useRef("");
+  let date = useRef("");
   const d = new Date();
   let year = d.getFullYear();
+  const [arr, setarr] = useState({
+    name: "",
+    gam: "",
+    taluko: "",
+    date: "",
+    ditrict: "",
+  });
 
   function print() {
     console.log(district.current.value);
@@ -21,10 +28,42 @@ function Form() {
     console.log(taluko.current.value);
     console.log(gam.current.value);
     console.log(date.current.value);
+
+    // console.log(arr);
   }
 
+  const handleSubmit = async () => {
+    setarr({
+      name: name.current.value,
+      gam: gam.current.value,
+      taluko: taluko.current.value,
+      date: date.current.value,
+      district: district.current.value,
+    });
+    console.log(arr);
+    try {
+      const senddata = await fetch(
+        `http://localhost:5000/contactForm/dataform`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(arr),
+        }
+      );
+
+      if (senddata.ok) {
+        name = "";
+      }
+    } catch (error) {
+      console.log("error");
+      console.log(error);
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit()} className="form ">
+    <div className="form ">
       <center>
         <div className="head">
           <h1>
@@ -1706,11 +1745,15 @@ function Form() {
         </div>
       </div>
       <center>
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="button"
+          onClick={() => handleSubmit()}
+          className="btn btn-primary"
+        >
           Submit
         </button>
       </center>
-    </form>
+    </div>
   );
 }
 

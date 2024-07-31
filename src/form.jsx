@@ -250,34 +250,7 @@ function Form() {
           </>
         )}
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-2">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
-            સ્થાપના તારીખ :
-          </label>
-        </div>
-        <div class="col-2">
-          <input
-            type="date"
-            id="inputPassword6"
-            class="form-control"
-            aria-describedby="passwordHelpInline"
-          />
-        </div>
-        <div class="col-2">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
-            સ્થાપના તારીખ :
-          </label>
-        </div>
-        <div class="col-2">
-          <input
-            type="date"
-            id="inputPassword6"
-            class="form-control"
-            aria-describedby="passwordHelpInline"
-          />
-        </div>
-      </div>
+      
       <div class="row mb-3 col-sm-13 align-items-center">
         <div class="col-3">
           <label for="inputPassword6" class="col-form-label col-sm-10">

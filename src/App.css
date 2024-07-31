@@ -50,6 +50,7 @@ input[type="number"] {
 .highlight {
   font-weight: 500;
   border-bottom: 2px solid grey;
+  display: inline-block;
 }
 .extrahighlight {
   display: inline-block;

@@ -7,6 +7,8 @@ function Form() {
   const [rent, rentstate] = useState();
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
+  const d = new Date();
+  let year = d.getFullYear();
   return (
     <div className="form ">
       <center>
@@ -15,7 +17,7 @@ function Form() {
             <span className="icon">
               <BiBookOpen />
             </span>{" "}
-            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સન : 2024-2025
+            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સને : {year - 1} - {year}
             <span className="icon">
               <BiBookOpen />
             </span>{" "}
@@ -540,6 +542,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
+      </div>
+      <div class="row mb-3 col-13 align-items-center">
         <div class="col-3">
           <label for="inputPassword6" class="col-form-label  ">
             (2) આ વર્ષમાં ઉમેરાયેલા પુસ્તકો ની સંખ્યા :
@@ -568,6 +572,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
+      </div>
+      <div class="row mb-3 col-13 align-items-center">
         <div class="col-3">
           <label for="inputPassword6" class="col-form-label  ">
             (4) વર્ષના અંતે પુસ્તકોની કુલ સંખ્યા :
@@ -620,7 +626,7 @@ function Form() {
       </div>
       <div class="row mb-3 col-13 align-items-center">
         <div class="col-7">
-          <label for="inputPassword6" class="col-form-label col-10 highlight">
+          <label for="inputPassword6" class="col-form-label col highlight">
             વર્ષ દરમિયાન ગ્રંથાલયમાં આવતા વર્તમાનપત્રો તથા સામયિકોના નામ :
           </label>
         </div>

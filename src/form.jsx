@@ -7,12 +7,12 @@ function Form() {
   const [rent, rentstate] = useState();
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
-  const district = useRef("");
-  const name = useRef("");
-  const gam = useRef("");
-  const taluko = useRef("");
-  const date = useRef("");
-  const d = new Date();
+  let district = useRef("");
+  let name = useRef("");
+  let gam = useRef("");
+  let taluko = useRef("");
+  let date = useRef("");
+  let d = new Date();
   let year = d.getFullYear();
 
   function print() {
@@ -46,10 +46,6 @@ function Form() {
           body: JSON.stringify(arr),
         }
       );
-
-      if (senddata.ok) {
-        name = "";
-      }
     } catch (error) {
       console.log("error");
       console.log(error);

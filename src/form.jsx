@@ -8,18 +8,14 @@ function Form() {
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
   let district = useRef("");
-  let name = useRef("");
+  let lname = useRef("");
   let gam = useRef("");
   let taluko = useRef("");
   let date = useRef("");
-<<<<<<< HEAD
-  let d = new Date();
-=======
   const d = new Date();
->>>>>>> mihir
   let year = d.getFullYear();
   const [arr, setarr] = useState({
-    name: "",
+    lname: "",
     gam: "",
     taluko: "",
     date: "",
@@ -38,7 +34,7 @@ function Form() {
 
   const handleSubmit = async () => {
     setarr({
-      name: name.current.value,
+      lname: lname.current.value,
       gam: gam.current.value,
       taluko: taluko.current.value,
       date: date.current.value,
@@ -56,6 +52,10 @@ function Form() {
           body: JSON.stringify(arr),
         }
       );
+
+      if (senddata.ok) {
+        name = "";
+      }
     } catch (error) {
       console.log("error");
       console.log(error);
@@ -86,7 +86,7 @@ function Form() {
         <div className="col-10">
           <input
             type="text"
-            ref={name}
+            ref={lname}
             className="form-control"
             id="inputPassword"
           />

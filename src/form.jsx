@@ -17,7 +17,7 @@ function Form() {
             <span className="icon">
               <BiBookOpen />
             </span>{" "}
-            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સને : {year - 1} - {year}
+            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહે વલ સને : {year - 1} - {year}
             <span className="icon">
               <BiBookOpen />
             </span>{" "}

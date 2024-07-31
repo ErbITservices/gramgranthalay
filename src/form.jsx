@@ -21,41 +21,7 @@ function Form() {
     console.log(taluko.current.value);
     console.log(gam.current.value);
     console.log(date.current.value);
-
-    // console.log(arr);
   }
-
-  const handleSubmit = async (e) => {
-    const arr = [
-      {
-        district: district.current.value,
-        name: name.current.value,
-        taluko: taluko.current.value,
-        gam: gam.current.value,
-        date: date.current.value,
-      },
-    ];
-    try {
-      const senddata = await fetch(
-        `http://localhost:5000/contactForm/dataform`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(arr),
-        }
-      );
-
-      if (senddata.ok) {
-        name = "";
-      }
-    } catch (error) {
-      console.log(year);
-      console.log("error");
-      console.log(error);
-    }
-  };
 
   return (
     <form onSubmit={handleSubmit()} className="form ">

@@ -27,46 +27,144 @@ function Form() {
 
   const d = new Date();
   let year = d.getFullYear();
+  const [data, setdata] = useState({
+    lname: "",
+    gam: "",
+    pin: Number,
+    taluko: "",
+    sthapnadate: Date,
+    district: "",
+    male: Number,
+    female: Number,
+    studypeople: Number,
+    studymale: Number,
+    studyfemale: Number,
+    studychild: Number,
+    lavaj: "",
+    lavajamount: Number,
+    workinghourslibrary: Number,
+    workinghoursbook: Number,
+    handleby: "",
+    registernumber: Number,
+    emailmen: "",
+    emailmenaddres: "",
+    libraryen: "",
+    libraryenaddres: "",
+    libraryeneducation: "",
+    libraryensalary: "",
+    housestate: "",
+    houserent: Number,
+    hosestatus: "",
+    aircondition: "",
+    openforevryone: "",
+    lastyearbookcount: "",
+    currentyearbookcount: "",
+    lastyearaddedbook: "",
+    endyearabookcount: "",
+    publishbook: "",
+    newspapercount: "",
+    newpaper: "",
+    parigrahan: "",
+    register: "",
+    deadregister: "",
+    attendencregister: "",
+    anualrequest: "",
+    recieptbook: "",
+    voucherbook: "",
+    rojmel: "",
+    commandbook: "",
+    publishregister: "",
+    followinstructoin: "",
+    whichlevel: "",
+    requirment: "",
+    grant: "",
+    vanchansamagrik: "",
+    vanchansamagrim: "",
+    pagark: "",
+    pagarm: "",
+    note1: "",
+    note2: "",
+    note3: "",
+    furnichark: "",
+    furnicharm: "",
+    otherm: "",
+    otherk: "",
+    alavajam: "",
+    aintrest: "",
+    arent: "",
+    awest: "",
+    agrant: "",
+    ahelp: "",
+    adistrict: "",
+    ataluko: "",
+    agam: "",
+    aotherhelp: "",
+    aother: "",
+    aprevios: "",
+    kbook: "",
+    knewspaper: "",
+    kbookbinding: "",
+    kinfletion: "",
+    ksalary: "",
+    kother: "",
+    kfurnichar: "",
+    kfurnicharrepair: "",
+    kotherbuy: "",
+    krent: "",
+    krepair: "",
+    ktax: "",
+    kstationary: "",
+    kmail: "",
+    ktrip: "",
+    kpremium: "",
+    klightbill: "",
+    kothersmall: "",
+  });
 
-  function print() {
-    console.log(district.current.value);
-    console.log(name.current.value);
-    console.log(taluko.current.value);
-    console.log(gam.current.value);
-    console.log(date.current.value);
+  const handleInput = (e) => {
+    // console.log(data);
+    const name = e.target.name;
+    const value = e.target.value;
+    setdata({
+      ...data,
+      [name]: value,
+    });
+    // console.log(data);
+  };
+  const handleCheck = (e) => {
+    // console.log(data);
+    const name = e.target.name;
+    const value = e.target.checked;
+    setdata({
+      ...data,
+      [name]: value,
+    });
+    // console.log(data);
+  };
 
-    // console.log(arr);
-  }
+  const handleSubmit = async () => {
+    // console.log(data);
 
-  const handleSubmit = async (e) => {
-    const arr = [
-      {
-        district: district.current.value,
-        name: name.current.value,
-        taluko: taluko.current.value,
-        gam: gam.current.value,
-        date: date.current.value,
-      },
-    ];
-    try {
-      const senddata = await fetch(
-        `http://localhost:5000/contactForm/dataform`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(arr),
-        }
-      );
+    console.log(data);
+    // try {
+    //   lname = "";
+    //   const senddata = await fetch(
+    //     `http://localhost:5000/contactForm/dataform`,
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(data),
+    //     }
+    //   );
 
-      if (senddata.ok) {
-        name = "";
-      }
-    } catch (error) {
-      console.log("error");
-      console.log(error);
-    }
+    //   if (senddata.ok) {
+    //   }
+    // } catch (error) {
+    //   console.log("error");
+    //   console.log(error);
+    // }
   };
 
   return (
@@ -77,7 +175,7 @@ function Form() {
             <span className="icon">
               <BiBookOpen />
             </span>{" "}
-            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહે વલ સને : {year - 1} - {year}
+            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સને : {year - 1} - {year}
             <span className="icon">
               <BiBookOpen />
             </span>{" "}
@@ -123,8 +221,8 @@ function Form() {
             <option>ગામ:3</option>
           </select>
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label">
             પિન :
           </label>
         </div>
@@ -140,8 +238,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label">
             તાલુકો :
           </label>
         </div>
@@ -159,9 +257,9 @@ function Form() {
             <option>taluko-3</option>
           </select>
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label">
-          જિલ્લો :
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label">
+            જીલો :
           </label>
         </div>
         <div className="col">
@@ -179,9 +277,9 @@ function Form() {
           </select>
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col">
+          <label for="inputPassword6" className="col-form-label col-sm-10">
             સ્થાપના તારીખ:
           </label>
         </div>
@@ -197,9 +295,9 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
-            વસ્તી : પુ
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label ">
+            વસ્તી : પુરશો
           </label>
         </div>
         <div className="col">
@@ -214,8 +312,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label ">
             સ્ત્રી :
           </label>
         </div>
@@ -231,8 +329,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label ">
             કુલ :
           </label>
         </div>
@@ -247,10 +345,10 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-1 col-sm-13 align-items-center">
-        <div class="col-sm-2">
-          <label for="inputPassword6" class="col-form-label ">
-            ભણેલાઓની સંખ્યા :
+      <div className="row mb-1 col-sm-13 align-items-center">
+        <div className="col-sm-2">
+          <label for="inputPassword6" className="col-form-label ">
+            ભણેલાઓ ની સાંખ્ય :
           </label>
         </div>
         <div className="col">
@@ -264,9 +362,9 @@ function Form() {
             className="form-control"
           />
         </div>
-        <div class="col">
-          <label for="inputPassword6" class="col-form-label ">
-            સભ્ય સંખ્યા : પુ
+        <div className="col">
+          <label for="inputPassword6" className="col-form-label ">
+            સભ્ય સંખ્યા : પુરુષ
           </label>
         </div>
         <div className="col">
@@ -281,8 +379,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label ">
             સ્ત્રી :
           </label>
         </div>
@@ -298,8 +396,8 @@ function Form() {
             aria-describedby="passwordHelpInline"
           />
         </div>
-        <div class="col-1">
-          <label for="inputPassword6" class="col-form-label ">
+        <div className="col-1">
+          <label for="inputPassword6" className="col-form-label ">
             બાળકો :
           </label>
         </div>
@@ -338,10 +436,10 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-sm-3">
-          <label for="inputPassword6" class="col-form-label ">
-           સભ્યો પાસેથી લવાજમ લેવામા આવે છે? :
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-sm-3">
+          <label for="inputPassword6" className="col-form-label ">
+            સબ્યો પાસેથી લવાજમ લેવામા આવે છે? :
           </label>
         </div>
 
@@ -353,14 +451,14 @@ function Form() {
             onChange={handleInput}
           >
             <option selected>Select</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
         {data.lavaj === "ha" && (
           <>
-            <div class="col-2">
-              <label for="inputPassword6" class="col-form-label ">
+            <div className="col-2">
+              <label for="inputPassword6" className="col-form-label ">
                 વાર્ષિક :
               </label>
             </div>
@@ -378,9 +476,9 @@ function Form() {
         )}
       </div>
 
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label col-sm-10">
             કામકાજના કલાકો: પુસ્તક આપ લે વિભાગ :
           </label>
         </div>
@@ -394,8 +492,8 @@ function Form() {
             className="form-control"
           />
         </div>
-        <div class="col-2">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
+        <div className="col-2">
+          <label for="inputPassword6" className="col-form-label col-sm-10">
             વાંચનાલય :
           </label>
         </div>
@@ -410,9 +508,9 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label col-sm-10">
             ગ્રંથાલયનુ વ્યાવસ્થાતંત્ર : પંચાયત/સંસ્થા/મંડળ/શાળા/અન્ય સંચાલિત
           </label>
         </div>
@@ -430,9 +528,9 @@ function Form() {
             <option value="na">other</option>
           </select>
         </div>
-        <div class="col-4">
-          <label for="inputPassword6" class="col-form-label col-sm-10">
-            વ્યાવસ્થાતંત્ર રજિસ્ટર્ડ હોય તો નોંધણી ક્રમાંક :
+        <div className="col-4">
+          <label for="inputPassword6" className="col-form-label col-sm-10">
+            વ્યાવસ્થાતંત્ર રજીસ્ટર હોય તો નોંધણી ક્રમાંક :
           </label>
         </div>
         <div className="col-2">
@@ -447,8 +545,8 @@ function Form() {
         </div>
       </div>
       <div className="row mb-3 col-sm-13 align-items-center">
-        <div class=" col-3">
-          <label for="inputPassword" class="col-sm-10 col-form-label">
+        <div className=" col-3">
+          <label for="inputPassword" className="col-sm-10 col-form-label">
             પત્ર વ્યાહાર માટે જવાબદાર વ્યક્તિનુ નામ :
           </label>
         </div>
@@ -469,7 +567,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             className="col-sm-10 col-form-label"
           >
-            હોદો આને પુરૂ સરનામું :
+            હોદો આને પૂરું સરનામું :
           </label>
         </div>
         <div className="col-9">
@@ -489,7 +587,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             className="col-sm-10 col-form-label"
           >
-            ગ્રંથપાલનું નામ
+            ગ્રંથપાલનુ નામ :
           </label>
         </div>
         <div className="col-9">
@@ -507,7 +605,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             className="col-sm-10 col-form-label"
           >
-            ગ્રંથપાલનું સરનામું
+            ગ્રંથપાલનુ સરનામું :
           </label>
         </div>
         <div className="col-9">
@@ -524,7 +622,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             className="col-sm-10 col-form-label"
           >
-            ગ્રંથપાલનું લાયકાત
+            ગ્રંથપાલનુ લાયકાત:
           </label>
         </div>
         <div className="col-3">
@@ -546,7 +644,7 @@ function Form() {
             for="exampleFormControlTextarea1"
             className="col-sm-10 col-form-label"
           >
-            ગ્રંથપાલનો પગાર
+            ગ્રંથપાલનો પગાર :
           </label>
         </div>
         <div className="col-3">
@@ -560,10 +658,10 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label ">
-            મકાન ગ્રંથાલયની માલિકીનું છે :
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label ">
+            મકાન ગ્રંથાલય ની માલિકી નું છે :
           </label>
         </div>
 
@@ -576,8 +674,8 @@ function Form() {
             onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
         {data.housestate === "na" && (
@@ -600,10 +698,10 @@ function Form() {
           </>
         )}
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label ">
-            મકાનની વર્તમાન સ્થિતિ :
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label ">
+            મકાન ની વર્તમાન સ્થિતિ :
           </label>
         </div>
         <div className="col-2">
@@ -616,9 +714,9 @@ function Form() {
             className="form-control"
           />
         </div>
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label ">
-            હવા, ઉજાશ આને બીજી સુવિધા છે? :
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label ">
+            હવા ઉજાશ આને બીજી સુવિધા છે? :
           </label>
         </div>
         <div className="col-2">
@@ -630,15 +728,15 @@ function Form() {
             aria-label="Default select example"
           >
             <option selected>પસંદ કરો</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-5">
-          <label for="inputPassword6" class="col-form-label ">
-            ગ્રંથાલય, દરેકને માટે કોઈપણ ભેદભાવ વગર ખુલ્લુ છે? :
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-5">
+          <label for="inputPassword6" className="col-form-label ">
+            ગ્રંથાલય દરેકને માટે કોઈપણ ભેદભાવ વગર ખુલ્લુ છે? :
           </label>
         </div>
         <div className="col-2">
@@ -649,21 +747,21 @@ function Form() {
             className="form-select"
           >
             <option selected>પસંદ કરો</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col">
-          <label for="inputPassword6" class="col-form-label col highlight">
-            ગત વર્ષના આવક - ખર્ચાના હિસાબો : (નમૂના: ક મુજબ) :
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col">
+          <label for="inputPassword6" className="col-form-label col highlight">
+            ગત વર્ષના આવક ખર્ચાના હિસાબો : (નમૂના ક મુજબ) :
           </label>
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
             (1) ગત વર્ષના અંતે પુસ્તકોની સંખ્યા :
           </label>
         </div>
@@ -678,10 +776,10 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
-            (2) આ વર્ષમાં ઉમેરાયેલા પુસ્તકોની સંખ્યા :
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
+            (2) આ વર્ષમાં ઉમેરાયેલા પુસ્તકો ની સંખ્યા :
           </label>
         </div>
         <div className="col-3">
@@ -695,9 +793,9 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
             (3) આ વર્ષમાં કમી થયેલા પુસ્તકોની સંખ્યા :
           </label>
         </div>
@@ -712,9 +810,9 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
             (4) વર્ષના અંતે પુસ્તકોની કુલ સંખ્યા :
           </label>
         </div>
@@ -733,13 +831,14 @@ function Form() {
         <div className="col-13">
           <label for="inputPassword6" className="col-form-label col highlight">
             ગ્રંથાલયમાં આવેલ ડેડસ્ટોકની વિગતો (અલગ પત્રકમાં યાદી બનાવીને જોડવી)
+            :
           </label>
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
-            (1) વર્ષ દરમ્યાન ઇસ્યુ થયેલા કુલ પુસ્તકો (પુસ્તક પરિભ્રમણ) :
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
+            (1) વર્ષ દરમ્યાન ઈશ્યૂ થયેલા કુલ પુસ્તકો (પુસ્તક પરિભ્રમણ) :
           </label>
         </div>
         <div className="col-3">
@@ -752,8 +851,8 @@ function Form() {
             className="form-control"
           />
         </div>
-        <div class="col-3">
-          <label for="inputPassword6" class="col-form-label  ">
+        <div className="col-3">
+          <label for="inputPassword6" className="col-form-label  ">
             (2) વર્તમાન પત્રો તથા સામયિકો વાંચનારની દૈનિક સરેરાશ સંખ્યા :
           </label>
         </div>
@@ -768,46 +867,24 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col-7">
-          <label for="inputPassword6" class="col-form-label col highlight">
-            વર્ષ દરમ્યાન ગ્રંથાલયમાં આવતા વર્તમાનપત્રો તથા સામયિકોના નામ :
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col-7">
+          <label for="inputPassword6" className="col-form-label col highlight">
+            વર્ષ દરમિયાન ગ્રંથાલયમાં આવતા વર્તમાનપત્રો તથા સામયિકોના નામ :
           </label>
         </div>
-        <div className="col">
-          <label for="inputPassword6" className="col-form-label  ">
-            <button
-              type="button"
-              onClick={() => {
-                countstate(count + 1);
-              }}
-              className="btn btn-primary"
-            >
-              ઉમેરો
-            </button>
-          </label>
+        <div className="col-5">
+          <input
+            required
+            type="text"
+            name="newpaper"
+            value={data.newpaper.push}
+            onChange={handleInput}
+            className="form-control"
+          />
         </div>
       </div>
-      <ul className="list-group">
-        {Array.apply(null, { length: count }).map((e, i) => (
-          <span className="busterCards" key={i}>
-            <div className="row mb-3 col-13 align-items-center">
-              <div className="col-2 align-items-center">
-                {i} name of newpaper :
-              </div>
 
-              <div className="col-5">
-                <input
-                  type="text"
-                  id="inputPassword6"
-                  className="form-control"
-                  aria-describedby="passwordHelpInline"
-                />
-              </div>
-            </div>
-          </span>
-        ))}
-      </ul>
       <div className="row mb-3 col-13 align-items-center">
         <div className="col">
           <label for="inputPassword6" className="col-form-label col highlight">
@@ -951,7 +1028,7 @@ function Form() {
         <div className=" align-items-center">
           <div className="form-check ">
             <label className="form-check-label" for="defaultCheck1">
-              ઇસ્યુ રજીસ્ટર
+              ૧o. ઇસ્યુ રજીસ્ટર
             </label>
             <input
               className="form-check-input"
@@ -966,7 +1043,7 @@ function Form() {
       <div className="row mb-3 col-sm-13 align-items-center">
         <div className="col-4">
           <label for="inputPassword6" className="col-form-label ">
-            નિરીક્ષકે કરેલા સૂચનોનું પાલન થાય છે?:
+            નિરીક્ષકે કરેલા સૂચનોનું પાલન થાય છે?
           </label>
         </div>
 
@@ -979,13 +1056,13 @@ function Form() {
             value={data.followinstructoin}
             onChange={handleInput}
           >
-            <option selected>પસંદ કરો</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option selected>Select</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
       </div>
-      {suchan === "ha" && (
+      {data.followinstructoin === "ha" && (
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className="col-4">
             <label for="inputPassword6" className="col-form-label ">
@@ -1007,7 +1084,7 @@ function Form() {
       <div className="row mb-3 col-sm-13 align-items-center">
         <div className="col-4">
           <label for="inputPassword6" className="col-form-label ">
-            વાંચકોની મૂળભૂત જરૂરિયાતને ગ્રંથાલય પહોંચી વડે છે કે કેમ?:
+            વાંચકોની મૂળભૂત જરૂરિયાતને ગ્રંથાલય પહોંચી વડે છે કે કેમ?
           </label>
         </div>
 
@@ -1019,14 +1096,14 @@ function Form() {
             className="form-select"
           >
             <option selected>પસંદ કરો</option>
-            <option value="ha">હા</option>
-            <option value="na">ના</option>
+            <option value="ha">Ha</option>
+            <option value="na">Na</option>
           </select>
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col-4">
-          <label for="inputPassword6" class="col-form-label ">
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col-4">
+          <label for="inputPassword6" className="col-form-label ">
             ગત વર્ષે મળેલી સરકારી અનુદાનની રકમ :
           </label>
         </div>
@@ -1041,9 +1118,9 @@ function Form() {
           />
         </div>
       </div>
-      <div class="row mb-3 col-sm-13 align-items-center">
-        <div class="col">
-          <label for="inputPassword6" class="col-form-label highlight">
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className="col">
+          <label for="inputPassword6" className="col-form-label highlight">
             સરકારી અનુદાનની ગણતરી માટેની ગતવર્ષની ખર્ચની વિગતો :
           </label>
         </div>
@@ -1096,7 +1173,7 @@ function Form() {
                     />
                   </td>
                   <td className="th">
-                    ઉપર કોલમ : ૨૪માં દર્શાવેલ રકમના ૫૦% રકમનો ખર્ચ વાંચન સામગ્રી
+                    ઉપર કોલમ: ૨૪માં દર્શાવેલ રકમના ૫૦% રકમનો ખર્ચ વાંચન સામગ્રી
                     માટે ફરજીયાત છે
                   </td>
                 </tr>
@@ -1136,7 +1213,7 @@ function Form() {
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>ફર્નિચર અને રીપેરીંગ નમૂનો : ક (ક)</td>
+                  <td>ફર્નિચર અને રીપેરીંગ નમૂનો: ક (ક)</td>
                   <td>
                     <input
                       required
@@ -1240,10 +1317,10 @@ function Form() {
       </center>
 
       <center className="head">
-        <h1 className="extrahighlight">નમૂનો : ક </h1>
+        <h1 className="extrahighlight">નમૂનો: ક (અ)</h1>
         <br />
         <p className="highlight">
-          ગ્રંથાલયોને અનુદાનના નિયમ : ૬(છ)ના પરિશિષ્ટ : ક ના આસન ૧૩ અને ૧૪ની
+          ગ્રંથાલયોને અનુદાનના નિયમ :૬(છ)ના પરિશિષ્ટ : ક ના આસન ૧૩ અને ૧૪ની
           માહિતીનું વિવરણ પત્રક
         </p>
         <br />
@@ -1265,9 +1342,9 @@ function Form() {
             <tbody>
               <tr>
                 <td>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૧. લવાજમ :
                       </label>
                     </div>
@@ -1282,9 +1359,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૨. ભંડોળનું વ્યાજ :
                       </label>
                     </div>
@@ -1299,9 +1376,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૩. ભાડાની ઉપજ :
                       </label>
                     </div>
@@ -1316,9 +1393,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૪. પસ્તી વેચાણ :
                       </label>
                     </div>
@@ -1333,9 +1410,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૫. સરકારી અનુદાન :
                       </label>
                     </div>
@@ -1350,9 +1427,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૬. પંચાયતની મદદ :
                       </label>
                     </div>
@@ -1367,9 +1444,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label tab">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label
+                        for="inputPassword6"
+                        className="col-form-label tab"
+                      >
                         (૧) જિલ્લા :
                       </label>
                     </div>
@@ -1384,9 +1464,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label tab">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label
+                        for="inputPassword6"
+                        className="col-form-label tab"
+                      >
                         (૨) તાલુકા :
                       </label>
                     </div>
@@ -1401,9 +1484,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label tab">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label
+                        for="inputPassword6"
+                        className="col-form-label tab"
+                      >
                         (૩) ગ્રામ :
                       </label>
                     </div>
@@ -1418,9 +1504,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૭. લોક મદદ :
                       </label>
                     </div>
@@ -1435,9 +1521,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૮. અન્ય આવક :
                       </label>
                     </div>
@@ -1452,9 +1538,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         કુલ આવક :
                       </label>
                     </div>
@@ -1479,9 +1565,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૯. વર્ષની શરૂઆતમાં હાથ ઉપની સિલક :
                       </label>
                     </div>
@@ -1499,16 +1585,16 @@ function Form() {
                 </td>
 
                 <td>
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         અ. વાંચન સામગ્રી :
                       </label>
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૧. પુસ્તક ખરીદી :
                       </label>
                     </div>
@@ -1523,9 +1609,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૨. વર્તમાન પત્રો, સામયિકો :
                       </label>
                     </div>
@@ -1540,9 +1626,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૩. પુસ્તક બાંધણી :
                       </label>
                     </div>
@@ -1557,9 +1643,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ :
                       </label>
                     </div>
@@ -1577,16 +1666,16 @@ function Form() {
                     </div>
                   </div>
 
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         બ. પગાર ખર્ચ :
                       </label>
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૧. પગાર :
                       </label>
                     </div>
@@ -1601,9 +1690,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૨. મોંઘવારી :
                       </label>
                     </div>
@@ -1618,9 +1707,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૩. અન્ય :
                       </label>
                     </div>
@@ -1635,9 +1724,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ :
                       </label>
                     </div>
@@ -1662,9 +1754,9 @@ function Form() {
                       </label>
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૧. ફર્નિચર :
                       </label>
                     </div>
@@ -1679,9 +1771,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૨. ફર્નિચર મરામત :
                       </label>
                     </div>
@@ -1696,9 +1788,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૩. અન્ય સાધન સામગ્રી :
                       </label>
                     </div>
@@ -1713,9 +1805,12 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ :
                       </label>
                     </div>
@@ -1733,16 +1828,16 @@ function Form() {
                     </div>
                   </div>
 
-                  <div class="row mb-3 col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ડ. મકાન ભાડુ તથા પરચુરણ ખર્ચ :
                       </label>
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૧. મકાન ભાડુ :
                       </label>
                     </div>
@@ -1757,9 +1852,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૨. મકાન મરામત(સામાન્ય) :
                       </label>
                     </div>
@@ -1774,9 +1869,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૩. કરવેરા :
                       </label>
                     </div>
@@ -1791,9 +1886,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૪. સ્ટેશનરી/છપામાણી :
                       </label>
                     </div>
@@ -1808,9 +1903,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૫. ટપાલ ખર્ચ :
                       </label>
                     </div>
@@ -1825,9 +1920,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૬. પ્રવાસ ખર્ચ :
                       </label>
                     </div>
@@ -1842,9 +1937,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૭. વીમાનું પ્રીમિયમ :
                       </label>
                     </div>
@@ -1859,9 +1954,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૮. વીજળી ખર્ચ :
                       </label>
                     </div>
@@ -1876,9 +1971,9 @@ function Form() {
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab col-sm-13 align-items-center">
-                    <div class="col">
-                      <label for="inputPassword6" class="col-form-label ">
+                  <div className="row mb-3 tab col-sm-13 align-items-center">
+                    <div className="col">
+                      <label for="inputPassword6" className="col-form-label ">
                         ૯. પરચુરણ ખર્ચ :
                       </label>
                     </div>
@@ -1887,25 +1982,9 @@ function Form() {
                         required
                         type="number"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
-                      />
-                    </div>
-                  </div>
-                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div className=" col">
-                      <label
-                        for="inputPassword6"
-                        className="tab2 col-form-label "
-                      >
-                        કુલ સરવાળો :
-                      </label>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        id="inputPassword6"
-                        className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kothersmall"
+                        value={data.kothersmall}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1913,9 +1992,12 @@ function Form() {
               </tr>
               <tr>
                 <td>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ સરવાળો :
                       </label>
                     </div>
@@ -1943,9 +2025,12 @@ function Form() {
                   </div>
                 </td>
                 <td>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ સરવાળો :
                       </label>
                     </div>

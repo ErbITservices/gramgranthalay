@@ -30,22 +30,22 @@ function Form() {
   const [data, setdata] = useState({
     lname: "",
     gam: "",
-    pin: Number,
+    pin: "",
     taluko: "",
-    sthapnadate: Date,
+    sthapnadate: "",
     district: "",
-    male: Number,
-    female: Number,
-    studypeople: Number,
-    studymale: Number,
-    studyfemale: Number,
-    studychild: Number,
+    male: "",
+    female: "",
+    studypeople: "",
+    studymale: "",
+    studyfemale: "",
+    studychild: "",
     lavaj: "",
-    lavajamount: Number,
-    workinghourslibrary: Number,
-    workinghoursbook: Number,
+    lavajamount: "",
+    workinghourslibrary: "",
+    workinghoursbook: "",
     handleby: "",
-    registernumber: Number,
+    registernumber: "",
     emailmen: "",
     emailmenaddres: "",
     libraryen: "",
@@ -53,7 +53,7 @@ function Form() {
     libraryeneducation: "",
     libraryensalary: "",
     housestate: "",
-    houserent: Number,
+    houserent: "",
     hosestatus: "",
     aircondition: "",
     openforevryone: "",
@@ -168,7 +168,7 @@ function Form() {
   };
 
   return (
-    <form ref={pdfref} onSubmit={handleSubmit} className="form ">
+    <div ref={pdfref} className="form ">
       <center>
         <div className="head">
           <h1>
@@ -190,7 +190,6 @@ function Form() {
         </div>
         <div className="col-10">
           <input
-            required
             type="text"
             className="form-control"
             id="gname"
@@ -228,7 +227,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             type="number"
             id="inputPassword6"
             name="pin"
@@ -285,7 +283,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             type="date"
             name="sthapnadate"
             value={data.sthapnadate}
@@ -302,7 +299,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="male"
             value={data.male}
             onChange={handleInput}
@@ -319,14 +315,11 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="female"
             value={data.female}
             onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className="col-1">
@@ -336,7 +329,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             value={Number(data.male) + Number(data.female)}
             type="number"
             id="inputPassword6"
@@ -353,7 +345,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="studypeople"
             value={data.studypeople}
             onChange={handleInput}
@@ -369,7 +360,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="studymale"
             value={data.studymale}
             onChange={handleInput}
@@ -386,7 +376,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="studyfemale"
             value={data.studyfemale}
             onChange={handleInput}
@@ -403,7 +392,6 @@ function Form() {
         </div>
         <div className="col">
           <input
-            required
             name="studychild"
             value={data.studychild}
             onChange={handleInput}
@@ -423,7 +411,6 @@ function Form() {
         "
         >
           <input
-            required
             value={
               Number(data.studychild) +
               Number(data.studyfemale) +
@@ -464,7 +451,6 @@ function Form() {
             </div>
             <div className="col-2">
               <input
-                required
                 name="lavajamount"
                 value={data.lavajamount}
                 onChange={handleInput}
@@ -484,7 +470,6 @@ function Form() {
         </div>
         <div className="col-2">
           <input
-            required
             name="workinghoursbook"
             value={data.workinghoursbook}
             onChange={handleInput}
@@ -499,7 +484,6 @@ function Form() {
         </div>
         <div className="col-2">
           <input
-            required
             name="workinghourslibrary"
             value={data.workinghourslibrary}
             onChange={handleInput}
@@ -535,7 +519,6 @@ function Form() {
         </div>
         <div className="col-2">
           <input
-            required
             name="registernumber"
             value={data.registernumber}
             onChange={handleInput}
@@ -552,7 +535,6 @@ function Form() {
         </div>
         <div className="col-9">
           <input
-            required
             type="text"
             name="emailmen"
             value={data.emailmen}
@@ -592,7 +574,6 @@ function Form() {
         </div>
         <div className="col-9">
           <input
-            required
             name="libraryen"
             value={data.libraryen}
             onChange={handleInput}
@@ -649,7 +630,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="libraryensalary"
             value={data.libraryensalary}
             onChange={handleInput}
@@ -687,7 +667,6 @@ function Form() {
             </div>
             <div className="col-2">
               <input
-                required
                 name="houserent"
                 value={data.houserent}
                 onChange={handleInput}
@@ -706,7 +685,6 @@ function Form() {
         </div>
         <div className="col-2">
           <input
-            required
             name="hosestatus"
             value={data.hosestatus}
             onChange={handleInput}
@@ -767,7 +745,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="lastyearbookcount"
             value={data.lastyearbookcount}
             onChange={handleInput}
@@ -784,7 +761,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="lastyearaddedbook"
             value={data.lastyearaddedbook}
             onChange={handleInput}
@@ -801,7 +777,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="currentyearbookcount"
             value={data.currentyearbookcount}
             onChange={handleInput}
@@ -818,7 +793,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="endyearabookcount"
             value={data.endyearabookcount}
             onChange={handleInput}
@@ -843,7 +817,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="publishbook"
             value={data.publishbook}
             onChange={handleInput}
@@ -858,7 +831,6 @@ function Form() {
         </div>
         <div className="col-3">
           <input
-            required
             name="newspapercount"
             value={data.newspapercount}
             onChange={handleInput}
@@ -875,7 +847,6 @@ function Form() {
         </div>
         <div className="col-5">
           <input
-            required
             type="text"
             name="newpaper"
             value={data.newpaper.push}
@@ -1049,7 +1020,6 @@ function Form() {
 
         <div className="col-2">
           <select
-            required
             className="form-select"
             aria-label="Default select example"
             name="followinstructoin"
@@ -1071,7 +1041,6 @@ function Form() {
           </div>
           <div className="col-2">
             <input
-              required
               type="text"
               className="form-control"
               name="whichlevel"
@@ -1109,7 +1078,6 @@ function Form() {
         </div>
         <div className="col-2">
           <input
-            required
             type="number"
             className="form-control"
             name="grant"
@@ -1154,7 +1122,6 @@ function Form() {
                   <td>વાંચન સામગ્રી નમૂનો : ક (અ)</td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="vanchansamagrik"
@@ -1164,7 +1131,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="number"
                       name="vanchansamagrim"
                       value={data.vanchansamagrim}
@@ -1182,7 +1148,6 @@ function Form() {
                   <td>કર્મચારી પગાર નમૂનો : ક (બ)</td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="pagark"
@@ -1192,7 +1157,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="pagarm"
@@ -1202,7 +1166,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="text"
                       className="form-control"
                       name="note1"
@@ -1216,7 +1179,6 @@ function Form() {
                   <td>ફર્નિચર અને રીપેરીંગ નમૂનો: ક (ક)</td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="furnichark"
@@ -1226,7 +1188,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="furnicharm"
@@ -1236,7 +1197,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="text"
                       className="form-control"
                       name="note2"
@@ -1250,7 +1210,6 @@ function Form() {
                   <td> મકાન ભાડુ પરચુરણ નમૂનો : ક(ડ)</td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="otherk"
@@ -1260,7 +1219,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       name="otherm"
@@ -1270,7 +1228,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="text"
                       className="form-control"
                       name="note3"
@@ -1284,7 +1241,6 @@ function Form() {
                   <td>કુલ</td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       value={
@@ -1297,7 +1253,6 @@ function Form() {
                   </td>
                   <td>
                     <input
-                      required
                       type="number"
                       className="form-control"
                       value={
@@ -1350,7 +1305,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="alavajam"
@@ -1367,7 +1321,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="aintrest"
@@ -1384,7 +1337,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="arent"
@@ -1401,7 +1353,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="awest"
@@ -1418,7 +1369,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="agrant"
@@ -1435,7 +1385,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="ahelp"
@@ -1455,7 +1404,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="adistrict"
@@ -1475,7 +1423,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="ataluko"
@@ -1495,7 +1442,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="agam"
@@ -1512,7 +1458,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="aotherhelp"
@@ -1529,7 +1474,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="aother"
@@ -1546,7 +1490,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         value={
@@ -1573,7 +1516,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="aprevios"
@@ -1600,7 +1542,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kbook"
@@ -1617,7 +1558,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="knewspaper"
@@ -1634,7 +1574,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kbookbinding"
@@ -1654,7 +1593,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1681,7 +1619,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="ksalary"
@@ -1698,7 +1635,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kinfletion"
@@ -1715,7 +1651,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kother"
@@ -1735,7 +1670,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1762,7 +1696,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kfurnichar"
@@ -1779,7 +1712,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kfurnicharrepair"
@@ -1796,7 +1728,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         name="kotherbuy"
@@ -1816,7 +1747,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1843,7 +1773,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="krent"
@@ -1860,7 +1789,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="krepair"
@@ -1877,7 +1805,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="ktax"
@@ -1894,7 +1821,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="kstationary"
@@ -1911,7 +1837,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="kmail"
@@ -1928,7 +1853,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="ktrip"
@@ -1945,7 +1869,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="kpremium"
@@ -1962,7 +1885,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="klightbill"
@@ -1979,7 +1901,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="kothersmall"
@@ -2003,7 +1924,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="text"
                         className="form-control"
                         value={
@@ -2036,7 +1956,6 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
-                        required
                         type="number"
                         className="form-control"
                         name="totalk"
@@ -2073,7 +1992,11 @@ function Form() {
       <center>
         <div className="row mb-3 tab2 col-sm-13 align-items-center">
           <div className=" col">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="btn btn-primary"
+            >
               Submit
             </button>
           </div>
@@ -2088,7 +2011,7 @@ function Form() {
           </div>
         </div>
       </center>
-    </form>
+    </div>
   );
 }
 

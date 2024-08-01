@@ -146,25 +146,25 @@ function Form() {
     // console.log(data);
 
     console.log(data);
-    // try {
-    //   lname = "";
-    //   const senddata = await fetch(
-    //     `http://localhost:5000/contactForm/dataform`,
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(data),
-    //     }
-    //   );
+    try {
+      lname = "";
+      const senddata = await fetch(
+        `http://localhost:5000/contactForm/dataform`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-    //   if (senddata.ok) {
-    //   }
-    // } catch (error) {
-    //   console.log("error");
-    //   console.log(error);
-    // }
+      if (senddata.ok) {
+      }
+    } catch (error) {
+      console.log("error");
+      console.log(error);
+    }
   };
 
   return (

@@ -7,63 +7,110 @@ function Form() {
   const [rent, rentstate] = useState();
   const [suchan, suchanstate] = useState();
   const [count, countstate] = useState(0);
-  let district = useRef("");
-  let lname = useRef("");
-  let gam = useRef("");
-  let taluko = useRef("");
-  let date = useRef("");
+
   const d = new Date();
   let year = d.getFullYear();
-  const [arr, setarr] = useState({
+  const [data, setdata] = useState({
     lname: "",
     gam: "",
+    pin: Number,
     taluko: "",
-    date: "",
-    ditrict: "",
+    sthapnadate: Date,
+    district: "",
+    male: Number,
+    female: Number,
+    studypeople: Number,
+    studymale: Number,
+    studyfemale: Number,
+    studychild: Number,
+    lavaj: "",
+    lavajamount: Number,
+    workinghourslibrary: Number,
+    workinghoursbook: Number,
+    handleby: "",
+    registernumber: Number,
+    emailmen: "",
+    emailmenaddres: "",
+    libraryen: "",
+    libraryenaddres: "",
+    libraryeneducation: "",
+    libraryensalary: "",
+    housestate: "",
+    houserent: Number,
+    hosestatus: "",
+    aircondition: "",
+    openforevryone: "",
+    lastyearbookcount: "",
+    currentyearbookcount: "",
+    lastyearaddedbook: "",
+    endyearabookcount: "",
+    publishbook: "",
+    newspapercount: "",
+    newpaper: "",
+    parigrahan: "",
+    register: "",
+    deadregister: "",
+    attendencregister: "",
+    anualrequest: "",
+    recieptbook: "",
+    voucherbook: "",
+    rojmel: "",
+    commandbook: "",
+    publishregister: "",
+    followinstructoin: "",
+    whichlevel: "",
+    requirment: "",
+    grant: "",
   });
 
-  function print() {
-    console.log(district.current.value);
-    console.log(name.current.value);
-    console.log(taluko.current.value);
-    console.log(gam.current.value);
-    console.log(date.current.value);
-
-    // console.log(arr);
-  }
+  const handleInput = (e) => {
+    // console.log(data);
+    const name = e.target.name;
+    const value = e.target.value;
+    setdata({
+      ...data,
+      [name]: value,
+    });
+    // console.log(data);
+  };
+  const handleCheck = (e) => {
+    // console.log(data);
+    const name = e.target.name;
+    const value = e.target.checked;
+    setdata({
+      ...data,
+      [name]: value,
+    });
+    // console.log(data);
+  };
 
   const handleSubmit = async () => {
-    setarr({
-      lname: lname.current.value,
-      gam: gam.current.value,
-      taluko: taluko.current.value,
-      date: date.current.value,
-      district: district.current.value,
-    });
-    console.log(arr);
-    try {
-      const senddata = await fetch(
-        `http://localhost:5000/contactForm/dataform`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(arr),
-        }
-      );
+    // console.log(data);
 
-      if (senddata.ok) {
-        name = "";
-      }
-    } catch (error) {
-      console.log("error");
-      console.log(error);
-    }
+    console.log(data);
+    // try {
+    //   lname = "";
+    //   const senddata = await fetch(
+    //     `http://localhost:5000/contactForm/dataform`,
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(data),
+    //     }
+    //   );
+
+    //   if (senddata.ok) {
+    //   }
+    // } catch (error) {
+    //   console.log("error");
+    //   console.log(error);
+    // }
   };
 
   return (
-    <div className="form ">
+    <form className="form ">
       <center>
         <div className="head">
           <h1>
@@ -86,9 +133,13 @@ function Form() {
         <div className="col-10">
           <input
             type="text"
-            ref={lname}
             className="form-control"
-            id="inputPassword"
+            id="gname"
+            autoComplete="off"
+            name="lname"
+            value={data.lname}
+            onChange={handleInput}
+            required
           />
         </div>
       </div>
@@ -99,7 +150,13 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select id="inputState" ref={gam} className="form-select">
+          <select
+            id="inputState"
+            name="gam"
+            value={data.gam}
+            onChange={handleInput}
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option>ગામ:1</option>
             <option>ગામ:2</option>
@@ -115,6 +172,9 @@ function Form() {
           <input
             type="number"
             id="inputPassword6"
+            name="pin"
+            value={data.pin}
+            onChange={handleInput}
             className="form-control"
             aria-describedby="passwordHelpInline"
           />
@@ -125,10 +185,14 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select id="inputState" className="form-select">
-            <option ref={taluko} selected>
-              પસંદ કરો
-            </option>
+          <select
+            id="inputState"
+            name="taluko"
+            value={data.taluko}
+            onChange={handleInput}
+            className="form-select"
+          >
+            <option selected>પસંદ કરો</option>
             <option>taluko-1</option>
             <option>taluko-2</option>
             <option>taluko-3</option>
@@ -140,11 +204,17 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select ref={district} id="inputState" className="form-select">
+          <select
+            name="district"
+            value={data.district}
+            onChange={handleInput}
+            id="inputState"
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option>district-1</option>
             <option>district-2</option>
-            <option>district-1</option>
+            <option>district-3</option>
           </select>
         </div>
       </div>
@@ -157,7 +227,9 @@ function Form() {
         <div className="col">
           <input
             type="date"
-            ref={date}
+            name="sthapnadate"
+            value={data.sthapnadate}
+            onChange={handleInput}
             id="inputPassword6"
             className="form-control"
             aria-describedby="passwordHelpInline"
@@ -170,6 +242,9 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="male"
+            value={data.male}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -183,6 +258,9 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="female"
+            value={data.female}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -196,6 +274,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            value={Number(data.male) + Number(data.female)}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -211,10 +290,12 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="studypeople"
+            value={data.studypeople}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className="col">
@@ -224,6 +305,9 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="studymale"
+            value={data.studymale}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -237,6 +321,9 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="studyfemale"
+            value={data.studyfemale}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -250,6 +337,9 @@ function Form() {
         </div>
         <div className="col">
           <input
+            name="studychild"
+            value={data.studychild}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -266,6 +356,11 @@ function Form() {
         "
         >
           <input
+            value={
+              Number(data.studychild) +
+              Number(data.studyfemale) +
+              Number(data.studymale)
+            }
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -282,18 +377,17 @@ function Form() {
 
         <div className="col-2">
           <select
+            name="lavaj"
+            value={data.lavaj}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              feesstate(event.target.value);
-            }}
+            onChange={handleInput}
           >
             <option selected>Select</option>
             <option value="ha">Ha</option>
             <option value="na">Na</option>
           </select>
         </div>
-        {fees === "ha" && (
+        {data.lavaj === "ha" && (
           <>
             <div className="col-2">
               <label for="inputPassword6" className="col-form-label ">
@@ -302,10 +396,11 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                name="lavajamount"
+                value={data.lavajamount}
+                onChange={handleInput}
                 type="number"
-                id="inputPassword6"
                 className="form-control"
-                aria-describedby="passwordHelpInline"
               />
             </div>
           </>
@@ -320,10 +415,11 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            name="workinghoursbook"
+            value={data.workinghoursbook}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className="col-2">
@@ -333,10 +429,11 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            name="workinghourslibrary"
+            value={data.workinghourslibrary}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -349,10 +446,9 @@ function Form() {
         <div className="col-2">
           <select
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              state(event.target.value);
-            }}
+            name="handleby"
+            value={data.handleby}
+            onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">panchayat</option>
@@ -368,10 +464,11 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            name="registernumber"
+            value={data.registernumber}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -382,7 +479,13 @@ function Form() {
           </label>
         </div>
         <div className="col-9">
-          <input type="text" className="form-control" id="inputPassword" />
+          <input
+            type="text"
+            name="emailmen"
+            value={data.emailmen}
+            onChange={handleInput}
+            className="form-control"
+          />
         </div>
       </div>
       <div className="row mb-3 col-sm-13 align-items-center">
@@ -396,6 +499,9 @@ function Form() {
         </div>
         <div className="col-9">
           <textarea
+            name="emailmenaddres"
+            value={data.emailmenaddres}
+            onChange={handleInput}
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="5"
@@ -413,10 +519,11 @@ function Form() {
         </div>
         <div className="col-9">
           <input
+            name="libraryen"
+            value={data.libraryen}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className=" col-3 mb-3">
@@ -429,8 +536,10 @@ function Form() {
         </div>
         <div className="col-9">
           <textarea
+            name="libraryenaddres"
+            value={data.libraryenaddres}
+            onChange={handleInput}
             className="form-control"
-            id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
         </div>
@@ -443,7 +552,12 @@ function Form() {
           </label>
         </div>
         <div className="col-3">
-          <select className="form-select" aria-label="Default select example">
+          <select
+            name="libraryeneducation"
+            value={data.libraryeneducation}
+            onChange={handleInput}
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option value="1">Graduated</option>
             <option value="2">Post Graduated</option>
@@ -461,10 +575,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="libraryensalary"
+            value={data.libraryensalary}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -479,16 +594,16 @@ function Form() {
           <select
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {
-              rentstate(event.target.value);
-            }}
+            name="housestate"
+            value={data.housestate}
+            onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">Ha</option>
             <option value="na">Na</option>
           </select>
         </div>
-        {rent === "ha" && (
+        {data.housestate === "na" && (
           <>
             <div className="col-2">
               <label for="inputPassword6" className="col-form-label ">
@@ -497,10 +612,11 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                name="houserent"
+                value={data.houserent}
+                onChange={handleInput}
                 type="number"
-                id="inputPassword6"
                 className="form-control"
-                aria-describedby="passwordHelpInline"
               />
             </div>
           </>
@@ -514,10 +630,11 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            name="hosestatus"
+            value={data.hosestatus}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className="col-3">
@@ -527,9 +644,11 @@ function Form() {
         </div>
         <div className="col-2">
           <select
+            name="aircondition"
+            value={data.aircondition}
+            onChange={handleInput}
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {}}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">Ha</option>
@@ -545,9 +664,10 @@ function Form() {
         </div>
         <div className="col-2">
           <select
+            name="openforevryone"
+            value={data.openforevryone}
+            onChange={handleInput}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {}}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">Ha</option>
@@ -570,10 +690,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="lastyearbookcount"
+            value={data.lastyearbookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -585,10 +706,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="lastyearaddedbook"
+            value={data.lastyearaddedbook}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -600,10 +722,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="currentyearbookcount"
+            value={data.currentyearbookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -615,10 +738,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="endyearabookcount"
+            value={data.endyearabookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -638,10 +762,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="publishbook"
+            value={data.publishbook}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className="col-3">
@@ -651,10 +776,11 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            name="newspapercount"
+            value={data.newspapercount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -664,40 +790,17 @@ function Form() {
             વર્ષ દરમિયાન ગ્રંથાલયમાં આવતા વર્તમાનપત્રો તથા સામયિકોના નામ :
           </label>
         </div>
-        <div className="col">
-          <label for="inputPassword6" className="col-form-label  ">
-            <button
-              type="button"
-              onClick={() => {
-                countstate(count + 1);
-              }}
-              className="btn btn-primary"
-            >
-              ઉમેરો
-            </button>
-          </label>
+        <div className="col-5">
+          <input
+            type="text"
+            name="newpaper"
+            value={data.newpaper.push}
+            onChange={handleInput}
+            className="form-control"
+          />
         </div>
       </div>
-      <ul className="list-group">
-        {Array.apply(null, { length: count }).map((e, i) => (
-          <span className="busterCards" key={i}>
-            <div className="row mb-3 col-13 align-items-center">
-              <div className="col-2 align-items-center">
-                {i} name of newpaper :
-              </div>
 
-              <div className="col-5">
-                <input
-                  type="text"
-                  id="inputPassword6"
-                  className="form-control"
-                  aria-describedby="passwordHelpInline"
-                />
-              </div>
-            </div>
-          </span>
-        ))}
-      </ul>
       <div className="row mb-3 col-13 align-items-center">
         <div className="col">
           <label for="inputPassword6" className="col-form-label col highlight">
@@ -714,8 +817,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="parigrahan"
+              value={data.parigrahan}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -727,8 +831,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="register"
+              value={data.register}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -740,8 +845,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="attendencregister"
+              value={data.attendencregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -755,8 +861,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="deadregister"
+              value={data.deadregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -768,8 +875,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="anualrequest"
+              value={data.anualrequest}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -781,8 +889,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="recieptbook"
+              value={data.recieptbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -796,8 +905,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="voucherbook"
+              value={data.voucherbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -809,8 +919,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="rojmel"
+              value={data.rojmel}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -822,8 +933,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="commandbook"
+              value={data.commandbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -837,8 +949,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="publishregister"
+              value={data.publishregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -854,9 +967,9 @@ function Form() {
           <select
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {
-              suchanstate(event.target.value);
-            }}
+            name="followinstructoin"
+            value={data.followinstructoin}
+            onChange={handleInput}
           >
             <option selected>Select</option>
             <option value="ha">Ha</option>
@@ -864,7 +977,7 @@ function Form() {
           </select>
         </div>
       </div>
-      {suchan === "ha" && (
+      {data.followinstructoin === "ha" && (
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className="col-4">
             <label for="inputPassword6" className="col-form-label ">
@@ -874,9 +987,10 @@ function Form() {
           <div className="col-2">
             <input
               type="text"
-              id="inputPassword6"
               className="form-control"
-              aria-describedby="passwordHelpInline"
+              name="whichlevel"
+              value={data.whichlevel}
+              onChange={handleInput}
             />
           </div>
         </div>
@@ -890,11 +1004,10 @@ function Form() {
 
         <div className="col-2">
           <select
+            name="requirment"
+            value={data.requirment}
+            onChange={handleInput}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              suchanstate(event.target.value);
-            }}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">Ha</option>
@@ -911,9 +1024,10 @@ function Form() {
         <div className="col-2">
           <input
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
+            name="grant"
+            value={data.grant}
+            onChange={handleInput}
           />
         </div>
       </div>
@@ -1747,13 +1861,13 @@ function Form() {
       <center>
         <button
           type="button"
-          onClick={() => handleSubmit()}
+          onClick={handleSubmit}
           className="btn btn-primary"
         >
           Submit
         </button>
       </center>
-    </div>
+    </form>
   );
 }
 

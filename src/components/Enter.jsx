@@ -48,7 +48,7 @@ function Enter({ arr }) {
           </tbody>
         </table>
       </div>
-      <button type="button" onClick={downloadpdf} class="btn btn-primary">
+      <button type="button" onClick={downloadpdf} className="btn btn-primary">
         Donwload PDF
       </button>
     </center>

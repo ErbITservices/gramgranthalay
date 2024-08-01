@@ -1,3 +1,4 @@
+import "./Form.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRef, useState } from "react";
 import { BiBook, BiBookOpen } from "react-icons/bi";

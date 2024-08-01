@@ -1,17 +1,30 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRef, useState } from "react";
 import { BiBook, BiBookOpen } from "react-icons/bi";
-import { GiPoliceBadge } from "react-icons/gi";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 function Form() {
-  const [fees, feesstate] = useState();
-  const [rent, rentstate] = useState();
-  const [suchan, suchanstate] = useState();
-  const [count, countstate] = useState(0);
-  const district = useRef("");
-  const name = useRef("");
-  const gam = useRef("");
-  const taluko = useRef("");
-  const date = useRef("");
+  const pdfref = useRef();
+  const downloadpdf = () => {
+    const input = pdfref.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a0", true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfheight = pdf.internal.pageSize.getHeight();
+      const imgwidth = canvas.width;
+      const imgheight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgwidth, pdfheight / imgheight);
+      const imgx = 200;
+      const imgy = 0;
+      console.log(pdfWidth);
+      console.log(imgwidth);
+      console.log(ratio);
+      pdf.addImage(imgData, "PNG", imgx, imgy);
+      pdf.save("DataTable.pdf");
+    });
+  };
+
   const d = new Date();
   let year = d.getFullYear();
 
@@ -25,7 +38,7 @@ function Form() {
     // console.log(arr);
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     const arr = [
       {
         district: district.current.value,
@@ -48,7 +61,7 @@ function Form() {
       );
 
       if (senddata.ok) {
-        // name = "";
+        name = "";
       }
     } catch (error) {
       console.log("error");
@@ -57,7 +70,7 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit()} className="form ">
+    <form ref={pdfref} onSubmit={handleSubmit} className="form ">
       <center>
         <div className="head">
           <h1>
@@ -79,10 +92,14 @@ function Form() {
         </div>
         <div className="col-10">
           <input
+            required
             type="text"
-            ref={name}
             className="form-control"
-            id="inputPassword"
+            id="gname"
+            autoComplete="off"
+            name="lname"
+            value={data.lname}
+            onChange={handleInput}
           />
         </div>
       </div>
@@ -93,7 +110,13 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select id="inputState" ref={gam} className="form-select">
+          <select
+            id="inputState"
+            name="gam"
+            value={data.gam}
+            onChange={handleInput}
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option>ગામ:1</option>
             <option>ગામ:2</option>
@@ -107,8 +130,12 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             type="number"
             id="inputPassword6"
+            name="pin"
+            value={data.pin}
+            onChange={handleInput}
             className="form-control"
             aria-describedby="passwordHelpInline"
           />
@@ -119,10 +146,14 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select id="inputState" className="form-select">
-            <option ref={taluko} selected>
-              પસંદ કરો
-            </option>
+          <select
+            id="inputState"
+            name="taluko"
+            value={data.taluko}
+            onChange={handleInput}
+            className="form-select"
+          >
+            <option selected>પસંદ કરો</option>
             <option>taluko-1</option>
             <option>taluko-2</option>
             <option>taluko-3</option>
@@ -134,11 +165,17 @@ function Form() {
           </label>
         </div>
         <div className="col">
-          <select ref={district} id="inputState" className="form-select">
+          <select
+            name="district"
+            value={data.district}
+            onChange={handleInput}
+            id="inputState"
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option>district-1</option>
             <option>district-2</option>
-            <option>district-1</option>
+            <option>district-3</option>
           </select>
         </div>
       </div>
@@ -150,8 +187,11 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             type="date"
-            ref={date}
+            name="sthapnadate"
+            value={data.sthapnadate}
+            onChange={handleInput}
             id="inputPassword6"
             className="form-control"
             aria-describedby="passwordHelpInline"
@@ -164,6 +204,10 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="male"
+            value={data.male}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -177,6 +221,10 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="female"
+            value={data.female}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -190,6 +238,8 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            value={Number(data.male) + Number(data.female)}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -205,10 +255,13 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="studypeople"
+            value={data.studypeople}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div class="col">
@@ -218,6 +271,10 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="studymale"
+            value={data.studymale}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -231,6 +288,10 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="studyfemale"
+            value={data.studyfemale}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -244,6 +305,10 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
+            name="studychild"
+            value={data.studychild}
+            onChange={handleInput}
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -260,6 +325,12 @@ function Form() {
         "
         >
           <input
+            required
+            value={
+              Number(data.studychild) +
+              Number(data.studyfemale) +
+              Number(data.studymale)
+            }
             type="number"
             id="inputPassword6"
             className="form-control"
@@ -276,18 +347,17 @@ function Form() {
 
         <div className="col-2">
           <select
+            name="lavaj"
+            value={data.lavaj}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              feesstate(event.target.value);
-            }}
+            onChange={handleInput}
           >
             <option selected>Select</option>
             <option value="ha">હા</option>
             <option value="na">ના</option>
           </select>
         </div>
-        {fees === "ha" && (
+        {data.lavaj === "ha" && (
           <>
             <div class="col-2">
               <label for="inputPassword6" class="col-form-label ">
@@ -296,10 +366,12 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                required
+                name="lavajamount"
+                value={data.lavajamount}
+                onChange={handleInput}
                 type="number"
-                id="inputPassword6"
                 className="form-control"
-                aria-describedby="passwordHelpInline"
               />
             </div>
           </>
@@ -314,10 +386,12 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
+            name="workinghoursbook"
+            value={data.workinghoursbook}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div class="col-2">
@@ -327,10 +401,12 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
+            name="workinghourslibrary"
+            value={data.workinghourslibrary}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -343,10 +419,9 @@ function Form() {
         <div className="col-2">
           <select
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              state(event.target.value);
-            }}
+            name="handleby"
+            value={data.handleby}
+            onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">panchayat</option>
@@ -362,10 +437,12 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
+            name="registernumber"
+            value={data.registernumber}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -376,7 +453,14 @@ function Form() {
           </label>
         </div>
         <div className="col-9">
-          <input type="text" className="form-control" id="inputPassword" />
+          <input
+            required
+            type="text"
+            name="emailmen"
+            value={data.emailmen}
+            onChange={handleInput}
+            className="form-control"
+          />
         </div>
       </div>
       <div className="row mb-3 col-sm-13 align-items-center">
@@ -390,6 +474,9 @@ function Form() {
         </div>
         <div className="col-9">
           <textarea
+            name="emailmenaddres"
+            value={data.emailmenaddres}
+            onChange={handleInput}
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="5"
@@ -407,10 +494,12 @@ function Form() {
         </div>
         <div className="col-9">
           <input
+            required
+            name="libraryen"
+            value={data.libraryen}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div className=" col-3 mb-3">
@@ -423,8 +512,10 @@ function Form() {
         </div>
         <div className="col-9">
           <textarea
+            name="libraryenaddres"
+            value={data.libraryenaddres}
+            onChange={handleInput}
             className="form-control"
-            id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
         </div>
@@ -437,7 +528,12 @@ function Form() {
           </label>
         </div>
         <div className="col-3">
-          <select className="form-select" aria-label="Default select example">
+          <select
+            name="libraryeneducation"
+            value={data.libraryeneducation}
+            onChange={handleInput}
+            className="form-select"
+          >
             <option selected>પસંદ કરો</option>
             <option value="1">Graduated</option>
             <option value="2">Post Graduated</option>
@@ -455,10 +551,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="libraryensalary"
+            value={data.libraryensalary}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -473,16 +571,16 @@ function Form() {
           <select
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {
-              rentstate(event.target.value);
-            }}
+            name="housestate"
+            value={data.housestate}
+            onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">હા</option>
             <option value="na">ના</option>
           </select>
         </div>
-        {rent === "ha" && (
+        {data.housestate === "na" && (
           <>
             <div className="col-2">
               <label for="inputPassword6" className="col-form-label ">
@@ -491,10 +589,12 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                required
+                name="houserent"
+                value={data.houserent}
+                onChange={handleInput}
                 type="number"
-                id="inputPassword6"
                 className="form-control"
-                aria-describedby="passwordHelpInline"
               />
             </div>
           </>
@@ -508,10 +608,12 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
+            name="hosestatus"
+            value={data.hosestatus}
+            onChange={handleInput}
             type="text"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div class="col-3">
@@ -521,9 +623,11 @@ function Form() {
         </div>
         <div className="col-2">
           <select
+            name="aircondition"
+            value={data.aircondition}
+            onChange={handleInput}
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {}}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">હા</option>
@@ -539,9 +643,10 @@ function Form() {
         </div>
         <div className="col-2">
           <select
+            name="openforevryone"
+            value={data.openforevryone}
+            onChange={handleInput}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {}}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">હા</option>
@@ -564,10 +669,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="lastyearbookcount"
+            value={data.lastyearbookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -579,10 +686,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="lastyearaddedbook"
+            value={data.lastyearaddedbook}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -594,10 +703,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="currentyearbookcount"
+            value={data.currentyearbookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -609,10 +720,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="endyearabookcount"
+            value={data.endyearabookcount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -631,10 +744,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="publishbook"
+            value={data.publishbook}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
         <div class="col-3">
@@ -644,10 +759,12 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
+            name="newspapercount"
+            value={data.newspapercount}
+            onChange={handleInput}
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
           />
         </div>
       </div>
@@ -676,7 +793,7 @@ function Form() {
           <span className="busterCards" key={i}>
             <div className="row mb-3 col-13 align-items-center">
               <div className="col-2 align-items-center">
-                {i} અખબારનું નામ :
+                {i} name of newpaper :
               </div>
 
               <div className="col-5">
@@ -691,9 +808,9 @@ function Form() {
           </span>
         ))}
       </ul>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class="col">
-          <label for="inputPassword6" class="col-form-label col highlight">
+      <div className="row mb-3 col-13 align-items-center">
+        <div className="col">
+          <label for="inputPassword6" className="col-form-label col highlight">
             ગ્રંથાલયમાં નીચેનું દફતર નિભાવવામાં આવે છે? :
           </label>
         </div>
@@ -707,8 +824,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="parigrahan"
+              value={data.parigrahan}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -720,8 +838,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="register"
+              value={data.register}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -733,8 +852,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="attendencregister"
+              value={data.attendencregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -748,8 +868,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="deadregister"
+              value={data.deadregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -761,8 +882,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="anualrequest"
+              value={data.anualrequest}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -774,8 +896,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="recieptbook"
+              value={data.recieptbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -789,8 +912,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="voucherbook"
+              value={data.voucherbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -802,8 +926,9 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="rojmel"
+              value={data.rojmel}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -815,23 +940,25 @@ function Form() {
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="commandbook"
+              value={data.commandbook}
+              onChange={handleCheck}
             />
           </div>
         </div>
       </div>
-      <div class="row mb-3 col-13 align-items-center">
-        <div class=" align-items-center">
-          <div class="form-check ">
-            <label class="form-check-label" for="defaultCheck1">
-           ૧૦. ઇસ્યુ રજીસ્ટર
+      <div className="row mb-3 col-13 align-items-center">
+        <div className=" align-items-center">
+          <div className="form-check ">
+            <label className="form-check-label" for="defaultCheck1">
+              ઇસ્યુ રજીસ્ટર
             </label>
             <input
               className="form-check-input"
               type="checkbox"
-              value=""
-              id="defaultCheck1"
+              name="publishregister"
+              value={data.publishregister}
+              onChange={handleCheck}
             />
           </div>
         </div>
@@ -845,11 +972,12 @@ function Form() {
 
         <div className="col-2">
           <select
+            required
             className="form-select"
             aria-label="Default select example"
-            onChange={(event) => {
-              suchanstate(event.target.value);
-            }}
+            name="followinstructoin"
+            value={data.followinstructoin}
+            onChange={handleInput}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">હા</option>
@@ -858,18 +986,20 @@ function Form() {
         </div>
       </div>
       {suchan === "ha" && (
-        <div class="row mb-3 col-sm-13 align-items-center">
-          <div class="col-4">
-            <label for="inputPassword6" class="col-form-label ">
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className="col-4">
+            <label for="inputPassword6" className="col-form-label ">
               કેટલા અંશે? :
             </label>
           </div>
           <div className="col-2">
             <input
+              required
               type="text"
-              id="inputPassword6"
               className="form-control"
-              aria-describedby="passwordHelpInline"
+              name="whichlevel"
+              value={data.whichlevel}
+              onChange={handleInput}
             />
           </div>
         </div>
@@ -883,11 +1013,10 @@ function Form() {
 
         <div className="col-2">
           <select
+            name="requirment"
+            value={data.requirment}
+            onChange={handleInput}
             className="form-select"
-            aria-label="Default select example"
-            onChange={(event) => {
-              suchanstate(event.target.value);
-            }}
           >
             <option selected>પસંદ કરો</option>
             <option value="ha">હા</option>
@@ -903,10 +1032,12 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             type="number"
-            id="inputPassword6"
             className="form-control"
-            aria-describedby="passwordHelpInline"
+            name="grant"
+            value={data.grant}
+            onChange={handleInput}
           />
         </div>
       </div>
@@ -946,18 +1077,22 @@ function Form() {
                   <td>વાંચન સામગ્રી નમૂનો : ક (અ)</td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="vanchansamagrik"
+                      value={data.vanchansamagrik}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
+                      name="vanchansamagrim"
+                      value={data.vanchansamagrim}
+                      onChange={handleInput}
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
                     />
                   </td>
                   <td className="th">
@@ -970,26 +1105,32 @@ function Form() {
                   <td>કર્મચારી પગાર નમૂનો : ક (બ)</td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="pagark"
+                      value={data.pagark}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="pagarm"
+                      value={data.pagarm}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
-                      type="number"
-                      id="inputPassword6"
+                      required
+                      type="text"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="note1"
+                      value={data.note1}
+                      onChange={handleInput}
                     />
                   </td>
                 </tr>
@@ -998,26 +1139,32 @@ function Form() {
                   <td>ફર્નિચર અને રીપેરીંગ નમૂનો : ક (ક)</td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="furnichark"
+                      value={data.furnichark}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="furnicharm"
+                      value={data.furnicharm}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
-                      type="number"
-                      id="inputPassword6"
+                      required
+                      type="text"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="note2"
+                      value={data.note2}
+                      onChange={handleInput}
                     />
                   </td>
                 </tr>
@@ -1026,26 +1173,32 @@ function Form() {
                   <td> મકાન ભાડુ પરચુરણ નમૂનો : ક(ડ)</td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="otherk"
+                      value={data.otherk}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="otherm"
+                      value={data.otherm}
+                      onChange={handleInput}
                     />
                   </td>
                   <td>
                     <input
-                      type="number"
-                      id="inputPassword6"
+                      required
+                      type="text"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      name="note3"
+                      value={data.note3}
+                      onChange={handleInput}
                     />
                   </td>
                 </tr>
@@ -1054,28 +1207,31 @@ function Form() {
                   <td>કુલ</td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      value={
+                        Number(data.pagark) +
+                        Number(data.vanchansamagrik) +
+                        Number(data.furnichark) +
+                        Number(data.otherk)
+                      }
                     />
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
-                      id="inputPassword6"
                       className="form-control"
-                      aria-describedby="passwordHelpInline"
+                      value={
+                        Number(data.pagarm) +
+                        Number(data.vanchansamagrim) +
+                        Number(data.furnicharm) +
+                        Number(data.otherm)
+                      }
                     />
                   </td>
-                  <td>
-                    <input
-                      type="number"
-                      id="inputPassword6"
-                      className="form-control"
-                      aria-describedby="passwordHelpInline"
-                    />
-                  </td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -1117,10 +1273,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="alavajam"
+                        value={data.alavajam}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1132,10 +1290,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="aintrest"
+                        value={data.aintrest}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1147,10 +1307,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="arent"
+                        value={data.arent}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1162,10 +1324,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="awest"
+                        value={data.awest}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1177,10 +1341,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="agrant"
+                        value={data.agrant}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1192,10 +1358,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="ahelp"
+                        value={data.ahelp}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1207,10 +1375,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="adistrict"
+                        value={data.adistrict}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1222,10 +1392,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="ataluko"
+                        value={data.ataluko}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1237,10 +1409,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="agam"
+                        value={data.agam}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1252,10 +1426,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="aotherhelp"
+                        value={data.aotherhelp}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1267,10 +1443,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="aother"
+                        value={data.aother}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1282,10 +1460,22 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        value={
+                          Number(data.aother) +
+                          Number(data.aotherhelp) +
+                          Number(data.agam) +
+                          Number(data.ataluko) +
+                          Number(data.adistrict) +
+                          Number(data.ahelp) +
+                          Number(data.agrant) +
+                          Number(data.awest) +
+                          Number(data.arent) +
+                          Number(data.aintrest) +
+                          Number(data.alavajam)
+                        }
                       />
                     </div>
                   </div>
@@ -1297,10 +1487,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="aprevios"
+                        value={data.aprevios}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1322,10 +1514,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kbook"
+                        value={data.kbook}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1337,10 +1531,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="knewspaper"
+                        value={data.knewspaper}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1352,10 +1548,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kbookbinding"
+                        value={data.kbookbinding}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1367,10 +1565,14 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        value={
+                          Number(data.kbookbinding) +
+                          Number(data.knewspaper) +
+                          Number(data.kbook)
+                        }
                       />
                     </div>
                   </div>
@@ -1390,10 +1592,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="ksalary"
+                        value={data.ksalary}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1405,10 +1609,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kinfletion"
+                        value={data.kinfletion}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1420,10 +1626,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kother"
+                        value={data.kother}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1435,10 +1643,14 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        value={
+                          Number(data.kother) +
+                          Number(data.ksalary) +
+                          Number(data.kinfletion)
+                        }
                       />
                     </div>
                   </div>
@@ -1458,10 +1670,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kfurnichar"
+                        value={data.kfurnichar}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1473,10 +1687,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kfurnicharrepair"
+                        value={data.kfurnicharrepair}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1488,10 +1704,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kotherbuy"
+                        value={data.kotherbuy}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1503,10 +1721,14 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        value={
+                          Number(data.kotherbuy) +
+                          Number(data.kfurnicharrepair) +
+                          Number(data.kfurnichar)
+                        }
                       />
                     </div>
                   </div>
@@ -1526,10 +1748,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="krent"
+                        value={data.krent}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1541,10 +1765,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="krepair"
+                        value={data.krepair}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1556,10 +1782,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="ktax"
+                        value={data.ktax}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1571,10 +1799,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kstationary"
+                        value={data.kstationary}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1586,10 +1816,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kmail"
+                        value={data.kmail}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1601,10 +1833,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="ktrip"
+                        value={data.ktrip}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1616,10 +1850,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="kpremium"
+                        value={data.kpremium}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1631,10 +1867,12 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="klightbill"
+                        value={data.klightbill}
+                        onChange={handleInput}
                       />
                     </div>
                   </div>
@@ -1646,16 +1884,19 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
                         aria-describedby="passwordHelpInline"
                       />
                     </div>
                   </div>
-                  <div class="row mb-3 tab2 col-sm-13 align-items-center">
-                    <div class=" col">
-                      <label for="inputPassword6" class="tab2 col-form-label ">
+                  <div className="row mb-3 tab2 col-sm-13 align-items-center">
+                    <div className=" col">
+                      <label
+                        for="inputPassword6"
+                        className="tab2 col-form-label "
+                      >
                         કુલ સરવાળો :
                       </label>
                     </div>
@@ -1680,10 +1921,23 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        value={
+                          Number(data.aother) +
+                          Number(data.aotherhelp) +
+                          Number(data.agam) +
+                          Number(data.ataluko) +
+                          Number(data.adistrict) +
+                          Number(data.ahelp) +
+                          Number(data.agrant) +
+                          Number(data.awest) +
+                          Number(data.arent) +
+                          Number(data.aintrest) +
+                          Number(data.alavajam) +
+                          Number(data.aprevios)
+                        }
                       />
                     </div>
                   </div>
@@ -1697,10 +1951,31 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
-                        id="inputPassword6"
                         className="form-control"
-                        aria-describedby="passwordHelpInline"
+                        name="totalk"
+                        onChange={handleInput}
+                        value={
+                          Number(data.kothersmall) +
+                          Number(data.klightbill) +
+                          Number(data.kpremium) +
+                          Number(data.ktrip) +
+                          Number(data.kmail) +
+                          Number(data.kstationary) +
+                          Number(data.ktax) +
+                          Number(data.krepair) +
+                          Number(data.krent) +
+                          Number(data.kbookbinding) +
+                          Number(data.knewspaper) +
+                          Number(data.kbook) +
+                          Number(data.kother) +
+                          Number(data.ksalary) +
+                          Number(data.kinfletion) +
+                          Number(data.kotherbuy) +
+                          Number(data.kfurnicharrepair) +
+                          Number(data.kfurnichar)
+                        }
                       />
                     </div>
                   </div>
@@ -1711,9 +1986,22 @@ function Form() {
         </div>
       </div>
       <center>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="row mb-3 tab2 col-sm-13 align-items-center">
+          <div className=" col">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <div className=" col">
+            <button
+              type="button"
+              onClick={downloadpdf}
+              className="btn btn-primary"
+            >
+              downloadpdf
+            </button>
+          </div>
+        </div>
       </center>
     </form>
   );

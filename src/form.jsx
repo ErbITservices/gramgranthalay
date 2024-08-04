@@ -15,12 +15,10 @@ function Form() {
       const pdfheight = pdf.internal.pageSize.getHeight();
       const imgwidth = canvas.width;
       const imgheight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgwidth, pdfheight / imgheight);
       const imgx = 200;
       const imgy = 0;
       console.log(pdfWidth);
       console.log(imgwidth);
-      console.log(ratio);
       pdf.addImage(imgData, "PNG", imgx, imgy);
       pdf.save("DataTable.pdf");
     });
@@ -148,17 +146,13 @@ function Form() {
 
     console.log(data);
     try {
-      lname = "";
-      const senddata = await fetch(
-        `http://localhost:5000/contactForm/dataform`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const senddata = await fetch(`https://backend-gram.onrender.com/form`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       if (senddata.ok) {
       }

@@ -69,7 +69,16 @@ input[type="number"] {
 }
 .head {
   background-color: lightblue;
+  /* padding: 5px; */
+  display: flex;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 2px, solid gray;
+}
+.head2 {
+  background-color: lightblue;
   padding: 5px;
+  /* display: flex; */
   margin-bottom: 5px;
   border-radius: 10px;
   border: 2px, solid gray;
@@ -89,4 +98,35 @@ input[type="number"] {
 .icon {
   margin: 0px 20px 0px 20px;
   font-size: 45px;
+}
+
+.logo {
+  height: 100px;
+  width: 170px;
+  /* padding: 0; */
+  display: inline-block;
+}
+.head h1 {
+}
+.logodiv {
+  width: 38%;
+  /* background-color: aquamarine; */
+  display: inline-block;
+  margin: 10px 0px;
+  text-align: start;
+  /* background-color: black; */
+}
+.titel {
+  text-align: center;
+  padding-top: 30px;
+  justify-content: end;
+  /* background-color: black; */
+}
+.button {
+  width: 100%;
+  text-align: center;
+}
+.button button {
+  width: 150px;
+  margin: 150px 100px 50px 100px;
 }

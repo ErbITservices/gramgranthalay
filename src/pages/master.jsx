@@ -1,10 +1,13 @@
 import "./Form.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
+import axios from "axios";
+
 import { BiBook, BiBookOpen } from "react-icons/bi";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-function Form() {
+function Master() {
   const pdfref = useRef();
   const downloadpdf = () => {
     const input = pdfref.current;
@@ -27,6 +30,7 @@ function Form() {
   const d = new Date();
   let year = d.getFullYear();
   const [data, setdata] = useState({
+    uid: "",
     lname: "",
     gam: "",
     pin: "",
@@ -120,8 +124,24 @@ function Form() {
     kothersmall: "",
   });
 
+  const [pd, setpd] = useState([]);
+
+  useEffect(() => {
+    const dataget = async () => {
+      try {
+        console.log("mihir");
+        
+        const response = await axios.get(`http://localhost:5555/form/`);
+        console.log(response.data), setpd(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    dataget();
+  }, []);
+
   const handleInput = (e) => {
-    // console.log(data);
+    // console.log(e);
     const name = e.target.name;
     const value = e.target.value;
     setdata({
@@ -143,40 +163,348 @@ function Form() {
 
   const handleSubmit = async () => {
     // console.log(data);
-
-    console.log(data);
+    // console.log(pd);
     try {
-      const senddata = await fetch(`https://backend-gram.onrender.com/form`, {
+      console.log("mihir");
+      
+      const senddata = await fetch(`http://localhost:5555/form/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-
       if (senddata.ok) {
+        console.log(data);
+        setdata({
+          lname: "",
+          gam: "",
+          pin: "",
+          taluko: "",
+          sthapnadate: "",
+          district: "",
+          male: "",
+          female: "",
+          studypeople: "",
+          studymale: "",
+          studyfemale: "",
+          studychild: "",
+          lavaj: "",
+          lavajamount: "",
+          workinghourslibrary: "",
+          workinghoursbook: "",
+          handleby: "",
+          registernumber: "",
+          emailmen: "",
+          emailmenaddres: "",
+          libraryen: "",
+          libraryenaddres: "",
+          libraryeneducation: "",
+          libraryensalary: "",
+          housestate: "",
+          houserent: "",
+          hosestatus: "",
+          aircondition: "",
+          openforevryone: "",
+          lastyearbookcount: "",
+          currentyearbookcount: "",
+          lastyearaddedbook: "",
+          endyearabookcount: "",
+          publishbook: "",
+          newspapercount: "",
+          newpaper: "",
+          parigrahan: "",
+          register: "",
+          deadregister: "",
+          attendencregister: "",
+          anualrequest: "",
+          recieptbook: "",
+          voucherbook: "",
+          rojmel: "",
+          commandbook: "",
+          publishregister: "",
+          followinstructoin: "",
+          whichlevel: "",
+          requirment: "",
+          grant: "",
+          vanchansamagrik: "",
+          vanchansamagrim: "",
+          pagark: "",
+          pagarm: "",
+          note1: "",
+          note2: "",
+          note3: "",
+          furnichark: "",
+          furnicharm: "",
+          otherm: "",
+          otherk: "",
+          alavajam: "",
+          aintrest: "",
+          arent: "",
+          awest: "",
+          agrant: "",
+          ahelp: "",
+          adistrict: "",
+          ataluko: "",
+          agam: "",
+          aotherhelp: "",
+          aother: "",
+          aprevios: "",
+          kbook: "",
+          knewspaper: "",
+          kbookbinding: "",
+          kinfletion: "",
+          ksalary: "",
+          kother: "",
+          kfurnichar: "",
+          kfurnicharrepair: "",
+          kotherbuy: "",
+          krent: "",
+          krepair: "",
+          ktax: "",
+          kstationary: "",
+          kmail: "",
+          ktrip: "",
+          kpremium: "",
+          klightbill: "",
+          kothersmall: "",
+        });
       }
     } catch (error) {
       console.log("error");
       console.log(error);
     }
   };
+  const number = useRef();
+  const [pin, setpin] = useState([
+    {
+      lname: "",
+      gam: "",
+      pin: "",
+      taluko: "",
+      sthapnadate: "",
+      district: "",
+      male: "",
+      female: "",
+      studypeople: "",
+      studymale: "",
+      studyfemale: "",
+      studychild: "",
+      lavaj: "",
+      lavajamount: "",
+      workinghourslibrary: "",
+      workinghoursbook: "",
+      handleby: "",
+      registernumber: "",
+      emailmen: "",
+      emailmenaddres: "",
+      libraryen: "",
+      libraryenaddres: "",
+      libraryeneducation: "",
+      libraryensalary: "",
+      housestate: "",
+      houserent: "",
+      hosestatus: "",
+      aircondition: "",
+      openforevryone: "",
+      lastyearbookcount: "",
+      currentyearbookcount: "",
+      lastyearaddedbook: "",
+      endyearabookcount: "",
+      publishbook: "",
+      newspapercount: "",
+      newpaper: "",
+      parigrahan: "",
+      register: "",
+      deadregister: "",
+      attendencregister: "",
+      anualrequest: "",
+      recieptbook: "",
+      voucherbook: "",
+      rojmel: "",
+      commandbook: "",
+      publishregister: "",
+      followinstructoin: "",
+      whichlevel: "",
+      requirment: "",
+      grant: "",
+      vanchansamagrik: "",
+      vanchansamagrim: "",
+      pagark: "",
+      pagarm: "",
+      note1: "",
+      note2: "",
+      note3: "",
+      furnichark: "",
+      furnicharm: "",
+      otherm: "",
+      otherk: "",
+      alavajam: "",
+      aintrest: "",
+      arent: "",
+      awest: "",
+      agrant: "",
+      ahelp: "",
+      adistrict: "",
+      ataluko: "",
+      agam: "",
+      aotherhelp: "",
+      aother: "",
+      aprevios: "",
+      kbook: "",
+      knewspaper: "",
+      kbookbinding: "",
+      kinfletion: "",
+      ksalary: "",
+      kother: "",
+      kfurnichar: "",
+      kfurnicharrepair: "",
+      kotherbuy: "",
+      krent: "",
+      krepair: "",
+      ktax: "",
+      kstationary: "",
+      kmail: "",
+      ktrip: "",
+      kpremium: "",
+      klightbill: "",
+      kothersmall: "",
+    },
+  ]);
+  const checkpin = () => {
+    const arr = pd.filter((elm) => elm.uid === number.current.value);
+    console.log(arr);
+
+    if (arr.length !== 0) {
+      setdata(arr[arr.length - 1]);
+      console.log(data);
+    } else {
+      setdata({
+        uid: "",
+        lname: "",
+        gam: "",
+        pin: "",
+        taluko: "",
+        sthapnadate: "",
+        district: "",
+        male: "",
+        female: "",
+        studypeople: "",
+        studymale: "",
+        studyfemale: "",
+        studychild: "",
+        lavaj: "",
+        lavajamount: "",
+        workinghourslibrary: "",
+        workinghoursbook: "",
+        handleby: "",
+        registernumber: "",
+        emailmen: "",
+        emailmenaddres: "",
+        libraryen: "",
+        libraryenaddres: "",
+        libraryeneducation: "",
+        libraryensalary: "",
+        housestate: "",
+        houserent: "",
+        hosestatus: "",
+        aircondition: "",
+        openforevryone: "",
+        lastyearbookcount: "",
+        currentyearbookcount: "",
+        lastyearaddedbook: "",
+        endyearabookcount: "",
+        publishbook: "",
+        newspapercount: "",
+        newpaper: "",
+        parigrahan: "",
+        register: "",
+        deadregister: "",
+        attendencregister: "",
+        anualrequest: "",
+        recieptbook: "",
+        voucherbook: "",
+        rojmel: "",
+        commandbook: "",
+        publishregister: "",
+        followinstructoin: "",
+        whichlevel: "",
+        requirment: "",
+        grant: "",
+        vanchansamagrik: "",
+        vanchansamagrim: "",
+        pagark: "",
+        pagarm: "",
+        note1: "",
+        note2: "",
+        note3: "",
+        furnichark: "",
+        furnicharm: "",
+        otherm: "",
+        otherk: "",
+        alavajam: "",
+        aintrest: "",
+        arent: "",
+        awest: "",
+        agrant: "",
+        ahelp: "",
+        adistrict: "",
+        ataluko: "",
+        agam: "",
+        aotherhelp: "",
+        aother: "",
+        aprevios: "",
+        kbook: "",
+        knewspaper: "",
+        kbookbinding: "",
+        kinfletion: "",
+        ksalary: "",
+        kother: "",
+        kfurnichar: "",
+        kfurnicharrepair: "",
+        kotherbuy: "",
+        krent: "",
+        krepair: "",
+        ktax: "",
+        kstationary: "",
+        kmail: "",
+        ktrip: "",
+        kpremium: "",
+        klightbill: "",
+        kothersmall: "",
+      });
+    }
+
+    console.log(pin);
+  };
 
   return (
     <div ref={pdfref} className="form ">
-      <center>
-        <div className="head">
-          <h1>
-            <span className="icon">
-              <BiBookOpen />
-            </span>{" "}
-            ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ સને : {year - 1} - {year}
-            <span className="icon">
-              <BiBookOpen />
-            </span>{" "}
-          </h1>
+      <NavBar titel={"ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ  "}></NavBar>
+      <div className="row mb-3 col-sm-13 align-items-center">
+        <div className=" col-2">
+          <label for="inputPassword" className="col-sm-10 col-form-label">
+            Pin :
+          </label>
         </div>
-      </center>
+        <div className="col-8">
+          <input
+            required
+            type="text"
+            className="form-control"
+            autoComplete="off"
+            ref={number}
+            name="uid"
+            value={data.uid}
+            onChange={handleInput}
+          />
+        </div>
+        <div className=" col">
+          <button type="button" onClick={checkpin} className="btn btn-primary">
+            Search
+          </button>
+        </div>
+      </div>
       <div className="row mb-3 col-sm-13 align-items-center">
         <div className=" col-2">
           <label for="inputPassword" className="col-sm-10 col-form-label">
@@ -185,12 +513,14 @@ function Form() {
         </div>
         <div className="col-10">
           <input
+            required
             type="text"
             className="form-control"
             id="gname"
             autoComplete="off"
             name="lname"
             value={data.lname}
+            // placeholder={pin[0].lname}
             onChange={handleInput}
           />
         </div>
@@ -209,10 +539,11 @@ function Form() {
             onChange={handleInput}
             className="form-select"
           >
-            <option selected>પસંદ કરો</option>
-            <option>ગામ:1</option>
-            <option>ગામ:2</option>
-            <option>ગામ:3</option>
+            <option selected>{data.gam}</option>
+            <option>gam</option>
+            <option>gam-1</option>
+            <option>gam-3</option>
+            <option>gam-2</option>
           </select>
         </div>
         <div className="col-1">
@@ -220,8 +551,9 @@ function Form() {
             પિન :
           </label>
         </div>
-        <div className="col">
+        <div className="row col">
           <input
+            required
             type="number"
             id="inputPassword6"
             name="pin"
@@ -244,7 +576,7 @@ function Form() {
             onChange={handleInput}
             className="form-select"
           >
-            <option selected>પસંદ કરો</option>
+            <option selected>{data.taluko}</option>
             <option>taluko-1</option>
             <option>taluko-2</option>
             <option>taluko-3</option>
@@ -263,10 +595,11 @@ function Form() {
             id="inputState"
             className="form-select"
           >
-            <option selected>પસંદ કરો</option>
-            <option>district-1</option>
-            <option>district-2</option>
-            <option>district-3</option>
+            <option selected>{data.district}</option>
+
+            <option>district - 1</option>
+            <option>district - 2</option>
+            <option>district - 3</option>
           </select>
         </div>
       </div>
@@ -278,6 +611,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             type="date"
             name="sthapnadate"
             value={data.sthapnadate}
@@ -294,6 +628,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="male"
             value={data.male}
             onChange={handleInput}
@@ -310,6 +645,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="female"
             value={data.female}
             onChange={handleInput}
@@ -324,6 +660,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             value={Number(data.male) + Number(data.female)}
             type="number"
             id="inputPassword6"
@@ -340,6 +677,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="studypeople"
             value={data.studypeople}
             onChange={handleInput}
@@ -355,6 +693,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="studymale"
             value={data.studymale}
             onChange={handleInput}
@@ -371,6 +710,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="studyfemale"
             value={data.studyfemale}
             onChange={handleInput}
@@ -387,6 +727,7 @@ function Form() {
         </div>
         <div className="col">
           <input
+            required
             name="studychild"
             value={data.studychild}
             onChange={handleInput}
@@ -406,6 +747,7 @@ function Form() {
         "
         >
           <input
+            required
             value={
               Number(data.studychild) +
               Number(data.studyfemale) +
@@ -446,6 +788,7 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                required
                 name="lavajamount"
                 value={data.lavajamount}
                 onChange={handleInput}
@@ -465,6 +808,7 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             name="workinghoursbook"
             value={data.workinghoursbook}
             onChange={handleInput}
@@ -479,6 +823,7 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             name="workinghourslibrary"
             value={data.workinghourslibrary}
             onChange={handleInput}
@@ -514,6 +859,7 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             name="registernumber"
             value={data.registernumber}
             onChange={handleInput}
@@ -530,6 +876,7 @@ function Form() {
         </div>
         <div className="col-9">
           <input
+            required
             type="text"
             name="emailmen"
             value={data.emailmen}
@@ -569,6 +916,7 @@ function Form() {
         </div>
         <div className="col-9">
           <input
+            required
             name="libraryen"
             value={data.libraryen}
             onChange={handleInput}
@@ -625,6 +973,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="libraryensalary"
             value={data.libraryensalary}
             onChange={handleInput}
@@ -662,6 +1011,7 @@ function Form() {
             </div>
             <div className="col-2">
               <input
+                required
                 name="houserent"
                 value={data.houserent}
                 onChange={handleInput}
@@ -680,6 +1030,7 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             name="hosestatus"
             value={data.hosestatus}
             onChange={handleInput}
@@ -740,6 +1091,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="lastyearbookcount"
             value={data.lastyearbookcount}
             onChange={handleInput}
@@ -756,6 +1108,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="lastyearaddedbook"
             value={data.lastyearaddedbook}
             onChange={handleInput}
@@ -772,6 +1125,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="currentyearbookcount"
             value={data.currentyearbookcount}
             onChange={handleInput}
@@ -788,6 +1142,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="endyearabookcount"
             value={data.endyearabookcount}
             onChange={handleInput}
@@ -812,6 +1167,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="publishbook"
             value={data.publishbook}
             onChange={handleInput}
@@ -826,6 +1182,7 @@ function Form() {
         </div>
         <div className="col-3">
           <input
+            required
             name="newspapercount"
             value={data.newspapercount}
             onChange={handleInput}
@@ -844,7 +1201,7 @@ function Form() {
           <input
             type="text"
             name="newpaper"
-            value={data.newpaper.push}
+            value={data.newpaper}
             onChange={handleInput}
             className="form-control"
           />
@@ -865,6 +1222,7 @@ function Form() {
               ૧. પરિગ્રહણ પત્રક
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="parigrahan"
@@ -879,6 +1237,7 @@ function Form() {
               ૨. સભ્ય રજીસ્ટર
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="register"
@@ -893,6 +1252,7 @@ function Form() {
               ૩. હાજરી પત્રક
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="attendencregister"
@@ -909,6 +1269,7 @@ function Form() {
               ૪. ડેડસ્ટોક રજીસ્ટર
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="deadregister"
@@ -923,6 +1284,7 @@ function Form() {
               ૫. વાર્ષિક નિવેદન
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="anualrequest"
@@ -937,6 +1299,7 @@ function Form() {
               ૬. પાવતી બુક
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="recieptbook"
@@ -953,6 +1316,7 @@ function Form() {
               ૭. વાઉચર ફાઈલ
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="voucherbook"
@@ -967,6 +1331,7 @@ function Form() {
               ૮. રોજમેળ
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="rojmel"
@@ -981,6 +1346,7 @@ function Form() {
               ૯. ઠરાવ બુક
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="commandbook"
@@ -997,6 +1363,7 @@ function Form() {
               ૧o. ઇસ્યુ રજીસ્ટર
             </label>
             <input
+              required
               className="form-check-input"
               type="checkbox"
               name="publishregister"
@@ -1036,6 +1403,7 @@ function Form() {
           </div>
           <div className="col-2">
             <input
+              required
               type="text"
               className="form-control"
               name="whichlevel"
@@ -1073,6 +1441,7 @@ function Form() {
         </div>
         <div className="col-2">
           <input
+            required
             type="number"
             className="form-control"
             name="grant"
@@ -1117,6 +1486,7 @@ function Form() {
                   <td>વાંચન સામગ્રી નમૂનો : ક (અ)</td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="vanchansamagrik"
@@ -1126,6 +1496,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
                       name="vanchansamagrim"
                       value={data.vanchansamagrim}
@@ -1143,6 +1514,7 @@ function Form() {
                   <td>કર્મચારી પગાર નમૂનો : ક (બ)</td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="pagark"
@@ -1152,6 +1524,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="pagarm"
@@ -1161,6 +1534,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="text"
                       className="form-control"
                       name="note1"
@@ -1174,6 +1548,7 @@ function Form() {
                   <td>ફર્નિચર અને રીપેરીંગ નમૂનો: ક (ક)</td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="furnichark"
@@ -1183,6 +1558,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="furnicharm"
@@ -1192,6 +1568,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="text"
                       className="form-control"
                       name="note2"
@@ -1205,6 +1582,7 @@ function Form() {
                   <td> મકાન ભાડુ પરચુરણ નમૂનો : ક(ડ)</td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="otherk"
@@ -1214,6 +1592,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       name="otherm"
@@ -1223,6 +1602,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="text"
                       className="form-control"
                       name="note3"
@@ -1236,6 +1616,7 @@ function Form() {
                   <td>કુલ</td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       value={
@@ -1248,6 +1629,7 @@ function Form() {
                   </td>
                   <td>
                     <input
+                      required
                       type="number"
                       className="form-control"
                       value={
@@ -1266,7 +1648,7 @@ function Form() {
         </div>
       </center>
 
-      <center className="head">
+      <center className="head2">
         <h1 className="extrahighlight">નમૂનો: ક (અ)</h1>
         <br />
         <p className="highlight">
@@ -1300,6 +1682,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="alavajam"
@@ -1316,6 +1699,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="aintrest"
@@ -1332,6 +1716,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="arent"
@@ -1348,6 +1733,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="awest"
@@ -1364,6 +1750,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="agrant"
@@ -1380,6 +1767,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="ahelp"
@@ -1399,6 +1787,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="adistrict"
@@ -1418,6 +1807,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="ataluko"
@@ -1437,6 +1827,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="agam"
@@ -1453,6 +1844,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="aotherhelp"
@@ -1469,6 +1861,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="aother"
@@ -1485,6 +1878,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         value={
@@ -1511,6 +1905,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="aprevios"
@@ -1537,6 +1932,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kbook"
@@ -1553,6 +1949,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="knewspaper"
@@ -1569,6 +1966,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kbookbinding"
@@ -1588,6 +1986,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1614,6 +2013,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="ksalary"
@@ -1630,6 +2030,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kinfletion"
@@ -1646,6 +2047,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kother"
@@ -1665,6 +2067,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1691,6 +2094,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kfurnichar"
@@ -1707,6 +2111,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kfurnicharrepair"
@@ -1723,6 +2128,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         name="kotherbuy"
@@ -1742,6 +2148,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1768,6 +2175,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="krent"
@@ -1784,6 +2192,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="krepair"
@@ -1800,6 +2209,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="ktax"
@@ -1816,6 +2226,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="kstationary"
@@ -1832,6 +2243,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="kmail"
@@ -1848,6 +2260,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="ktrip"
@@ -1864,6 +2277,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="kpremium"
@@ -1880,6 +2294,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="klightbill"
@@ -1896,6 +2311,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="kothersmall"
@@ -1919,6 +2335,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="text"
                         className="form-control"
                         value={
@@ -1951,6 +2368,7 @@ function Form() {
                     </div>
                     <div className="col">
                       <input
+                        required
                         type="number"
                         className="form-control"
                         name="totalk"
@@ -1987,14 +2405,17 @@ function Form() {
       <center>
         <div className="row mb-3 tab2 col-sm-13 align-items-center">
           <div className=" col">
-            <button
-              type="button"
-              onClick={handleSubmit}
-              className="btn btn-primary"
-            >
-              Submit
-            </button>
+            <a href="/">
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="btn btn-primary"
+              >
+                Back
+              </button>
+            </a>
           </div>
+
           <div className=" col">
             <button
               type="button"
@@ -2004,10 +2425,33 @@ function Form() {
               downloadpdf
             </button>
           </div>
+          <div className=" col">
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="btn btn-primary"
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </center>
     </div>
   );
 }
 
-export default Form;
+export default Master;
+
+//start
+
+// import React from "react";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import axios from "axios";
+
+// const master = () => {
+
+//   return <div>master</div>;
+// };
+
+// export default master;

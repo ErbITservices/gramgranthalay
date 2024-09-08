@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { FadeLoader } from "react-spinners";
+import NavBar from "../components/NavBar";
 
 function Motibhaiamin_1() {
   let count = 0;
@@ -177,6 +178,7 @@ function Motibhaiamin_1() {
   };
   return (
     <>
+      <NavBar />
       {loader === "true" && (
         <div className="loader">
           <h1>Loading...</h1>
@@ -187,7 +189,7 @@ function Motibhaiamin_1() {
         <form className="form " onSubmit={handleSubmit}>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className=" col-2">
-              <label className="col-sm-10 col-form-label">Pin :</label>
+              <label className="col-sm-10 col-form-label">UID :</label>
             </div>
             <div className="col-8">
               <input
@@ -219,9 +221,15 @@ function Motibhaiamin_1() {
                   <label className="col-sm-10 col-form-label">
                     lname is : {library[0].lname}
                   </label>
-                  <br />
+                </div>
+                <div className=" col">
                   <label className="col-sm-10 col-form-label">
                     city is : {library[0].gam}
+                  </label>
+                </div>
+                <div className=" col">
+                  <label className="col-sm-10 col-form-label">
+                    Category : {library[0].categoryoflibrary}
                   </label>
                 </div>
               </div>

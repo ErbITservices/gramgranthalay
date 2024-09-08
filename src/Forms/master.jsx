@@ -510,7 +510,7 @@ function Master() {
           <div ref={pdfref} className="form ">
             <div className="row mb-3 col-sm-13 align-items-center">
               <div className=" col-2">
-                <label className="col-sm-10 col-form-label">Pin :</label>
+                <label className="col-sm-10 col-form-label">UID :</label>
               </div>
               <div className="col-8">
                 <input

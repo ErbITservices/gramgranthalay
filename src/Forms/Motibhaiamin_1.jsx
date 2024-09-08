@@ -229,7 +229,7 @@ function Motibhaiamin_1() {
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    {/* Category : {library[0].categoryoflibrary} */}
+                     Category : {library[0].categoryoflibrary}
                   </label>
                 </div>
               </div>

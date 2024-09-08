@@ -45,6 +45,7 @@ const Login8 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "adlrajkot");
+         localStorage.setItem("district", "rajkot");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
 

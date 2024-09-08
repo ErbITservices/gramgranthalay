@@ -50,6 +50,7 @@ const Login = () => {
         
         console.log("dhh");
         localStorage.setItem("login", "director");
+        // localStorage.setItem("district");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
         setUser({

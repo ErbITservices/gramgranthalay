@@ -58,7 +58,9 @@ function Addnew() {
   useEffect(() => {
     const dataget = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/form/`);
+        const response = await axios.get(
+          `http://localhost:5555/district/${localStorage.getItem("district")}`
+        );
         console.log(response.data), setpd(response.data);
       } catch (error) {
         console.log(error);
@@ -119,7 +121,13 @@ function Addnew() {
     try {
       const dataget = async () => {
         try {
-          const response = await axios.get(`http://localhost:5555/form/`);
+          const response = await axios.get(
+            `http://localhost:5555/district/${localStorage.getItem("district")}`
+          );
+          console.log(
+            `http://localhost:5555/district/${localStorage.getItem("district")}`
+          );
+          
           console.log(response.data), setpd(response.data);
         } catch (error) {
           console.log(error);

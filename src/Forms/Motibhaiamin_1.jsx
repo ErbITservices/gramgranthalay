@@ -117,24 +117,46 @@ function Motibhaiamin_1() {
     console.log(data);
   };
 
-  function handleSubmit() {
-    console.log("mihir");
+  async function handleSubmit() {
     for (let index = 1; index <= 95; index++) {
-      console.log();
       count += Number(data["select_" + index]);
-      console.log(count);
-      
     }
     console.log(count);
+    setloader("true");
+    try {
+      console.log("mihir");
+
+      const senddata = await fetch(`http://localhost:5555/Motibhaiamin/Motibhaiamin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({"lname":library[0].lname,"gam":library[0].gam,"uid":library[0].uid,"marks":count}),
+      });
+      if (senddata.ok) {
+        console.log("done");
+        
+        setloader("false");
+      } else {
+        setloader("false");
+      }
+    } catch (error) {
+      console.log("error");
+      console.log(error);
+      alert("data not submited try again");
+      setloader("false");
+    }
   }
   const checkpin = () => {
     console.log(number.current.value);
-    
+
     const dataget = async () => {
       try {
         console.log("mihir");
 
-        const response = await axios.get(`http://localhost:5555/form/${number.current.value}`);
+        const response = await axios.get(
+          `http://localhost:5555/form/${number.current.value}`
+        );
         console.log(response.data), setlibrary(response.data);
       } catch (error) {
         console.log(error);
@@ -143,13 +165,11 @@ function Motibhaiamin_1() {
     dataget();
     setloader("true");
     if (library.length !== 0) {
-      
       setloader("false");
     } else {
       // alert("data not found");
       setloader("false");
     }
-    
 
     // console.log(pin);
   };
@@ -175,8 +195,8 @@ function Motibhaiamin_1() {
                 autoComplete="off"
                 ref={number}
                 name="uid"
-              //   value={data.uid}
-              //   onChange={handleInput}
+                //   value={data.uid}
+                //   onChange={handleInput}
               />
             </div>
             <div className=" col">
@@ -344,7 +364,9 @@ function Motibhaiamin_1() {
                       Select
                     </option>
                     <option value={5}>granthapal+ 3 to vadhu karmachari</option>
-                    <option value={3}>granthapal+ helper granthpal+peune </option>
+                    <option value={3}>
+                      granthapal+ helper granthpal+peune{" "}
+                    </option>
                     <option value={2}>granthapal+peune </option>
                     <option value={1}>granthapal</option>
                     <option value={0}>no employee</option>
@@ -474,7 +496,8 @@ function Motibhaiamin_1() {
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay pravesh apel vanchanalay vibhag niyamo likht che :
+                    granthalay pravesh apel vanchanalay vibhag niyamo likht che
+                    :
                   </label>
                 </div>
                 <div className="col">
@@ -1541,8 +1564,8 @@ function Motibhaiamin_1() {
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    aapti sandharbh seva ni nondh mate aalag aalag register rakhai
-                    he?:
+                    aapti sandharbh seva ni nondh mate aalag aalag register
+                    rakhai he?:
                   </label>
                 </div>
                 <div className="col">
@@ -1759,8 +1782,8 @@ function Motibhaiamin_1() {
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    bandhayel samayiko vanchkone pustak savroop e issue karai che?
-                    :
+                    bandhayel samayiko vanchkone pustak savroop e issue karai
+                    che? :
                   </label>
                 </div>
                 <div className="col">
@@ -1898,8 +1921,8 @@ function Motibhaiamin_1() {
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    vacation ma badko mate aapati vishist sevao ke thati padhatio
-                    aange ni vigato :
+                    vacation ma badko mate aapati vishist sevao ke thati
+                    padhatio aange ni vigato :
                   </label>
                 </div>
                 <div className="col">
@@ -2261,8 +2284,8 @@ function Motibhaiamin_1() {
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    grathalay ma jantunashak davao no niyamit chantkavo thai che?
-                    :
+                    grathalay ma jantunashak davao no niyamit chantkavo thai
+                    che? :
                   </label>
                 </div>
                 <div className="col">
@@ -2427,8 +2450,8 @@ function Motibhaiamin_1() {
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay dawara aapati vishist seva o pravrutiyo ulekh patr
-                    koi vishasta ke padhati hoito teni vigato :
+                    granthalay dawara aapati vishist seva o pravrutiyo ulekh
+                    patr koi vishasta ke padhati hoito teni vigato :
                   </label>
                 </div>
                 <div className="col">

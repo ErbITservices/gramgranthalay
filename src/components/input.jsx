@@ -6,6 +6,7 @@ function Input(props) {
       <div className="row mb-3 col-sm-13 align-items-center">
         <div className=" col">
           <select
+            required
             onChange={(event) => props.handleclick(event)}
             className="form-select"
             aria-label="Default select example"
@@ -20,6 +21,7 @@ function Input(props) {
         </div>
         <div className=" col">
           <select
+            required
             className="form-select"
             aria-label="Default select example"
             onChange={async (event) => props.handleclick(event)}
@@ -34,6 +36,7 @@ function Input(props) {
         </div>
         <div className=" col">
           <select
+            required
             className="form-select"
             aria-label="Default select example"
             onChange={async (event) => props.showdata(event)}

@@ -168,7 +168,7 @@ function Master() {
   const handleSubmit = async () => {
     // console.log(data);
     // console.log(pd);
-    setloader("true")
+    setloader("true");
     try {
       console.log("mihir");
 
@@ -277,13 +277,13 @@ function Master() {
           email: "",
           phone: "",
         });
-        setloader("false")
+        setloader("false");
       }
     } catch (error) {
       console.log("error");
       console.log(error);
-      alert("data not submited try again")
-      setloader("false")
+      alert("data not submited try again");
+      setloader("false");
     }
   };
   const number = useRef();
@@ -388,11 +388,11 @@ function Master() {
   const checkpin = () => {
     const arr = pd.filter((elm) => elm.uid === number.current.value);
     console.log(arr);
-    setloader("true")
+    setloader("true");
     if (arr.length !== 0) {
       setdata(arr[arr.length - 1]);
       console.log(data);
-      setloader("false")
+      setloader("false");
     } else {
       setdata({
         uid: "",
@@ -490,7 +490,7 @@ function Master() {
         email: "",
         phone: "",
       });
-      setloader("false")
+      setloader("false");
     }
 
     console.log(pin);
@@ -560,6 +560,7 @@ function Master() {
               </div>
               <div className="col">
                 <select
+                  required
                   id="inputState"
                   name="gam"
                   value={data.gam}
@@ -579,6 +580,7 @@ function Master() {
               </div>
               <div className="col">
                 <select
+                  required
                   id="inputState"
                   name="taluko"
                   value={data.taluko}
@@ -596,6 +598,7 @@ function Master() {
               </div>
               <div className="col">
                 <select
+                  required
                   name="district"
                   value={data.district}
                   onChange={handleInput}
@@ -646,6 +649,7 @@ function Master() {
               </div>
               <div className="col">
                 <select
+                  required
                   name="categoryoflibrary"
                   value={data.categoryoflibrary}
                   onChange={handleInput}
@@ -788,6 +792,7 @@ function Master() {
 
               <div className="col-2">
                 <select
+                  required
                   name="lavaj"
                   value={data.lavaj}
                   className="form-select"
@@ -856,6 +861,7 @@ function Master() {
               </div>
               <div className="col-2">
                 <select
+                  required
                   className="form-select"
                   name="handleby"
                   value={data.handleby}
@@ -967,6 +973,7 @@ function Master() {
               </div>
               <div className="col-3">
                 <select
+                  required
                   name="libraryeneducation"
                   value={data.libraryeneducation}
                   onChange={handleInput}
@@ -1007,6 +1014,7 @@ function Master() {
 
               <div className="col-2">
                 <select
+                  required
                   className="form-select"
                   aria-label="Default select example"
                   name="housestate"
@@ -1059,6 +1067,7 @@ function Master() {
               </div>
               <div className="col-2">
                 <select
+                  required
                   name="aircondition"
                   value={data.aircondition}
                   onChange={handleInput}
@@ -1079,6 +1088,7 @@ function Master() {
               </div>
               <div className="col-2">
                 <select
+                  required
                   name="openforevryone"
                   value={data.openforevryone}
                   onChange={handleInput}
@@ -1396,6 +1406,7 @@ function Master() {
 
               <div className="col-2">
                 <select
+                  required
                   className="form-select"
                   aria-label="Default select example"
                   name="followinstructoin"
@@ -1434,6 +1445,7 @@ function Master() {
 
               <div className="col-2">
                 <select
+                  required
                   name="requirment"
                   value={data.requirment}
                   onChange={handleInput}
@@ -2388,10 +2400,7 @@ function Master() {
               <div className="row mb-3 tab2 col-sm-13 align-items-center">
                 <div className=" col">
                   <a href="/">
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                    >
+                    <button type="button" className="btn btn-primary">
                       Back
                     </button>
                   </a>

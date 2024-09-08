@@ -348,6 +348,7 @@ function Form() {
           </div>
           <div className="col">
             <select
+              required
               id="inputState"
               name="gam"
               value={data.gam}
@@ -379,6 +380,7 @@ function Form() {
           </div>
           <div className="col">
             <select
+              required
               id="inputState"
               name="taluko"
               value={data.taluko}
@@ -399,6 +401,7 @@ function Form() {
           </div>
           <div className="col">
             <select
+              required
               name="district"
               value={data.district}
               onChange={handleInput}
@@ -554,6 +557,7 @@ function Form() {
 
           <div className="col-2">
             <select
+              required
               name="lavaj"
               value={data.lavaj}
               className="form-select"
@@ -621,6 +625,7 @@ function Form() {
           </div>
           <div className="col-2">
             <select
+              required
               className="form-select"
               name="handleby"
               value={data.handleby}
@@ -732,6 +737,7 @@ function Form() {
           </div>
           <div className="col-3">
             <select
+              required
               name="libraryeneducation"
               value={data.libraryeneducation}
               onChange={handleInput}
@@ -772,6 +778,7 @@ function Form() {
 
           <div className="col-2">
             <select
+              required
               className="form-select"
               aria-label="Default select example"
               name="housestate"
@@ -822,6 +829,7 @@ function Form() {
           </div>
           <div className="col-2">
             <select
+              required
               name="aircondition"
               value={data.aircondition}
               onChange={handleInput}
@@ -842,6 +850,7 @@ function Form() {
           </div>
           <div className="col-2">
             <select
+              required
               name="openforevryone"
               value={data.openforevryone}
               onChange={handleInput}
@@ -1161,6 +1170,7 @@ function Form() {
 
           <div className="col-2">
             <select
+              required
               className="form-select"
               aria-label="Default select example"
               name="followinstructoin"
@@ -1199,6 +1209,7 @@ function Form() {
 
           <div className="col-2">
             <select
+              required
               name="requirment"
               value={data.requirment}
               onChange={handleInput}
@@ -2135,11 +2146,7 @@ function Form() {
           <div className="row mb-3 tab2 col-sm-13 align-items-center">
             <div className=" col">
               <a href="/">
-                <button
-                  type="button"
-                  
-                  className="btn btn-primary"
-                >
+                <button type="button" className="btn btn-primary">
                   Back
                 </button>
               </a>

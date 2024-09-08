@@ -10,9 +10,7 @@ import jsPDF from "jspdf";
 import { useNavigate } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 function Addnew() {
-
-const [loader,setloader] = useState("false")
-
+  const [loader, setloader] = useState("false");
 
   const pdfref = useRef();
   const downloadpdf = () => {
@@ -76,8 +74,6 @@ const [loader,setloader] = useState("false")
       }
     };
     getcount();
-    
-    
   }, []);
 
   // let Uid = "VAD000" ;
@@ -108,7 +104,7 @@ const [loader,setloader] = useState("false")
     if (count > 99) {
       // Uid = ;
       setUid("VAD0" + count);
-    } else  {
+    } else {
       setUid("VAD00" + count);
     }
     setUidset("false");
@@ -119,7 +115,7 @@ const [loader,setloader] = useState("false")
 
   const handleSubmit = async () => {
     // console.log(data);
-      setloader("true")
+    setloader("true");
     try {
       const dataget = async () => {
         try {
@@ -198,26 +194,23 @@ const [loader,setloader] = useState("false")
         dataget();
         // navigate("/showid", { state: { id: Uid } });
         // navigate("/Home1");
-        setloader("false")
+        setloader("false");
       }
       try {
         console.log("mihir");
-        let ind = count+1;
+        let ind = count + 1;
         // setcount({count: ind + 1})
-        const senddata = await fetch(
-          `http://localhost:5555/Count/${count} `,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            
-            body: JSON.stringify({ "count": ind }),
-          }
-        );
+        const senddata = await fetch(`http://localhost:5555/Count/${count} `, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({ count: ind }),
+        });
         if (senddata.ok) {
-          console.log("done "+count);
-          
+          console.log("done " + count);
+
           setloader("false");
         }
       } catch (error) {
@@ -229,8 +222,8 @@ const [loader,setloader] = useState("false")
     } catch (error) {
       console.log("error");
       console.log(error);
-      setloader("false")
-      alert("data not submited")
+      setloader("false");
+      alert("data not submited");
     }
     const getcount = async () => {
       try {
@@ -299,7 +292,7 @@ const [loader,setloader] = useState("false")
   }
   async function handleedit() {
     console.log("mihir");
-    setloader("true")
+    setloader("true");
     console.log(editvalu);
 
     const edit = await fetch(`http://localhost:5555/form/${editvalu.uid}`, {
@@ -322,7 +315,7 @@ const [loader,setloader] = useState("false")
       };
       dataget();
       setedit("false");
-      setloader("false")
+      setloader("false");
     }
   }
 
@@ -364,6 +357,7 @@ const [loader,setloader] = useState("false")
               </div>
               <div className="col">
                 <select
+                  required
                   id="inputState"
                   name="gam"
                   value={data.gam}
@@ -383,6 +377,7 @@ const [loader,setloader] = useState("false")
               </div>
               <div className="col">
                 <select
+                  required
                   id="inputState"
                   name="taluko"
                   value={data.taluko}
@@ -400,6 +395,7 @@ const [loader,setloader] = useState("false")
               </div>
               <div className="col">
                 <select
+                  required
                   name="district"
                   value={data.district}
                   onChange={handleInput}
@@ -451,6 +447,7 @@ const [loader,setloader] = useState("false")
               </div>
               <div className="col">
                 <select
+                  required
                   name="categoryoflibrary"
                   value={data.categoryoflibrary}
                   onChange={handleInput}

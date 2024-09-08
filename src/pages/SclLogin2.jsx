@@ -45,8 +45,10 @@ const SclLogin2 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "sclvadodara");
-        localStorage.setItem("id", user.email);
-        localStorage.setItem("pass", user.password);
+        
+         localStorage.setItem("id", user.email);
+         localStorage.setItem("pass", user.password);
+         localStorage.setItem("district", "vadodara");
 
         setUser({
           email: "",
@@ -73,7 +75,7 @@ const SclLogin2 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Login </h1>
+                <h1 className="main-heading mb-3">Scl Vadodara Login </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>

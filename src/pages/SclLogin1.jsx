@@ -47,6 +47,7 @@ const SclLogin1 = () => {
         localStorage.setItem("login", "sclgandhinagar");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
+        localStorage.setItem("district", "gandhinagar");
 
         setUser({
           email: "",
@@ -73,7 +74,7 @@ const SclLogin1 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Login </h1>
+                <h1 className="main-heading mb-3">Login Gandhinagar</h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>

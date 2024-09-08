@@ -185,7 +185,7 @@ function Motibhaiamin_1() {
           <FadeLoader color="#00008b" />
         </div>
       )}
-      {/* {loader != "false" && ( */}
+      {loader != "true" && (
         <form className="form " onSubmit={handleSubmit}>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className=" col-2">
@@ -214,17 +214,17 @@ function Motibhaiamin_1() {
             </div>
           </div>
 
-          {/* {library.length === 0 && ( */}
+          {library.length != 0 && (
             <div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    {/* lname is : {library[0].lname} */}
+                    lname is : {library[0].lname}
                   </label>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    {/* city is : {library[0].gam} */}
+                    city is : {library[0].gam}
                   </label>
                 </div>
                 <div className=" col">
@@ -2635,9 +2635,9 @@ function Motibhaiamin_1() {
                 </div>
               </center>
             </div>
-          {/* // )} */}
+            )} 
         </form>
-      {/* )} */}
+      )} 
       <div>
         <Footer></Footer>
       </div>

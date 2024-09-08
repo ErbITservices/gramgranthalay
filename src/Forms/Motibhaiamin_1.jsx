@@ -229,7 +229,7 @@ function Motibhaiamin_1() {
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    Category : {library[0].categoryoflibrary}
+                    {/* Category : {library[0].categoryoflibrary} */}
                   </label>
                 </div>
               </div>
@@ -1442,7 +1442,7 @@ function Motibhaiamin_1() {
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                  ગ્રંથો આપલે માટેની કઈ પધ્ધતિ અમલમાં છે?:
+                  ગ્રંથો આપલે માટેની કઈ પધ્ધતિ અમલમાં છે?(ખાતાવહી, રજીસ્ટર, ટિકિટ પધ્ધતિ કે કોમ્પ્યુટર પ્રોગ્રામ દ્વાર):
                   </label>
                 </div>
                 <div className="col">
@@ -1458,15 +1458,14 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}></option>
-                    <option value={2}></option>
-                    <option value={1}></option>
+                    <option value={3}>કોમ્પ્યુટરાઇઝ/ટિકિટ પદ્ધતિ</option>
+                    <option value={2}>ખાતાવહી પદ્ધતિ</option>
+                    <option value={1}>દૈનિક રજીસ્ટર પદ્ધતિ</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    niyat mudadt ma pustak parat na aave te late fees levai che?
-                    ketli :
+                  વાચકોને કેટલા દિવસ માટે પુસ્તકો વાંચવા આપય છે? :
                   </label>
                 </div>
                 <div className="col">
@@ -1482,16 +1481,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>૧૪ દિવસ અને તેથી વધુ</option>
+                    <option value={0}>૧૪ થી ઓછા</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    niyat mudat ma grantho pacha na aave to smruti partro lakhai
-                    che?:
+                  નિયત મુદ્દતમાં પુસ્તક પરત ન આવે તે લેઇટ ફી લેવાય છે?કેટલી?:
                   </label>
                 </div>
                 <div className="col">
@@ -1507,14 +1505,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    vanchako ne joitu pustak medvi sake te mate aagav thi pustak
-                    reserve karvani sagwad aapai che ? kevi rete :
+                  નિયત મુદ્દતમાં પુસ્તક પાયા ન આવે તો સ્મૃતિપત્રો લખાય છે? :
                   </label>
                 </div>
                 <div className="col">
@@ -1530,15 +1527,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    hare vanchva apel pustako ni kul sankhiya :
+                  વાચકને જોઈતુ પુસ્તક મેળવી શકે તે માટે અગાઉથી પુસ્તક રિઝર્વ કરવવાની સગવડ અપાય છે? કેવી રીતે?:
                   </label>
                 </div>
                 <div className="col">
@@ -1554,13 +1551,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    aantar grathalay loan ni suvidha che? :
+                  ઘરે વાંચવા આપેલ પુસ્તકોની કુલ સંખ્યા:
                   </label>
                 </div>
                 <div className="col">
@@ -1576,17 +1573,17 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={4}>option 1</option>
-                    <option value={3}>option 2</option>
-                    <option value={2}>option 3</option>
-                    <option value={1}>option 4</option>
+                    <option value={4}>૨૫,૦૦૧ કરતા વધુ</option>
+                    <option value={3}>૧૫૦૦૧ થી ૨૫૦૦૦ હોય તો</option>
+                    <option value={2}>૧૦૦૦૧ થી ૧૫૦૦૦ હોય તો</option>
+                    <option value={1}>૧૦૦૦૦ થી ઓછા હોય તો</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay ma aalag sandharbhav vibhag che?:
+                  આંતર ગ્રંથાલય લોનની સુવિધા છે?:
                   </label>
                 </div>
                 <div className="col">
@@ -1602,13 +1599,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    sandharbh grathni ni sankhiya :
+                  ગ્રંથાલયમાં અલગ સંદર્ભ વિભાગ છે? :
                   </label>
                 </div>
                 <div className="col">
@@ -1624,16 +1621,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    aapti sandharbh seva ni nondh mate aalag aalag register
-                    rakhai he?:
+                  સંદર્ભગ્રંથોની સંખ્યા:
                   </label>
                 </div>
                 <div className="col">
@@ -1649,14 +1645,14 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={0}>option 1</option>
-                    <option value={1}>option 2</option>
-                    <option value={2}>option 3</option>
+                    <option value={0}>૫૦૦ થી ૧૦૦૦</option>
+                    <option value={1}>૧૦૦૦ થી ૧૫૦૦ હોય તો</option>
+                    <option value={2}>૧૫૦૦ થી વધુ</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    sandharbh seva na labh lenar vanhko ni varsik sankhiya :
+                  અપાતી સંદર્ભસેવાની નોંધ માટે આલગ રજીસ્ટર રખાઇ છે?:
                   </label>
                 </div>
                 <div className="col">
@@ -1672,15 +1668,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={1}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    xerox ke evii koi suvidha aapai che?:
+                  સંદર્ભસેવાનો લાભ લેનાર વાચકોની વાર્ષિક સંખ્યા:
                   </label>
                 </div>
                 <div className="col">
@@ -1696,15 +1692,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={5}>option 1</option>
-                    <option value={4}>option 2</option>
-                    <option value={3}>option 3</option>
-                    <option value={0}>option 4</option>
+                    <option value={5}>વાર્ષિક ૨૦૦૦ થી વધુ</option>
+                    <option value={4}>વાર્ષિક ૧૫૦૦ થી ૨૦૦૦</option>
+                    <option value={3}>વાર્ષિક ૧૦૦૦ થી ૧૫૦૦</option>
+                    <option value={0}>વાર્ષિક ૧૦૦૦ થી ઓછા</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    grathalay ma mangavta deniko ni sankhiya :
+                  ઝેરોક્ષ કે એવી કોઈ સુવિધા અપાય છે?:
                   </label>
                 </div>
                 <div className="col">
@@ -1720,15 +1716,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    garhalay ma mangavta samayako ni sankhiya:
+                  ગ્રંથાલયમાં મંગાવતા દેનિકોની સંખ્યા (બને વર્ષોની સરેરાશ):
                   </label>
                 </div>
                 <div className="col">
@@ -1744,14 +1740,14 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={0}>option 1</option>
-                    <option value={3}>option 2</option>
-                    <option value={5}>option 3</option>
+                    <option value={0}>૫ હોય તો</option>
+                    <option value={3}>૬ થી ૧૦ હોય તો</option>
+                    <option value={5}>૧૦ થી વધુ</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    denik patro mate no kharch :
+                  ગ્રંથાલયમાં મંગાવતા સામાયકોની સંખ્યા (બને વર્ષોની સરેરાશ) :
                   </label>
                 </div>
                 <div className="col">
@@ -1767,17 +1763,17 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={0}>option 1</option>
-                    <option value={1}>option 2</option>
-                    <option value={2}>option 3</option>
-                    <option value={4}>option 4</option>
+                    <option value={0}>૨૦ સામયિકો</option>
+                    <option value={1}>૨૧ થી ૩૦ સામયિકો</option>
+                    <option value={2}>૩૧ થી ૪૦ સામયિકો</option>
+                    <option value={4}>૪૧ થી વધુ</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    samayiko mate no kharch:
+                  દૈનિકપત્રો માટેનો ખર્ચ:
                   </label>
                 </div>
                 <div className="col">
@@ -1793,16 +1789,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={1}>option 3</option>
-                    <option value={0}>option 4</option>
+                    <option value={3}>૨૦ થી વધુ</option>
+                    <option value={2}>૧૫ થી ૨૦ હજાર</option>
+                    <option value={1}>૮ થી ૧૫ હજાર</option>
+                    <option value={0}>૭ હજાર</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    vanchnalay ma aavta vanchko ni nondh mate register rakhvama
-                    aave che? :
+                  સામયિકો માટેનો ખર્ચ :
                   </label>
                 </div>
                 <div className="col">
@@ -1818,16 +1813,18 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={0}>૧૦૦૦૦ ૱</option>
+                    <option value={1}>૧૦ થી ૧૫ હજાર</option>
+                    <option value={2}>૧૫ થી ૨૦ હજાર</option>
+                    <option value={3}>૨૦ થી વધુ</option>
                   </select>
                 </div>
               </div>
+              
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    garnthalay ma mangavama aavta samayiko petik bandhavine
-                    sachvama aavta samyaiko ni sankhiya:
+                  વંચનાલાયમાં આવતા વાચકોની નોંધ માટે રજિસ્ટર રાખવામાં આવે છે:
                   </label>
                 </div>
                 <div className="col">
@@ -1843,14 +1840,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={1}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    bandhayel samayiko vanchkone pustak savroop e issue karai
-                    che? :
+                  ગ્રંથાલયમાં માંગવામાં આવતા સામાયિકો પૈકી બંધાવીને સાચવવામાં આવતા સામયિકોની યાદી :
                   </label>
                 </div>
                 <div className="col">
@@ -1866,15 +1862,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    samayiko na chuta aanko vanchakone issue karai che?:
+                  બંધાયેલ સામયિકો વાચકોને પુસ્તક સ્વરૂપે ઇસ્યુ કરાય છે?:
                   </label>
                 </div>
                 <div className="col">
@@ -1890,13 +1886,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    samayiko na juna aanko vechan mukai che :
+                  સામયિકના જૂના અંકો વેચાણ મુકાય છે ? :
                   </label>
                 </div>
                 <div className="col">
@@ -1912,15 +1908,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    mahila sabhiyo mate aalag vibhag che?:
+                  સામયિકના જૂના અંકો વેચાણ મુકાય છે ?:
                   </label>
                 </div>
                 <div className="col">
@@ -1936,13 +1932,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>રાહતદરથી વેચાણ માટે મુકાય છે તો</option>
+                    <option value={0}>રાહતદરથી વેચાણ માટે નથી મુકાતા અને પસ્તીમાં વેચાય છે તો</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    baad sabhiyo mate aalag vibhag che? :
+                  મહિલા સભ્યો માટે અલગ વિભાગ છે:
                   </label>
                 </div>
                 <div className="col">
@@ -1958,15 +1954,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    mahila sabhiyo mate aapti vishist seva ni vegato:
+                  બાળ સભ્યો માટે અલગ વિભાગ છે :
                   </label>
                 </div>
                 <div className="col">
@@ -1982,14 +1978,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    vacation ma badko mate aapati vishist sevao ke thati
-                    padhatio aange ni vigato :
+                  મહિલા સભ્યો માટે અપાતી વિશિષ્ટ સેવાની વિગતો:
                   </label>
                 </div>
                 <div className="col">
@@ -2005,15 +2000,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    sabhiy nodhai mate kai padhati aamal ma che?:
+                  વેકેશનમાં બાળકો માટે અપાતી સેવાઓ કે થતી પધ્ધતિઓ અંગેની વિગતો:
                   </label>
                 </div>
                 <div className="col">
@@ -2029,15 +2024,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
+                   
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    jamingiri levai che? :
+                  સભ્યનોંધણી માટે કઈ પધ્ધતિ - અમલમાં છે?
+                  (કોમ્પ્યુટર પ્રોગ્રામ/સભ્ય પ્રોગ્રામ/રજીસ્ટરમાં નોંધણી/ અન્ય):
                   </label>
                 </div>
                 <div className="col">
@@ -2053,15 +2048,42 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>કોમ્પ્યુટર પ્રોગ્રામ</option>
+                    <option value={2}>સભ્ય ફોર્મ</option>
+                    <option value={1}>રજીસ્ટરમાં નોંધીને</option>
+                    <option value={0}>ન નોંધાતા હોય તો</option>
+                  </select>
+                </div>
+              </div>
+              <div className="row mb-3 col-sm-13 align-items-center">
+                
+                <div className=" col">
+                  <label className="col-sm-10 col-form-label">
+                  જામીનગીરી લેવાય છે :
+                  </label>
+                </div>
+                <div className="col">
+                  <select
+                    required
+                    id="inputState"
+                    onClick={handleInput}
+                    name="select_73"
+                    value={data.select_73}
+                    onChange={handleInput}
+                    className="form-select"
+                  >
+                    <option selected value={0}>
+                      Select
+                    </option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    deposit levai che ? ketli?:
+                  ડિપોઝિટ લેવાય છે?કેટલી?:
                   </label>
                 </div>
                 <div className="col">
@@ -2077,15 +2099,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>નથી લેવાતી</option>
+                    <option value={2}>1રૂ  થી  50રૂ </option>
+                    <option value={1}>51રૂ થી 100રૂ </option>
+                    <option value={0}>100રૂ થી વધુ</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    baad sabhiyo ni deposit levai che? ketli? :
+                  બાળ સભ્યો ની ડિપોઝિટ લેવાય છે?કેટલી? :
                   </label>
                 </div>
                 <div className="col">
@@ -2101,17 +2123,17 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>ના લેવાતી હોય તો</option>
+                    <option value={2}>૧રૂ થી ૧૦રૂ </option>
+                    <option value={1}>૧૧રૂ થી ૩૦રૂ </option>
+                    <option value={0}>૩૦રૂ થી વધુ</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    lavajam levai che? ketlu?:
+                  લવાજમ લેવાય છે? કેટલું?(માસિક/વાર્ષિક):
                   </label>
                 </div>
                 <div className="col">
@@ -2127,15 +2149,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={4}>option 1</option>
-                    <option value={3}>option 2</option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={4}>વાર્ષિક લવાજમ ન લેવાતું હોય તો</option>
+                    <option value={3}>વાર્ષિક લવાજમ ૧ થી ૨૫ સુધી લેવાય તો</option>
+                    <option value={2}>વાર્ષિક લવાજમ ૨૬ થી ૫૦ હોય તો </option>
+                    <option value={0}>વાર્ષિક લવાજમ ૫૦ થી વધુ હોય તો</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    varas darmiyan raad thayela sabhiyo ni sankhiya :
+                  વર્ષ દરમ્યાન રદ થયેલ સભ્યોની સંખ્યાં :
                   </label>
                 </div>
                 <div className="col">
@@ -2151,17 +2173,17 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={1}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>કોઈ પણ રદ ન થતાં હોય તો</option>
+                    <option value={2}>૧ થી ૨૦ સભ્યો રદ થયા હોય તો</option>
+                    <option value={1}>૨૧ થી ૩૦ સભ્યો રદ થયા હોય તો</option>
+                    <option value={0}>૩૦ થી વધુ સભ્યો રદ થયા હોય તો</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    grathalay sabhiyo ni sankhiya:
+                  ગ્રંથલાયના  સભ્યોની સંખ્યા:
                   </label>
                 </div>
                 <div className="col">
@@ -2177,16 +2199,16 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={4}>option 1</option>
-                    <option value={3}>option 2</option>
-                    <option value={2}>option 1</option>
-                    <option value={1}>option 2</option>
-                    <option value={0}>option 2</option>
+                    <option value={4}>૪૦૦૧ થી વધુ</option>
+                    <option value={3}>૩૦૦૧ થી ૪૦૦૦ સુધી</option>
+                    <option value={2}>૨૦૦૧ થી ૩૦૦૦ સુધી</option>
+                    <option value={1}>૧૦૦૧ થી ૨૦૦૦ સુધી</option>
+                    <option value={0}>૧૦૦૧ થી ૨૦૦૦ સુધી</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    garnthalay vistran pravrutiyo nu aayojan thai che? :
+                  ગ્રંથાલય વિસ્તરણ પ્રવૃતિઓનું આયોજન થાય છે? :
                   </label>
                 </div>
                 <div className="col">
@@ -2202,15 +2224,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    varas darmiyan keva ne ketla kariyakaram karai :
+                  વર્ષ દરમિયાન કેટલા અને કેવા કાર્યક્રમો કર્યા? :
                   </label>
                 </div>
                 <div className="col">
@@ -2226,16 +2248,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={0}>option 1</option>
-                    <option value={2}>option 2</option>
-                    <option value={3}>option 1</option>
-                    <option value={4}>option 2</option>
+                    <option value={0}>એક પણ કાર્ય કરેલ ન હોય તો</option>
+                    <option value={2}>૫ સુધી કાર્યક્રમ કરેલ હોય તો</option>
+                    <option value={3}>૬ થી ૧૦ કાર્યક્રમ કરેલ હોય તો</option>
+                    <option value={4}>૧૦ થી વધુ કાર્યક્રમ કરેલ હોય તો</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    loko joi sake te rete granthalay bahar naam darshav tu board
-                    rakhel che? :
+                  લોકો જોઈ શકે તે રીતે ગ્રંથાલય બહાર નામ દર્શાવતું બોર્ડ રાખેલ છે:
                   </label>
                 </div>
                 <div className="col">
@@ -2251,15 +2272,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    garnthalay no samay thata aathwadik :
+                  ગ્રંથાલયનો સમય તથા અઠવાડિક સમય ની માહિતી અને નિયમો પ્રદર્શિત કરેલ છે :
                   </label>
                 </div>
                 <div className="col">
@@ -2275,13 +2296,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    makan purti hawa ujas wadu che?
+                  મકાન પૂરતી હવા ઉજાસવાળુ છે?
                   </label>
                 </div>
                 <div className="col">
@@ -2297,15 +2318,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    makan ma vanchako mate prathmik jaruriyaaat ni suvidha che?:
+                  મકાનમાં વાચકો માટે પ્રાથમિક જરૂરિયાતની સુવિધા છે કે કેમ?:
                   </label>
                 </div>
                 <div className="col">
@@ -2321,13 +2342,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    makan ma darek sathad e purti safai rakhvama aave che? :
+                  મકાનમાં દરેક સ્થળે પૂરતી સફાઈ રાખવામાં આવે છે કે કેમ? :
                   </label>
                 </div>
                 <div className="col">
@@ -2343,16 +2364,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    grathalay ma jantunashak davao no niyamit chantkavo thai
-                    che? :
+                  ગ્રંથાલયોમાં જંતુનાશક દવાઓનો નિયમિત છંટકાવ થાય છે કે કેમ? :
                   </label>
                 </div>
                 <div className="col">
@@ -2368,14 +2388,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    parat aavela pustako granth bandar ma samai saar gothavai
-                    che?:
+                  પરત આવેલા પુસ્તક ગ્રંથભંડારમાં સમયસર ગોઠવાય છે કે કેમ?:
                   </label>
                 </div>
                 <div className="col">
@@ -2391,16 +2410,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthpal no vanchako sathe no vevhar swanjaniya pun janai
-                    che? :
+                  ગ્રંથપાલનો વાંચકો સાથેનો વ્યવહાર સોજન્ય પૂર્ણ જણય છે કે કેમ? :
                   </label>
                 </div>
                 <div className="col">
@@ -2416,13 +2434,14 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay ma visit book rakhva ma aave che?:
+                  ગ્રંથાલય માં વીઝીટ બુક રાખવામાં આવે છે ?
+                  તેમાં ગ્રંથાલયમાં આવતી પ્રતિષ્ઠિત વ્યક્તિઓના મંતવ્યો નોંધાયેલ છે:
                   </label>
                 </div>
                 <div className="col">
@@ -2438,15 +2457,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    chele nondh kyare theyel che? :
+                  છેલ્લે નોંધ ક્યારે થયેલ છે? :
                   </label>
                 </div>
                 <div className="col">
@@ -2462,14 +2481,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>સંતોષકારક અને અદ્યતન નિભાવે છે</option>
+                    <option value={0}>સંતોષકારક અને અદ્યતન નિભાવે  નથી</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay ma nibhawama aavta registero aane aaniya daftar
-                    aadhiyatan rakhai che?:
+                  ગ્રંથાલયમાં નિભાવવામાં આવતા રજિસ્ટરો અને અન્ય દફતર અધ્યતનન રખાય છે? કે કેમ?:
                   </label>
                 </div>
                 <div className="col">
@@ -2485,17 +2503,16 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={3}>option 1</option>
-                    <option value={1}>option 2</option>
-                    <option value={0}>option 2</option>
+                    <option value={3}>હા</option>
+                    <option value={1}>સંતોષકારક ન નિભાવેલ હોય તો</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay ni aagav karel tapasani darmiyan aapva ma aavel
-                    vanha o ni purta karel che? :
+                  ગ્રંથાલયની અગાઉ કરાયેલ તપાસણી દરમ્યાન આપવામાં આવેલ વાંધાઓની પૂર્તતા કરેલ છે કે કેમ? :
                   </label>
                 </div>
                 <div className="col">
@@ -2511,14 +2528,13 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay dawara aapati vishist seva o pravrutiyo ulekh
-                    patr koi vishasta ke padhati hoito teni vigato :
+                  ગ્રંથાલય દ્વારા અપાતી  વિશિષ્ટ સેવાઓ/પ્રવૃત્તિ ઉલ્લેખપાત્ર કોઈ વિશેષતા કે પધ્ધતી હોય તો તેની વિગતો :
                   </label>
                 </div>
                 <div className="col">
@@ -2534,15 +2550,15 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>હા</option>
+                    <option value={0}>ના</option>
                   </select>
                 </div>
               </div>
               <div className="row mb-3 col-sm-13 align-items-center">
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay na vikas mate vevastha tantra ni dhagas :
+                  ગ્રંથાલયના વિકાસ માટે વ્યવસ્થા થી ધગશ અને નવીન વિકાસ યોજના કોઈ એક હોયતે તેની વિગત:
                   </label>
                 </div>
                 <div className="col">
@@ -2558,14 +2574,14 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={1}>option 2</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>વ્યવસ્થાતંત્રની ધગશ અને વિશિષ્ટ યોજના હોઈ તો</option>
+                    <option value={1}>યોજના હોય પણ સંતોષકારક પ્રગતિ ન હોય</option>
+                    <option value={0}>કોઈ યોજના ન હોય તો</option>
                   </select>
                 </div>
                 <div className=" col">
                   <label className="col-sm-10 col-form-label">
-                    granthalay mate nankiy strona vadharva:
+                  ગ્રંથાલય માટે નાણાકીય સ્ત્રોતોનો વધારવા વ્યવસ્થાતંત્ર દ્વારા કોઈ વિશિષ્ટ પ્રવાસો થયા હોય તો તેની વિગત:
                   </label>
                 </div>
                 <div className="col">
@@ -2581,8 +2597,8 @@ function Motibhaiamin_1() {
                     <option selected value={0}>
                       Select
                     </option>
-                    <option value={2}>option 1</option>
-                    <option value={0}>option 2</option>
+                    <option value={2}>પૂરતા પ્રયાસો થતાં હોય અને નાણાકીય સ્ત્રોત વધારેલ હોય તો</option>
+                    <option value={0}>કોઈ જ પ્રયત્નો ન હોય</option>
                   </select>
                 </div>
               </div>

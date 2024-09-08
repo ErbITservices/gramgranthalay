@@ -67,7 +67,7 @@ function SingleData(props) {
           </center>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className=" col-2">
-              <label for="inputPassword" className="col-sm-10 col-form-label">
+              <label className="col-sm-10 col-form-label">
                 ગ્રંથાલયનું નામ :
               </label>
             </div>
@@ -83,17 +83,13 @@ function SingleData(props) {
               <label className="highlightdata ">{arr[0].gam}</label>
             </div>
             <div className="col-1">
-              <label for="inputPassword6" className="col-form-label">
-                પિન :
-              </label>
+              <label className="col-form-label">પિન કોડ :</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].pin}</label>
             </div>
             <div className="col-1">
-              <label for="inputPassword6" className="col-form-label">
-                તાલુકો :
-              </label>
+              <label className="col-form-label">તાલુકો :</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].taluko}</label>
@@ -108,50 +104,38 @@ function SingleData(props) {
 
           <div className="row mb-1 col-sm-13 align-items-center">
             <div className="col-2">
-              <label for="inputPassword6" className="col-form-label col-sm-10">
-                સ્થાપના તારીખ:
-              </label>
+              <label className="col-form-label col-sm-10">સ્થાપના તારીખ:</label>
             </div>
             <div className="col-2">
               <label className="highlightdata">{arr[0].sthapnadate}</label>
             </div>
             <div className="col-sm-2">
-              <label for="inputPassword6" className="col-form-label ">
-                ભણેલાઓ ની સાંખ્ય :
-              </label>
+              <label className="col-form-label ">ભણેલાઓ ની સાંખ્ય :</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].studypeople}</label>
             </div>
             <div className="row mb-3 col-sm-13 align-items-center"></div>
             <div className="col">
-              <label for="inputPassword6" className="col-form-label ">
-                સભ્ય સંખ્યા : પુરુષ
-              </label>
+              <label className="col-form-label ">સભ્ય સંખ્યા : પુરુષ</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].studymale}</label>
             </div>
             <div className="col-1">
-              <label for="inputPassword6" className="col-form-label ">
-                સ્ત્રી :
-              </label>
+              <label className="col-form-label ">સ્ત્રી :</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].studyfemale}</label>
             </div>
             <div className="col-1">
-              <label for="inputPassword6" className="col-form-label ">
-                બાળકો :
-              </label>
+              <label className="col-form-label ">બાળકો :</label>
             </div>
             <div className="col">
               <label className="highlightdata">{arr[0].studychild}</label>
             </div>
             <div className="col-1">
-              <label for="inputPassword6" className="col-form-label ">
-                કુલ
-              </label>
+              <label className="col-form-label ">કુલ</label>
             </div>
             <div
               className="col
@@ -164,7 +148,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-sm-3">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 સબ્યો પાસેથી લવાજમ લેવામા આવે છે? :
               </label>
             </div>
@@ -174,9 +158,7 @@ function SingleData(props) {
             </div>
 
             <div className="col-2">
-              <label for="inputPassword6" className="col-form-label ">
-                વાર્ષિક :
-              </label>
+              <label className="col-form-label ">વાર્ષિક :</label>
             </div>
             <div className="col-2">
               <label className="highlightdata">{arr[0].lavajamount}</label>
@@ -185,7 +167,7 @@ function SingleData(props) {
 
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label col-sm-10">
+              <label className="col-form-label col-sm-10">
                 કામકાજના કલાકો: પુસ્તક આપ લે વિભાગ :
               </label>
             </div>
@@ -195,9 +177,7 @@ function SingleData(props) {
               </label>
             </div>
             <div className="col-2">
-              <label for="inputPassword6" className="col-form-label col-sm-10">
-                વાંચનાલય :
-              </label>
+              <label className="col-form-label col-sm-10">વાંચનાલય :</label>
             </div>
             <div className="col-2">
               <label className="highlightdata">
@@ -207,7 +187,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label col-sm-10">
+              <label className="col-form-label col-sm-10">
                 ગ્રંથાલયનુ વ્યાવસ્થાતંત્ર : પંચાયત/સંસ્થા/મંડળ/શાળા/અન્ય સંચાલિત
               </label>
             </div>
@@ -215,7 +195,7 @@ function SingleData(props) {
               <label className="highlightdata">{arr[0].handleby}</label>
             </div>
             <div className="col-4">
-              <label for="inputPassword6" className="col-form-label col-sm-10">
+              <label className="col-form-label col-sm-10">
                 વ્યાવસ્થાતંત્ર રજીસ્ટર હોય તો નોંધણી ક્રમાંક :
               </label>
             </div>
@@ -225,7 +205,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className=" col-3">
-              <label for="inputPassword" className="col-sm-10 col-form-label">
+              <label className="col-sm-10 col-form-label">
                 પત્ર વ્યાહાર માટે જવાબદાર વ્યક્તિનુ નામ :
               </label>
             </div>
@@ -296,7 +276,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 મકાન ગ્રંથાલય ની માલિકી નું છે :
               </label>
             </div>
@@ -306,9 +286,7 @@ function SingleData(props) {
             </div>
 
             <div className="col-2">
-              <label for="inputPassword6" className="col-form-label ">
-                વાર્ષિક ભાડું :
-              </label>
+              <label className="col-form-label ">વાર્ષિક ભાડું :</label>
             </div>
             <div className="col-2">
               <label className="highlightdata">{arr[0].houserent}</label>
@@ -316,7 +294,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 મકાન ની વર્તમાન સ્થિતિ :
               </label>
             </div>
@@ -324,7 +302,7 @@ function SingleData(props) {
               <label className="highlightdata"> {arr[0].hosestatus}</label>
             </div>
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 હવા ઉજાશ આને બીજી સુવિધા છે? :
               </label>
             </div>
@@ -334,7 +312,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-5">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 ગ્રંથાલય દરેકને માટે કોઈપણ ભેદભાવ વગર ખુલ્લુ છે? :
               </label>
             </div>
@@ -344,17 +322,14 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col">
-              <label
-                for="inputPassword6"
-                className="col-form-label col highlight"
-              >
+              <label className="col-form-label col highlight">
                 ગત વર્ષના આવક ખર્ચાના હિસાબો : (નમૂના ક મુજબ) :
               </label>
             </div>
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (1) ગત વર્ષના અંતે પુસ્તકોની સંખ્યા :
               </label>
             </div>
@@ -367,7 +342,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (2) આ વર્ષમાં ઉમેરાયેલા પુસ્તકો ની સંખ્યા :
               </label>
             </div>
@@ -380,7 +355,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (3) આ વર્ષમાં કમી થયેલા પુસ્તકોની સંખ્યા :
               </label>
             </div>
@@ -393,7 +368,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (4) વર્ષના અંતે પુસ્તકોની કુલ સંખ્યા :
               </label>
             </div>
@@ -406,10 +381,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-13">
-              <label
-                for="inputPassword6"
-                className="col-form-label col highlight"
-              >
+              <label className="col-form-label col highlight">
                 ગ્રંથાલયમાં આવેલ ડેડસ્ટોકની વિગતો (અલગ પત્રકમાં યાદી બનાવીને
                 જોડવી) :
               </label>
@@ -417,7 +389,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (1) વર્ષ દરમ્યાન ઈશ્યૂ થયેલા કુલ પુસ્તકો (પુસ્તક પરિભ્રમણ) :
               </label>
             </div>
@@ -425,7 +397,7 @@ function SingleData(props) {
               <label className="highlightdata"> {arr[0].publishbook}</label>
             </div>
             <div className="col-3">
-              <label for="inputPassword6" className="col-form-label  ">
+              <label className="col-form-label  ">
                 (2) વર્તમાન પત્રો તથા સામયિકો વાંચનારની દૈનિક સરેરાશ સંખ્યા :
               </label>
             </div>
@@ -435,10 +407,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-13 align-items-center">
             <div className="col-7">
-              <label
-                for="inputPassword6"
-                className="col-form-label col highlight"
-              >
+              <label className="col-form-label col highlight">
                 વર્ષ દરમિયાન ગ્રંથાલયમાં આવતા વર્તમાનપત્રો તથા સામયિકોના નામ :
               </label>
             </div>
@@ -449,10 +418,7 @@ function SingleData(props) {
 
           <div className="row mb-3 col-13 align-items-center">
             <div className="col">
-              <label
-                for="inputPassword6"
-                className="col-form-label col highlight"
-              >
+              <label className="col-form-label col highlight">
                 ગ્રંથાલયમાં નીચેનું દફતર નિભાવવામાં આવે છે? :
               </label>
             </div>
@@ -551,7 +517,7 @@ function SingleData(props) {
           </div>
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-4">
-              <label for="inputPassword6" className="col-form-label ">
+              <label className="col-form-label ">
                 નિરીક્ષકે કરેલા સૂચનોનું પાલન થાય છે?
               </label>
             </div>
@@ -565,9 +531,7 @@ function SingleData(props) {
 
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className="col-4">
-              <label for="inputPassword6" className="col-form-label ">
-                કેટલા અંશે? :
-              </label>
+              <label className="col-form-label ">કેટલા અંશે? :</label>
             </div>
             <div className="col-2">
               <label className="highlightdata">{arr[0].whichlevel}</label>

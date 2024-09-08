@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import Footer from "../components/Footer";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const Login = () => {
-  
+const Login8 = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    role: "director",
+    role:"adlrajkot"
   });
 
   const navigate = useNavigate();
@@ -31,7 +27,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
-    
 
     try {
       const response = await fetch(`http://localhost:5555/admin/login`, {
@@ -43,20 +38,23 @@ const Login = () => {
       });
 
       if (response.ok) {
+        alert("login successful");
+
         const res_data = await response.json();
         console.log("jaimin", res_data);
         //storeTokenInLs(res_data.token);
 
-        
-        console.log("dhh");
-        localStorage.setItem("login", "director");
+        localStorage.setItem("login", "adlrajkot");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
+
         setUser({
           email: "",
           password: "",
         });
-        navigate("/Admin_Home");
+        console.log("dhh");
+
+        navigate("/Home1");
       } else {
         alert("Invalid data");
       }
@@ -67,7 +65,7 @@ const Login = () => {
 
   return (
     <>
-      <NavBar titel={"પુસ્તકાલય ગુજરાત રાજ્યના ડાયરેક્ટર, ગાંધીનગર"}></NavBar>
+      <NavBar titel={"રાજકોટ લોગીન"}></NavBar>
       <section>
         <main>
           <div className="section-registration">
@@ -75,11 +73,11 @@ const Login = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Director Login</h1>
+                <h1 className="main-heading mb-3">Login </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ</label>
+                    <label>યુઝર નામ </label>
                     <input
                       type="text"
                       name="email"
@@ -100,7 +98,7 @@ const Login = () => {
                     />
                   </div>
                   <br />
-                  <button type="submit " className="btn  btn-primary">
+                  <button type="submit " className="btn btn-primary">
                     લોગીન
                   </button>
                   <a href="/Forgotpassword">
@@ -119,4 +117,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login8;

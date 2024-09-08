@@ -29,7 +29,7 @@ function Dataintable() {
   useEffect(() => {
     const dataget = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/form`);
+        const response = await axios.get(`http://localhost:5555/form/`);
         console.log(response.data), setData(response.data);
       } catch (error) {
         console.log(error);

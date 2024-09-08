@@ -123,7 +123,17 @@ function Dataintable_Admin() {
     "jagadiya",
   ];
   const narmada = ["tilakwada", "nandod"];
-  let category = ["city", "town-1", "town-2", "village"];
+  let category = [
+    "વિશિષ્ટ લાઇબ્રેરી",
+    "શહેર લાઇબ્રેરી",
+    "શહેર શાખા",
+    "નગર કક્ષા-૧",
+    "નગર કક્ષા-૨",
+    "મહિલા લાયબ્રેરી",
+    "બાળ લાયબ્રેરી",
+    "અંધજન લાયબ્રેરી",
+    "ગ્રામ ગ્રંથાલય",
+  ];
   let [library, state] = useState([]);
   let [librarycity, setcity] = useState([]);
   let town_1 = ["rajkot", "sidhpur", "baroda"];

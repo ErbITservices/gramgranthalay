@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Login3 = () => {
   const [user, setUser] = useState({
@@ -27,7 +28,7 @@ const Login3 = () => {
     console.log(user);
 
     try {
-      const response = await fetch(`http://localhost:5555/admin/r`, {
+      const response = await fetch(`http://localhost:5555/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +48,7 @@ const Login3 = () => {
           password: "",
         });
         console.log("dhh");
-
+        localStorage.setItem("login", "director");
         navigate("/Home2");
       } else {
         alert("Invalid data");
@@ -71,7 +72,7 @@ const Login3 = () => {
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>User Name </label>
+                    <label>યુઝર નામ </label>
                     <input
                       type="text"
                       name="email"
@@ -82,7 +83,7 @@ const Login3 = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="password">Password</label>
+                    <label>પાસવર્ડ</label>
                     <input
                       type="password"
                       name="password"
@@ -93,14 +94,20 @@ const Login3 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-submit">
-                    Login
+                    લોગીન
                   </button>
+                  <a href="/Forgotpassword">
+                    <p>Forgot Password</p>
+                  </a>
                 </form>
               </div>
             </div>
           </div>
         </main>
       </section>
+      <div>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

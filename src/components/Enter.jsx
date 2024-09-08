@@ -1646,6 +1646,11 @@ function Enter({ arr }) {
       <button type="button" onClick={downloadpdf} className="btn btn-primary">
         Donwload PDF
       </button>
+      <a href="Home2/">
+        <button class="btn btn-danger m-3 " type="button">
+          Log Out
+        </button>
+      </a>
     </center>
   );
 }

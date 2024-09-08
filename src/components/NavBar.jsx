@@ -6,13 +6,16 @@ function NavBar({ titel }) {
     <center>
       <div className="head">
         <div className="logodiv">
-          <img className="logo" src="src/assets/logo.png" alt="logo" />
+          <img className="logo" src="src/assets/logo1.jpg" alt="logo" />
         </div>
         <div className="titel">
-          <h1>
-            {titel}
-            <span className="icon"> </span>{" "}
-          </h1>
+         
+          <h2>SPORTS, YOUTH & CULTURAL ACTIVITIES DEPARTMENT</h2>
+          <br />
+          <h4>DIRECTOR OF LIBRARIES GUJARAT STATE, GANDHINAGAR</h4>
+        </div>
+        <div className="logodiv2">
+          <img className="logo" src="src/assets/logo2.jpg" alt="logo" />
         </div>
       </div>
     </center>

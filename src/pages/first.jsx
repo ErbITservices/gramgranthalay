@@ -12,16 +12,7 @@ function First() {
         <form class="container-fluid justify-content-start">
           <a href="All_Login">
             <button class="btn btn-outline-success me-2" type="button">
-              Login
-            </button>
-          </a>
-          <a href="/Home1">
-            <button
-              class="btn btn-outline-success me-2"
-              //   onClick={navigate("/form")}
-              type="button"
-            >
-              Form
+              લોગીન
             </button>
           </a>
         </form>

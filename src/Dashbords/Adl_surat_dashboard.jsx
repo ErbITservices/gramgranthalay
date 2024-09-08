@@ -2,18 +2,17 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-function Home2() {
+function Adl_surat_dashboard() {
   const navigator = useNavigate();
   function Logout() {
     navigator("/All_Login");
     localStorage.setItem("login", "");
     // localStorage.setItem("login", "director");
-    
   }
   return (
     <>
       <NavBar titel={"ગ્રામ ગ્રંથાલયનુ પોર્ટલ"}></NavBar>
-      <div class=" mb-3">
+      <div class=" mb-3 btn-container">
         <form class="container-fluid justify-content-start">
           <a href="/Dataintable">
             <button class="btn m-3 btn-info " type="button">
@@ -51,4 +50,4 @@ function Home2() {
     </>
   );
 }
-export default Home2;
+export default Adl_surat_dashboard;

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login2 = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    role: "adlvadodara",
   });
 
   const navigate = useNavigate();
@@ -27,7 +31,7 @@ const Login2 = () => {
     console.log(user);
 
     try {
-      const response = await fetch(`http://localhost:5555/admin/r`, {
+      const response = await fetch(`http://localhost:5555/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,12 +44,15 @@ const Login2 = () => {
         console.log("jaimin", res_data);
         //storeTokenInLs(res_data.token);
 
+        localStorage.setItem("login", "Adlvadodara");
+        localStorage.setItem("id", user.email);
+        localStorage.setItem("pass", user.password);
         setUser({
           email: "",
           password: "",
         });
         console.log("dhh");
-
+        
         navigate("/Home2");
       } else {
         alert("Invalid data");
@@ -65,11 +72,11 @@ const Login2 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Login</h1>
+                <h1 className="main-heading mb-3">vadodara</h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>User Name </label>
+                    <label> યુઝર નામ </label>
                     <input
                       type="text"
                       name="email"
@@ -80,7 +87,7 @@ const Login2 = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="password">Password</label>
+                    <label>પાસવર્ડ</label>
                     <input
                       type="password"
                       name="password"
@@ -90,15 +97,21 @@ const Login2 = () => {
                     />
                   </div>
                   <br />
-                  <button type="submit " className="btn btn-submit">
-                    Login
+                  <button type="submit " className="btn  btn-primary mb-3">
+                    લોગીન
                   </button>
+                  <a href="/Forgotpassword">
+                    <p>Forgot Password</p>
+                  </a>
                 </form>
               </div>
             </div>
           </div>
         </main>
       </section>
+      <div>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

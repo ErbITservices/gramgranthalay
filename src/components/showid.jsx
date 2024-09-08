@@ -11,7 +11,7 @@ function Showid() {
       <h1>Your Library Id Is :- {location.state.id}</h1>
       <div className="row mb-3 tab2 col-sm-13 align-items-center">
         <div className=" col">
-          <a href="/home1">
+          <a href="/">
             <button type="button" className="btn btn-primary">
               Back
             </button>

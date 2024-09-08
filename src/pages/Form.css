@@ -1,3 +1,16 @@
+
+*{
+  
+  font-family: "Noto Sans Gujarati", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .main {
   max-width: 800px;
 }
@@ -56,7 +69,7 @@ input[type="number"] {
 .extrahighlight {
   display: inline-block;
   font-weight: 700;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid grey;
 }
 .th {
   width: 20%;
@@ -68,15 +81,17 @@ input[type="number"] {
   text-indent: 60px;
 }
 .head {
-  background-color: lightblue;
+  background-color: rgb(0, 65, 133);
   /* padding: 5px; */
   display: flex;
   margin-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
+  
+  padding: 10px;
   border: 2px, solid gray;
 }
 .head2 {
-  background-color: lightblue;
+  background-color: rgb(0, 65, 133);
   padding: 5px;
   /* display: flex; */
   margin-bottom: 5px;
@@ -84,9 +99,13 @@ input[type="number"] {
   border: 2px, solid gray;
 }
 .form .teablehead {
-  background-color: lightblue;
+  background-color: rgb(0, 65, 133);
   text-align: center;
+  color: aliceblue;
+  font-size: 30px;
+  
 }
+
 .form table {
   border: 1px solid black;
   border-radius: 5px;
@@ -101,25 +120,36 @@ input[type="number"] {
 }
 
 .logo {
-  height: 100px;
-  width: 170px;
+  height: 200px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
   /* padding: 0; */
   display: inline-block;
 }
-.head h1 {
-}
+
 .logodiv {
-  width: 38%;
+  width: 20%;
   /* background-color: aquamarine; */
   display: inline-block;
   margin: 10px 0px;
   text-align: start;
   /* background-color: black; */
 }
+.logodiv2 {
+  width: 20%;
+  /* background-color: aquamarine; */
+  display: inline-block;
+  margin: 10px 0px;
+  text-align: end;
+  /* background-color: black; */
+}
 .titel {
+  width: 60%;
   text-align: center;
   padding-top: 30px;
   justify-content: end;
+  color: aliceblue;
   /* background-color: black; */
 }
 .button {

@@ -64,6 +64,41 @@ function Motibhaiamin_1() {
     select_58: "",
     select_59: "",
     select_60: "",
+    select_61: "",
+    select_62: "",
+    select_63: "",
+    select_64: "",
+    select_65: "",
+    select_66: "",
+    select_67: "",
+    select_68: "",
+    select_69: "",
+    select_70: "",
+    select_71: "",
+    select_72: "",
+    select_73: "",
+    select_74: "",
+    select_75: "",
+    select_76: "",
+    select_77: "",
+    select_78: "",
+    select_79: "",
+    select_80: "",
+    select_81: "",
+    select_82: "",
+    select_83: "",
+    select_84: "",
+    select_85: "",
+    select_86: "",
+    select_87: "",
+    select_88: "",
+    select_89: "",
+    select_90: "",
+    select_91: "",
+    select_92: "",
+    select_93: "",
+    select_94: "",
+    select_95: "",
   });
     const handleInput = (e) => {
         // console.log(e);
@@ -875,7 +910,6 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -897,14 +931,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             kai kai babato nu computerization thayel che :
+              kai kai babato nu computerization thayel che :
             </label>
           </div>
           <div className="col">
@@ -922,7 +955,6 @@ function Motibhaiamin_1() {
               <option value={3}>option 1</option>
               <option value={2}>option 2</option>
               <option value={0}>option 3</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -944,15 +976,12 @@ function Motibhaiamin_1() {
               </option>
               <option value={3}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
-            <label className="col-sm-10 col-form-label">
-            grath praprti :
-            </label>
+            <label className="col-sm-10 col-form-label">grath praprti :</label>
           </div>
           <div className="col">
             <select
@@ -968,7 +997,6 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -990,14 +1018,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-            pustak pasandgi mate kaiya sadhano nu upyog karai che?:
+              pustak pasandgi mate kaiya sadhano nu upyog karai che?:
             </label>
           </div>
           <div className="col">
@@ -1014,7 +1041,6 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -1036,14 +1062,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             pustako ni nondhani namunana parigrahan regiterma thai che:
+              pustako ni nondhani namunana parigrahan regiterma thai che:
             </label>
           </div>
           <div className="col">
@@ -1061,7 +1086,6 @@ function Motibhaiamin_1() {
               <option value={3}>option 1</option>
               <option value={1}>option 2</option>
               <option value={0}>option 3</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -1083,14 +1107,14 @@ function Motibhaiamin_1() {
               </option>
               <option value={0}>option 1</option>
               <option value={2}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             gratho uper yogay sathane sika thta niyat jagiya e pitpati lagava ma aave che?:
+              gratho uper yogay sathane sika thta niyat jagiya e pitpati lagava
+              ma aave che?:
             </label>
           </div>
           <div className="col">
@@ -1107,7 +1131,6 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
@@ -1130,14 +1153,13 @@ function Motibhaiamin_1() {
               <option value={3}>option 1</option>
               <option value={1}>option 2</option>
               <option value={0}>option 3</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             vargikaran mate ketla pustakoni kariyawahi baki che?:
+              vargikaran mate ketla pustakoni kariyawahi baki che?:
             </label>
           </div>
           <div className="col">
@@ -1154,12 +1176,11 @@ function Motibhaiamin_1() {
               </option>
               <option value={0}>option 1</option>
               <option value={3}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               pustako ni suchi karan kai padhati ti karvama aave che? :
+              pustako ni suchi karan kai padhati ti karvama aave che? :
             </label>
           </div>
           <div className="col">
@@ -1178,14 +1199,13 @@ function Motibhaiamin_1() {
               <option value={2}>option 2</option>
               <option value={1}>option 3</option>
               <option value={0}>option 4</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             suchi karan mate ketla pustakoni kariyawahi baki che?:
+              suchi karan mate ketla pustakoni kariyawahi baki che?:
             </label>
           </div>
           <div className="col">
@@ -1202,12 +1222,11 @@ function Motibhaiamin_1() {
               </option>
               <option value={0}>option 1</option>
               <option value={2}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               grath apel mate ni ai pathati amal ma che?:
+              grath apel mate ni ai pathati amal ma che?:
             </label>
           </div>
           <div className="col">
@@ -1225,14 +1244,13 @@ function Motibhaiamin_1() {
               <option value={3}>option 1</option>
               <option value={2}>option 2</option>
               <option value={1}>option 3</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             vanhako ne ketla divas mate pustako vanchva apai che?:
+              vanhako ne ketla divas mate pustako vanchva apai che?:
             </label>
           </div>
           <div className="col">
@@ -1249,12 +1267,12 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               niyat mudadt ma pustak parat na aave te late fees levai che? ketli :
+              niyat mudadt ma pustak parat na aave te late fees levai che? ketli
+              :
             </label>
           </div>
           <div className="col">
@@ -1271,14 +1289,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             niyat mudat ma grantho pacha na aave to smruti partro lakhai che?:
+              niyat mudat ma grantho pacha na aave to smruti partro lakhai che?:
             </label>
           </div>
           <div className="col">
@@ -1295,12 +1312,12 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               vanchako ne joitu pustak medvi sake te mate aagav thi pustak reserve karvani sagwad aapai che ? kevi rete :
+              vanchako ne joitu pustak medvi sake te mate aagav thi pustak
+              reserve karvani sagwad aapai che ? kevi rete :
             </label>
           </div>
           <div className="col">
@@ -1317,14 +1334,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             hare vanchva apel pustako ni kul sankhiya :
+              hare vanchva apel pustako ni kul sankhiya :
             </label>
           </div>
           <div className="col">
@@ -1343,12 +1359,11 @@ function Motibhaiamin_1() {
               <option value={3}>option 2</option>
               <option value={2}>option 1</option>
               <option value={1}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               aantar grathalay loan ni suvidha che? :
+              aantar grathalay loan ni suvidha che? :
             </label>
           </div>
           <div className="col">
@@ -1365,14 +1380,13 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             granthalay ma aalag sandharbhav vibhag che?:
+              granthalay ma aalag sandharbhav vibhag che?:
             </label>
           </div>
           <div className="col">
@@ -1389,12 +1403,11 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               sandharbh grathni ni sankhiya :
+              sandharbh grathni ni sankhiya :
             </label>
           </div>
           <div className="col">
@@ -1412,14 +1425,14 @@ function Motibhaiamin_1() {
               <option value={0}>option 1</option>
               <option value={1}>option 2</option>
               <option value={2}>option 3</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             aapti sandharbh seva ni nondh mate aalag aalag register rakhai he?:
+              aapti sandharbh seva ni nondh mate aalag aalag register rakhai
+              he?:
             </label>
           </div>
           <div className="col">
@@ -1436,12 +1449,11 @@ function Motibhaiamin_1() {
               </option>
               <option value={1}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               sandharbh seva na labh lenar vanhko ni varsik sankhiya :
+              sandharbh seva na labh lenar vanhko ni varsik sankhiya :
             </label>
           </div>
           <div className="col">
@@ -1460,14 +1472,13 @@ function Motibhaiamin_1() {
               <option value={4}>option 2</option>
               <option value={3}>option 3</option>
               <option value={0}>option 4</option>
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             xerox ke evii koi suvidha aapai che?:
+              xerox ke evii koi suvidha aapai che?:
             </label>
           </div>
           <div className="col">
@@ -1484,12 +1495,11 @@ function Motibhaiamin_1() {
               </option>
               <option value={2}>option 1</option>
               <option value={0}>option 2</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               grathalay ma mangavta deniko ni sankhiya :
+              grathalay ma mangavta deniko ni sankhiya :
             </label>
           </div>
           <div className="col">
@@ -1507,15 +1517,13 @@ function Motibhaiamin_1() {
               <option value={0}>option 1</option>
               <option value={3}>option 2</option>
               <option value={5}>option 3</option>
-              
-            
             </select>
           </div>
         </div>
         <div className="row mb-3 col-sm-13 align-items-center">
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-             garhalay ma mangavta samayako ni sankhiya:
+              garhalay ma mangavta samayako ni sankhiya:
             </label>
           </div>
           <div className="col">
@@ -1534,31 +1542,807 @@ function Motibhaiamin_1() {
               <option value={1}>option 2</option>
               <option value={2}>option 3</option>
               <option value={4}>option 4</option>
-            
             </select>
           </div>
           <div className=" col">
             <label className="col-sm-10 col-form-label">
-               sandharbh seva na labh lenar vanhko ni varsik sankhiya :
+              denik patro mate no kharch :
             </label>
           </div>
           <div className="col">
             <select
               id="inputState"
               onClick={handleInput}
-              name="select_57"
-              value={data.select_57}
+              name="select_61"
+              value={data.select_61}
               onChange={handleInput}
               className="form-select"
             >
               <option selected value={0}>
                 Select
               </option>
-              <option value={5}>option 1</option>
-              <option value={4}>option 2</option>
-              <option value={3}>option 3</option>
+              <option value={3}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={1}>option 3</option>
               <option value={0}>option 4</option>
-            
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              samayiko mate no kharch:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_62"
+              value={data.select_62}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={0}>option 1</option>
+              <option value={1}>option 2</option>
+              <option value={2}>option 3</option>
+              <option value={3}>option 4</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              vanchnalay ma aavta vanchko ni nondh mate register rakhvama aave
+              che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_63"
+              value={data.select_63}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={1}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              garnthalay ma mangavama aavta samayiko petik bandhavine sachvama
+              aavta samyaiko ni sankhiya:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_64"
+              value={data.select_64}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              bandhayel samayiko vanchkone pustak savroop e issue karai che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_65"
+              value={data.select_65}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              samayiko na chuta aanko vanchakone issue karai che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_66"
+              value={data.select_66}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              samayiko na juna aanko vechan mukai che :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_67"
+              value={data.select_67}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              mahila sabhiyo mate aalag vibhag che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_68"
+              value={data.select_68}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              baad sabhiyo mate aalag vibhag che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_69"
+              value={data.select_69}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              mahila sabhiyo mate aapti vishist seva ni vegato:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_70"
+              value={data.select_70}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              vacation ma badko mate aapati vishist sevao ke thati padhatio
+              aange ni vigato :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_71"
+              value={data.select_71}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              sabhiy nodhai mate kai padhati aamal ma che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_72"
+              value={data.select_72}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={1}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              jamingiri levai che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_73"
+              value={data.select_73}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              deposit levai che ? ketli?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_74"
+              value={data.select_74}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={1}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              baad sabhiyo ni deposit levai che? ketli? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_75"
+              value={data.select_75}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={1}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              lavajam levai che? ketlu?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_76"
+              value={data.select_76}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={4}>option 1</option>
+              <option value={3}>option 2</option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              varas darmiyan raad thayela sabhiyo ni sankhiya :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_77"
+              value={data.select_77}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={1}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              grathalay sabhiyo ni sankhiya:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_78"
+              value={data.select_78}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={4}>option 1</option>
+              <option value={3}>option 2</option>
+              <option value={2}>option 1</option>
+              <option value={1}>option 2</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+             garnthalay vistran pravrutiyo nu aayojan thai che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_79"
+              value={data.select_79}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              varas darmiyan keva ne ketla kariyakaram karai :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_80"
+              value={data.select_80}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={0}>option 1</option>
+              <option value={2}>option 2</option>
+              <option value={3}>option 1</option>
+              <option value={4}>option 2</option>
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              loko joi sake te rete granthalay bahar naam darshav tu board rakhel che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_81"
+              value={data.select_81}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              garnthalay no samay thata aathwadik  :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_82"
+              value={data.select_82}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+             </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              makan purti hawa ujas wadu che? 
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_83"
+              value={data.select_83}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              makan ma vanchako mate prathmik jaruriyaaat ni suvidha che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_84"
+              value={data.select_84}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              makan ma darek sathad e purti safai rakhvama aave che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_85"
+              value={data.select_85}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              grathalay ma jantunashak davao no niyamit chantkavo thai che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_86"
+              value={data.select_86}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+              parat aavela pustako granth bandar ma samai saar gothavai che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_87"
+              value={data.select_87}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthpal no vanchako sathe no vevhar swanjaniya pun janai che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_88"
+              value={data.select_88}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay ma visit book rakhva ma aave che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_89"
+              value={data.select_89}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                chele nondh kyare theyel che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_90"
+              value={data.select_90}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay ma nibhawama aavta registero aane aaniya daftar aadhiyatan rakhai che?:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_91"
+              value={data.select_91}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={3}>option 1</option>
+              <option value={1}>option 2</option>
+              <option value={0}>option 2</option>
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay ni aagav karel tapasani darmiyan aapva ma aavel vanha o ni purta karel che? :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_92"
+              value={data.select_92}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay dawara aapati vishist seva o pravrutiyo ulekh patr koi vishasta ke padhati hoito teni vigato :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_93"
+              value={data.select_93}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+        </div>
+        <div className="row mb-3 col-sm-13 align-items-center">
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay na vikas mate vevastha tantra ni dhagas :
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_94"
+              value={data.select_94}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={1}>option 2</option>
+              <option value={0}>option 2</option>
+              
+            </select>
+          </div>
+          <div className=" col">
+            <label className="col-sm-10 col-form-label">
+                granthalay mate nankiy strona vadharva:
+            </label>
+          </div>
+          <div className="col">
+            <select
+              id="inputState"
+              onClick={handleInput}
+              name="select_95"
+              value={data.select_95}
+              onChange={handleInput}
+              className="form-select"
+            >
+              <option selected value={0}>
+                Select
+              </option>
+              <option value={2}>option 1</option>
+              <option value={0}>option 2</option>
+             
             </select>
           </div>
         </div>

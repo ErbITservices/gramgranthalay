@@ -126,7 +126,7 @@ function Motibhaiamin_1() {
     try {
       console.log("mihir");
 
-      const senddata = await fetch(`http://localhost:5555/Motibhaiamin/Motibhaiamin`, {
+      const senddata = await fetch(`http://localhost:5555/Motibhaiamin1/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,6 +139,8 @@ function Motibhaiamin_1() {
         setloader("false");
       } else {
         setloader("false");
+        alert("data alredy submited")
+        
       }
     } catch (error) {
       console.log("error");

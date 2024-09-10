@@ -60,7 +60,7 @@ const Login3 = () => {
 
   return (
     <>
-      <NavBar titel={"ગાંધીનગર લોગીન"}></NavBar>
+      <NavBar titel={"ગાંધીનગર Login"}></NavBar>
       <section>
         <main>
           <div className="section-registration">
@@ -72,7 +72,7 @@ const Login3 = () => {
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ </label>
+                    <label>User Name </label>
                     <input
                       type="text"
                       name="email"
@@ -83,7 +83,7 @@ const Login3 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -94,7 +94,7 @@ const Login3 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-submit">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

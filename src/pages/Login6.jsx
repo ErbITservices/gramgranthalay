@@ -7,7 +7,7 @@ const Login6 = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    role:"adlsurat"
+    role: "adlsurat",
   });
 
   const navigate = useNavigate();
@@ -45,9 +45,10 @@ const Login6 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "adlsurat");
-         localStorage.setItem("district", "surat");
+        localStorage.setItem("district", "Surat");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
+        localStorage.setItem("code", "ADLSUR");
 
         setUser({
           email: "",
@@ -66,7 +67,7 @@ const Login6 = () => {
 
   return (
     <>
-      <NavBar titel={"સુરત લોગીન"}></NavBar>
+      <NavBar titel={"સુરત Login"}></NavBar>
       <section>
         <main>
           <div className="section-registration">
@@ -74,11 +75,11 @@ const Login6 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3"> surat Login </h1>
+                <h1 className="main-heading mb-3"> ADL Surat Login </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ </label>
+                    <label>User Name </label>
                     <input
                       type="text"
                       name="email"
@@ -89,7 +90,7 @@ const Login6 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -100,7 +101,7 @@ const Login6 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-primary">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

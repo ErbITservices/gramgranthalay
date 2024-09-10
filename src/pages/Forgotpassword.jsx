@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Forgotpassword = () => {
   const [user, setUser] = useState({
     email: "",
-    
   });
   const [loder, setloader] = useState("false");
   const [message, setmessage] = useState("Wait a Minutes Sending Mail");
@@ -31,18 +30,21 @@ const Forgotpassword = () => {
     e.preventDefault();
     console.log(user);
     console.log("mihir");
-    
+
     setloader("true");
 
     try {
-      const response = await fetch(`http://localhost:5555/admin/sendpasswordlink`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
-      console.log("mihir "+response);
+      const response = await fetch(
+        `http://localhost:5555/admin/sendpasswordlink`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
+      console.log("mihir " + response);
       const res_data = await response.json();
       if (res_data.msg === "invalid email") {
         setUser({
@@ -57,15 +59,13 @@ const Forgotpassword = () => {
     } catch (err) {
       console.log(err);
       setloader("false");
-      setmessage("Sorry Mail not sended")
-      
+      setmessage("Sorry Mail not sended");
     }
   };
 
-  
   return (
     <>
-      <NavBar titel={"વડોદરા લોગીન"}></NavBar>
+      <NavBar titel={"વડોદરા Login"}></NavBar>
       {loder === "false" && (
         <section>
           <main>
@@ -99,12 +99,7 @@ const Forgotpassword = () => {
           </main>
         </section>
       )}
-      {loder === "true" && (
-        
-          <Loader message={message}></Loader>
-          
-        
-      )}
+      {loder === "true" && <Loader message={message}></Loader>}
     </>
   );
 };

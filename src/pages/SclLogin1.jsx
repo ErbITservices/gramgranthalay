@@ -7,7 +7,7 @@ const SclLogin1 = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    role:"sclgandhinagar"
+    role: "sclgandhinagar",
   });
 
   const navigate = useNavigate();
@@ -47,7 +47,8 @@ const SclLogin1 = () => {
         localStorage.setItem("login", "sclgandhinagar");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
-        localStorage.setItem("district", "gandhinagar");
+        localStorage.setItem("district", "Gandhinagar");
+        localStorage.setItem("code", "SCLG");
 
         setUser({
           email: "",
@@ -74,11 +75,11 @@ const SclLogin1 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Login Gandhinagar</h1>
+                <h1 className="main-heading mb-3"> SCL Gandhinagar Login</h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ</label>
+                    <label>User Name</label>
                     <input
                       type="text"
                       name="email"
@@ -89,7 +90,7 @@ const SclLogin1 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -100,7 +101,7 @@ const SclLogin1 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-primary">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

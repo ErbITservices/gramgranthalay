@@ -80,7 +80,7 @@ const Login = () => {
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ</label>
+                    <label>User Name</label>
                     <input
                       type="text"
                       name="email"
@@ -91,7 +91,7 @@ const Login = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -102,7 +102,7 @@ const Login = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn  btn-primary">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

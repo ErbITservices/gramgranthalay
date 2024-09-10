@@ -45,15 +45,16 @@ const Login2 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "Adlvadodara");
-         localStorage.setItem("district", "vadodara");
+        localStorage.setItem("district", "Vadodara");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
+        localStorage.setItem("code", "ADLVAD");
         setUser({
           email: "",
           password: "",
         });
         console.log("dhh");
-        
+
         navigate("/Home2");
       } else {
         alert("Invalid data");
@@ -65,7 +66,7 @@ const Login2 = () => {
 
   return (
     <>
-      <NavBar titel={"વડોદરા લોગીન"}></NavBar>
+      <NavBar titel={"વડોદરા Login"}></NavBar>
       <section>
         <main>
           <div className="section-registration">
@@ -73,11 +74,11 @@ const Login2 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">vadodara</h1>
+                <h1 className="main-heading mb-3">ADL Vadodara Login</h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label> યુઝર નામ </label>
+                    <label> User Name </label>
                     <input
                       type="text"
                       name="email"
@@ -88,7 +89,7 @@ const Login2 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -99,7 +100,7 @@ const Login2 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn  btn-primary mb-3">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

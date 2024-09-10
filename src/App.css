@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
+  font-weight: 500;
 }
 body{
   background-color: aliceblue;
@@ -336,3 +336,33 @@ background: rgb(26, 24, 24) !important;
   width: 50%;
   text-align: end;
 }
+
+
+/* CSS */
+.button-25 {
+  background-color: #008dd4;
+  
+  border: 1px solid #0098e4;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  
+  font-size: 16px;
+  line-height: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 10px 25px 10px;
+  text-align: center;
+  
+  width: 100%;
+}
+
+.button-25:hover {
+  background-color: #0085c7;
+  color: #ffffff;
+  transition-duration: .15s, .15s;
+}
+
+

@@ -45,9 +45,10 @@ const Login7 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "adlbhavnagar");
-         localStorage.setItem("district", "bhavnagar");
+        localStorage.setItem("district", "Bhavnagar");
         localStorage.setItem("id", user.email);
         localStorage.setItem("pass", user.password);
+        localStorage.setItem("code", "ADLBHV");
 
         setUser({
           email: "",
@@ -66,7 +67,7 @@ const Login7 = () => {
 
   return (
     <>
-      <NavBar titel={"ભાવનગર લોગીન"}></NavBar>
+      <NavBar></NavBar>
       <section>
         <main>
           <div className="section-registration">
@@ -74,11 +75,11 @@ const Login7 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3"> bhavnagar Login </h1>
+                <h1 className="main-heading mb-3"> ADL Bhavnagar Login </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ</label>
+                    <label>User Name</label>
                     <input
                       type="text"
                       name="email"
@@ -89,7 +90,7 @@ const Login7 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -100,7 +101,7 @@ const Login7 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-primary">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

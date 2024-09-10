@@ -1,7 +1,7 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { useRef } from "react";
-function Report({arr,handleback}) {
+function Report({arr,handleback,title}) {
   const pdfref = useRef();
   const downloadpdf = () => {
     const input = pdfref.current;
@@ -27,7 +27,7 @@ function Report({arr,handleback}) {
   return (
     <center>
       <div className="main rounded">
-        <h1 className="heighlight">SCL Gandhinagar</h1>
+        <h1 className="heighlight">{title}</h1>
         <table
           ref={pdfref}
           className="table table-bordered table-hover rounded"
@@ -44,29 +44,28 @@ function Report({arr,handleback}) {
             </tr>
           </thead>
           <tbody>
-                      {arr.length != 0 &&
-                          (arr.map((i) => (
+            {arr.length != 0 &&
+              arr.map((i) => (
                 <tr>
-                    <td>{ i.uid}</td>
-                    <td>{ i.lname}</td>
-                    <td>{ i.district}</td>
-                    <td>{ i.taluko}</td>
-                    <td>{ i.gam}</td>
-                    <td>{ i.phone}</td>
-                    <td>{ i.email}</td>
-              </tr>
-            )))}
+                  <td>{i.uid}</td>
+                  <td>{i.lname}</td>
+                  <td>{i.district}</td>
+                  <td>{i.taluko}</td>
+                  <td>{i.gam}</td>
+                  <td>{i.phone}</td>
+                  <td>{i.email}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
       <button type="button" onClick={downloadpdf} className="btn btn-primary">
         Donwload PDF
       </button>
-      
-        <button onClick={handleback} class="btn btn-danger m-3 " type="button">
-          Back
-        </button>
-      
+
+      <button onClick={handleback} class="btn btn-warning m-3 " type="button">
+        Back
+      </button>
     </center>
   );
 }

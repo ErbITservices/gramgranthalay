@@ -79,7 +79,7 @@ function Addnew() {
   }, []);
 
   // let Uid = "VAD000" ;
-  const [Uid, setUid] = useState("VAD000");
+  const [Uid, setUid] = useState("");
   const handleInput = (e) => {
     // console.log(e);
     console.log("count is " + count);
@@ -105,9 +105,9 @@ function Addnew() {
 
     if (count > 99) {
       // Uid = ;
-      setUid("VAD0" + count);
+      setUid(localStorage.getItem("code") + "0"+count);
     } else {
-      setUid("VAD00" + count);
+      setUid(localStorage.getItem("code") + "00" + count);
     }
     setUidset("false");
     console.log(data);
@@ -127,7 +127,7 @@ function Addnew() {
           console.log(
             `http://localhost:5555/district/${localStorage.getItem("district")}`
           );
-          
+
           console.log(response.data), setpd(response.data);
         } catch (error) {
           console.log(error);
@@ -136,9 +136,9 @@ function Addnew() {
       dataget();
       if (pd.length > 99) {
         // Uid = ;
-        setUid("VAD0" + count);
+        setUid(localStorage.getItem("code")+"0" + count);
       } else {
-        setUid("VAD00" + count);
+      setUid(localStorage.getItem("code") + "00" + count);
       }
       setUidset("true");
 
@@ -193,7 +193,11 @@ function Addnew() {
         setlist(templist);
         const dataget = async () => {
           try {
-            const response = await axios.get(`http://localhost:5555/form/`);
+            const response = await axios.get(
+              `http://localhost:5555/district/${localStorage.getItem(
+                "district"
+              )}`
+            );
             console.log(response.data), setpd(response.data);
           } catch (error) {
             console.log(error);
@@ -252,13 +256,15 @@ function Addnew() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(),
+      body: JSON.stringify({ uid: i.uid }),
     });
 
     if (delet) {
       const dataget = async () => {
         try {
-          const response = await axios.get(`http://localhost:5555/form/`);
+          const response = await axios.get(
+            `http://localhost:5555/district/${localStorage.getItem("district")}`
+          );
           console.log(response.data), setpd(response.data);
         } catch (error) {
           console.log(error);
@@ -288,13 +294,6 @@ function Addnew() {
       categoryoflibrary: i.categoryoflibrary,
       sthapnadate: i.sthapnadate,
       district: i.district,
-      registernumber: "",
-      emailmen: "",
-      emailmenaddres: "",
-      libraryen: "",
-      libraryenaddres: "",
-      libraryeneducation: "",
-      libraryensalary: "",
     });
     seteditvalue(i);
   }
@@ -315,7 +314,9 @@ function Addnew() {
     if (edit) {
       const dataget = async () => {
         try {
-          const response = await axios.get(`http://localhost:5555/form/`);
+          const response = await axios.get(
+            `http://localhost:5555/district/${localStorage.getItem("district")}`
+          );
           console.log(response.data), setpd(response.data);
         } catch (error) {
           console.log(error);
@@ -326,6 +327,39 @@ function Addnew() {
       setloader("false");
     }
   }
+
+  const number = useRef();
+  const checkpin = () => {
+    const arr = pd.filter((elm) => elm.uid === number.current.value);
+    console.log(arr);
+    setloader("true");
+    if (arr.length !== 0) {
+      setdata(arr[arr.length - 1]);
+      console.log(data);
+      setloader("false");
+    } else {
+      setdata({
+        uid: "",
+        lname: "",
+        gam: "",
+        pin: "",
+        taluko: "",
+        categoryoflibrary: "",
+        sthapnadate: "",
+        district: "",
+        registernumber: "",
+        emailmen: "",
+        emailmenaddres: "",
+        libraryen: "",
+        libraryenaddres: "",
+        libraryeneducation: "",
+        libraryensalary: "",
+      });
+      setloader("false");
+    }
+
+    console.log(pin);
+  };
 
   return (
     <>
@@ -412,9 +446,13 @@ function Addnew() {
                 >
                   <option selected>Select</option>
 
-                  <option>gandhinagar</option>
-                  <option>vadodara</option>
-                  <option>surat</option>
+                  <option>Gandhinagar</option>
+                  <option>Meshana</option>
+                  <option>Vadodara</option>
+                  <option>Surat</option>
+                  <option>Ahmedabad</option>
+                  <option>Bhavnagar</option>
+                  <option>Rajkot</option>
                 </select>
               </div>
               <div className="col-1">
@@ -505,7 +543,7 @@ function Addnew() {
               <div className="row mb-3 tab2 col-sm-13 align-items-center">
                 <div className=" col">
                   <a href="/">
-                    <button type="button" className="btn btn-primary">
+                    <button type="button" className="btn btn-warning">
                       Back
                     </button>
                   </a>
@@ -521,6 +559,7 @@ function Addnew() {
                   </button>
                 </div>
 
+                
                 {edit === "false" && (
                   <div className=" col">
                     <button
@@ -548,36 +587,61 @@ function Addnew() {
             {Uidset === "true" && <h1>{Uid}</h1>}
           </div>
           {pd.length !== 0 && (
-            <table className="table-bordered table-hover datatable">
-              <tr>
-                <th className="helight">name</th>
-                <th className="helight">id</th>
-                <th className="helight"></th>
-              </tr>
-
-              {pd.map((i) => (
+            <>
+              <div className="row mb-3 col-sm-13 align-items-center">
+                <div className=" col-2">
+                  <label className="col col-form-label">UID :</label>
+                </div>
+                <div className="col">
+                  <input
+                    required
+                    type="text"
+                    className="form-control"
+                    autoComplete="off"
+                    ref={number}
+                  />
+                </div>
+                <div className=" col-2">
+                  <button
+                    type="button"
+                    onClick={checkpin}
+                    className="btn btn-primary"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+              <table className="table-bordered table-hover datatable">
                 <tr>
-                  <th key={i.lname}> {i.lname}</th>
-                  <th key={i.uid}> {i.uid}</th>
-                  <th>
-                    <button
-                      type="button"
-                      onClick={() => setvalue(i)}
-                      className="btn btn-info"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handledelete(i)}
-                      className="btn btn-danger"
-                    >
-                      Delete
-                    </button>
-                  </th>
+                  <th className="helight">name</th>
+                  <th className="helight">id</th>
+                  <th className="helight"></th>
                 </tr>
-              ))}
-            </table>
+
+                {pd.map((i) => (
+                  <tr>
+                    <th key={i.lname}> {i.lname}</th>
+                    <th key={i.uid}> {i.uid}</th>
+                    <th>
+                      <button
+                        type="button"
+                        onClick={() => setvalue(i)}
+                        className="btn btn-info"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handledelete(i)}
+                        className="btn btn-danger"
+                      >
+                        Delete
+                      </button>
+                    </th>
+                  </tr>
+                ))}
+              </table>
+            </>
           )}
           <div>
             <Footer></Footer>

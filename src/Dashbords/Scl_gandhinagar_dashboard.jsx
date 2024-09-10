@@ -19,7 +19,7 @@ function Scl_gandhinagar_dashboard() {
       const dataget = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5555/district/gandhinagar`
+            `http://localhost:5555/district/Gandhinagar`
           );
           console.log(response.data), setData(response.data);
         } catch (error) {
@@ -44,7 +44,7 @@ function Scl_gandhinagar_dashboard() {
           <form class="container-fluid justify-content-start">
             <button
               onClick={handleshowdata}
-              class="btn m-3 btn-info "
+              class="btn m-3 button-25 "
               type="button"
             >
               Report
@@ -67,7 +67,9 @@ function Scl_gandhinagar_dashboard() {
           </form>
         </div>
       )}
-      {showdata === "true" && <Report handleback={handleback} arr={data} />}
+      {showdata === "true" && (
+        <Report handleback={handleback} arr={data} title={"Scl gandhinagar"} />
+      )}
 
       <div>
         <Footer></Footer>

@@ -7,7 +7,7 @@ const SclLogin2 = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    role:"sclvadodara"
+    role: "sclvadodara",
   });
 
   const navigate = useNavigate();
@@ -45,10 +45,11 @@ const SclLogin2 = () => {
         //storeTokenInLs(res_data.token);
 
         localStorage.setItem("login", "sclvadodara");
-        
-         localStorage.setItem("id", user.email);
-         localStorage.setItem("pass", user.password);
-         localStorage.setItem("district", "vadodara");
+
+        localStorage.setItem("id", user.email);
+        localStorage.setItem("pass", user.password);
+        localStorage.setItem("district", "Vadodara");
+        localStorage.setItem("code", "SCLV");
 
         setUser({
           email: "",
@@ -75,11 +76,11 @@ const SclLogin2 = () => {
               <div className="registration-image reg-img"></div>
               {/* our main registration code  */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Scl Vadodara Login </h1>
+                <h1 className="main-heading mb-3">SCL Vadodara Login </h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label>યુઝર નામ </label>
+                    <label>User Name </label>
                     <input
                       type="text"
                       name="email"
@@ -90,7 +91,7 @@ const SclLogin2 = () => {
                   </div>
 
                   <div>
-                    <label>પાસવર્ડ</label>
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
@@ -101,7 +102,7 @@ const SclLogin2 = () => {
                   </div>
                   <br />
                   <button type="submit " className="btn btn-primary">
-                    લોગીન
+                    Login
                   </button>
                   <a href="/Forgotpassword">
                     <p>Forgot Password</p>

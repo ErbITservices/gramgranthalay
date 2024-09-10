@@ -11,8 +11,8 @@ function First() {
       <div class=" mb-3 button">
         <form class="container-fluid justify-content-start">
           <a href="All_Login">
-            <button class="btn btn-outline-success me-2" type="button">
-              લોગીન
+            <button class="btn btn-outline-success m-3" type="button">
+              Login
             </button>
           </a>
         </form>

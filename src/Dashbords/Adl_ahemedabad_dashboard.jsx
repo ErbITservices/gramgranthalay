@@ -15,7 +15,7 @@ function Adl_ahemedabad_dashboard() {
       <div class=" mb-3 btn-container">
         <form class="container-fluid justify-content-start">
           <a href="/Dataintable">
-            <button class="btn m-3 btn-info " type="button">
+            <button class="btn m-3 button-25 " type="button">
               Report
             </button>
           </a>

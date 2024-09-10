@@ -25,6 +25,7 @@ import Login5 from "./pages/Login5";
 import Login6 from "./pages/Login6";
 import Login7 from "./pages/Login7";
 import Login8 from "./pages/Login8";
+import Motibhaiaminresult from "./components/Motibhaiaminresult";
 import Directo_Dashbord from "./Dashbords/Director_Dashbord";
 import Scl_gandhinagar_dashboard from "./Dashbords/Scl_gandhinagar_dashboard";
 import Scl_vadodara_dashboard from "./Dashbords/Scl_vadodara_dashboard";
@@ -47,6 +48,7 @@ import ConfirmPassword from "./pages/ConfirmPassword";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Protected from "./pages/Protected";
 import Motibhaiamin_1 from "./Forms/Motibhaiamin_1";
+import Motibhaiaminbtnpage from "./pages/Motibhaiaminbtnpage";
 
 function App() {
   return (
@@ -111,6 +113,14 @@ function App() {
           ></Route>
           <Route path="/master" element={<Master />}></Route>
           <Route path="/Motibhaiamin_1" element={<Motibhaiamin_1 />}></Route>
+          <Route
+            path="/Motibhaiaminresult"
+            element={<Motibhaiaminresult />}
+          ></Route>
+          <Route
+            path="/Motibhaiaminbtnpage"
+            element={<Motibhaiaminbtnpage />}
+          ></Route>
           <Route path="/Login1" element={<Login />}></Route>
           <Route path="/Login2" element={<Login2 />}></Route>
           <Route path="/Login3" element={<Login3 />}></Route>

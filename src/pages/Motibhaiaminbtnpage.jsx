@@ -4,97 +4,76 @@ import "/src/App.css";
 import { useEffect } from "react";
 import Slideshow from "../components/Slid";
 import Footer from "../components/Footer";
-function All_Login() {
+function Motibhaiaminbtnpage() {
   return (
     <>
       <div>
         <NavBar titel={"ગ્રામ ગ્રંથાલયનુ પોર્ટલ"}></NavBar>
       </div>
-      <div>
-        <Slideshow></Slideshow>
-      </div>
+
       <div class=" mb-3 btn-container">
         <form class="container-fluid justify-content-start">
-          <a href="/Login1">
+          <a href="/Motibhaiamin_1">
             <button
-              class="btn  btn-success"
+              class="btn m-3 btn-primary"
               //   onClick={navigate("/form")}
               type="button"
             >
-              Gandhinagar Director
+              Motibhaiamin_1
             </button>
           </a>
-          <a href="/sclLogin1">
+          <a href="/Motibhaiamin_2">
             <button
-              class="btn loginbtn btn-primary "
+              class="btn m-3 btn-primary "
               //   onClick={navigate("/form")}
               type="button"
             >
-              SCL GANDHINAGAR
+              Motibhaiamin_2
             </button>
           </a>
-          <a href="/sclLogin2">
+          <a href="/Motibhaiamin_3">
             <button
-              class="btn  btn-primary "
+              class="btn m-3 btn-primary "
               //   onClick={navigate("/form")}
               type="button"
             >
-              SCL VADODARA
+              Motibhaiamin_3
             </button>
           </a>
-          <br />
-          <a href="/Login4">
+          <a href="/Motibhaiamin_4">
             <button
               class="btn  btn-primary m-3"
               //   onClick={navigate("/master")}
               type="button"
             >
-              ADL AHMEDABAD
+              Motibhaiamin_4
             </button>
           </a>
-          <a href="/Login5">
+          <a href="/Motibhaiamin_5">
             <button
               class="btn  btn-primary m-3"
               //   onClick={navigate("/master")}
               type="button"
             >
-              ADL MEHSANA
+              Motibhaiamin_5
             </button>
           </a>
-          <a href="/Login2">
+          <a href="/Motibhaiamin_6">
             <button
               class="btn  btn-primary m-3"
               //   onClick={navigate("/master")}
               type="button"
             >
-              ADL VADODARA
+              Motibhaiamin_6
             </button>
           </a>
-          <a href="/Login6">
+          <a href="/Motibhaiamin_7">
             <button
               class="btn  btn-primary m-3"
               //   onClick={navigate("/master")}
               type="button"
             >
-              ADL SURAT
-            </button>
-          </a>
-          <a href="/Login7">
-            <button
-              class="btn  btn-primary m-3"
-              //   onClick={navigate("/master")}
-              type="button"
-            >
-              ADL BHAVNAGAR
-            </button>
-          </a>
-          <a href="/Login8">
-            <button
-              class="btn  btn-primary m-3"
-              //   onClick={navigate("/master")}
-              type="button"
-            >
-              ADL RAJKOT
+              Motibhaiamin_7
             </button>
           </a>
         </form>
@@ -105,4 +84,4 @@ function All_Login() {
     </>
   );
 }
-export default All_Login;
+export default Motibhaiaminbtnpage;

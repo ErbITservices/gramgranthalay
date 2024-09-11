@@ -56,7 +56,7 @@ const Login8 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home1");
+        navigate("/Adl_rajkot_dashboard");
       } else {
         alert("Invalid data");
       }

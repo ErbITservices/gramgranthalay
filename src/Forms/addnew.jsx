@@ -5,31 +5,17 @@ import { useRef, useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
 
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import { useReactToPrint } from "react-to-print";
 import { useNavigate } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 function Addnew() {
   const [loader, setloader] = useState("false");
 
   const pdfref = useRef();
-  const downloadpdf = () => {
-    const input = pdfref.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a0", true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfheight = pdf.internal.pageSize.getHeight();
-      const imgwidth = canvas.width;
-      const imgheight = canvas.height;
-      const imgx = 200;
-      const imgy = 0;
-      console.log(pdfWidth);
-      console.log(imgwidth);
-      pdf.addImage(imgData, "PNG", imgx, imgy);
-      pdf.save("DataTable.pdf");
-    });
-  };
+  const downloadpdf = useReactToPrint({
+    content: () => pdfref.current,
+    documentTitle: "Ahevalform",
+  });
 
   const navigate = useNavigate();
   const d = new Date();
@@ -105,7 +91,7 @@ function Addnew() {
 
     if (count > 99) {
       // Uid = ;
-      setUid(localStorage.getItem("code") + "0"+count);
+      setUid(localStorage.getItem("code") + "0" + count);
     } else {
       setUid(localStorage.getItem("code") + "00" + count);
     }
@@ -136,9 +122,9 @@ function Addnew() {
       dataget();
       if (pd.length > 99) {
         // Uid = ;
-        setUid(localStorage.getItem("code")+"0" + count);
+        setUid(localStorage.getItem("code") + "0" + count);
       } else {
-      setUid(localStorage.getItem("code") + "00" + count);
+        setUid(localStorage.getItem("code") + "00" + count);
       }
       setUidset("true");
 
@@ -372,7 +358,7 @@ function Addnew() {
       {loader === "false" && (
         <div>
           <NavBar titel={"ગ્રામ ગ્રંથાલયનો નિરીક્ષણ અહેવલ  "}></NavBar>
-          <div ref={pdfref} className="form ">
+          <form onSubmit={handleSubmit} ref={pdfref} className="form ">
             <div className="row mb-3 col-sm-13 align-items-center">
               <div className=" col-2">
                 <label className="col-sm-10 col-form-label">
@@ -406,7 +392,7 @@ function Addnew() {
                   onChange={handleInput}
                   className="form-select"
                 >
-                  <option selected>select</option>
+                  <option selected value="">select</option>
                   <option>gam</option>
                   <option>gam-1</option>
                   <option>gam-3</option>
@@ -426,7 +412,7 @@ function Addnew() {
                   onChange={handleInput}
                   className="form-select"
                 >
-                  <option selected>{data.taluko}</option>
+                  <option selected value="">{data.taluko}</option>
                   <option>taluko-1</option>
                   <option>taluko-2</option>
                   <option>taluko-3</option>
@@ -444,7 +430,7 @@ function Addnew() {
                   id="inputState"
                   className="form-select"
                 >
-                  <option selected>Select</option>
+                  <option selected value="">Select</option>
 
                   <option>Gandhinagar</option>
                   <option>Meshana</option>
@@ -516,7 +502,7 @@ function Addnew() {
               </div>
               <div className="col">
                 <input
-                  // required
+                  required
                   // value={}
                   name="phone"
                   value={data.phone}
@@ -530,7 +516,7 @@ function Addnew() {
               </div>
               <div className="col">
                 <input
-                  // required
+                  required
                   name="email"
                   value={data.email}
                   onChange={handleInput}
@@ -559,12 +545,10 @@ function Addnew() {
                   </button>
                 </div>
 
-                
                 {edit === "false" && (
                   <div className=" col">
                     <button
                       type="submit"
-                      onClick={handleSubmit}
                       className="btn btn-primary"
                     >
                       Submit
@@ -585,7 +569,7 @@ function Addnew() {
               </div>
             </center>
             {Uidset === "true" && <h1>{Uid}</h1>}
-          </div>
+          </form>
           {pd.length !== 0 && (
             <>
               <div className="row mb-3 col-sm-13 align-items-center">

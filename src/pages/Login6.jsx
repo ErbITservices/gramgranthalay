@@ -56,7 +56,7 @@ const Login6 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home1");
+        navigate("/Adl_surat_dashboard");
       } else {
         alert("Invalid data");
       }

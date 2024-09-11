@@ -19,7 +19,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/form")}
               type="button"
             >
-              Motibhaiamin_1
+              મહિલા બાળ
             </button>
           </a>
           <a href="/Motibhaiamin_2">
@@ -28,7 +28,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/form")}
               type="button"
             >
-              Motibhaiamin_2
+              શહેર ગ્રંથાલય
             </button>
           </a>
           <a href="/Motibhaiamin_3">
@@ -37,7 +37,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/form")}
               type="button"
             >
-              Motibhaiamin_3
+              શહેર શાખા નગરકક્ષા
             </button>
           </a>
           <a href="/Motibhaiamin_4">
@@ -46,7 +46,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/master")}
               type="button"
             >
-              Motibhaiamin_4
+              ગ્રામ ગ્રંથાલય
             </button>
           </a>
           <a href="/Motibhaiamin_5">
@@ -55,7 +55,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/master")}
               type="button"
             >
-              Motibhaiamin_5
+              નગરકક્ષા ૧
             </button>
           </a>
           <a href="/Motibhaiamin_6">
@@ -64,7 +64,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/master")}
               type="button"
             >
-              Motibhaiamin_6
+              નગરકક્ષા ૨
             </button>
           </a>
           <a href="/Motibhaiamin_7">
@@ -73,7 +73,7 @@ function Motibhaiaminbtnpage() {
               //   onClick={navigate("/master")}
               type="button"
             >
-              Motibhaiamin_7
+              વિશીષ્ટ લાઇબ્રેરી
             </button>
           </a>
         </form>

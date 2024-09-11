@@ -48,6 +48,12 @@ import ConfirmPassword from "./pages/ConfirmPassword";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Protected from "./pages/Protected";
 import Motibhaiamin_1 from "./Forms/Motibhaiamin_1";
+import Motibhaiamin_2 from "./Forms/Motibhaiamin_2";
+import Motibhaiamin_3 from "./Forms/Motibhaiamin_3";
+import Motibhaiamin_4 from "./Forms/Motibhaiamin_4";
+import Motibhaiamin_5 from "./Forms/Motibhaiamin_5";
+import Motibhaiamin_6 from "./Forms/Motibhaiamin_6";
+import Motibhaiamin_7 from "./Forms/Motibhaiamin_7";
 import Motibhaiaminbtnpage from "./pages/Motibhaiaminbtnpage";
 
 function App() {
@@ -113,6 +119,12 @@ function App() {
           ></Route>
           <Route path="/master" element={<Master />}></Route>
           <Route path="/Motibhaiamin_1" element={<Motibhaiamin_1 />}></Route>
+          <Route path="/Motibhaiamin_2" element={<Motibhaiamin_2 />}></Route>
+          <Route path="/Motibhaiamin_3" element={<Motibhaiamin_3 />}></Route>
+          <Route path="/Motibhaiamin_4" element={<Motibhaiamin_4 />}></Route>
+          <Route path="/Motibhaiamin_5" element={<Motibhaiamin_5 />}></Route>
+          <Route path="/Motibhaiamin_6" element={<Motibhaiamin_6 />}></Route>
+          <Route path="/Motibhaiamin_7" element={<Motibhaiamin_7 />}></Route>
           <Route
             path="/Motibhaiaminresult"
             element={<Motibhaiaminresult />}

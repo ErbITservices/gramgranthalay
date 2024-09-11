@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/x-date-pickers": "^7.16.0",
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
     "html2canvas": "^1.4.1",
@@ -20,7 +21,8 @@
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.26.0",
     "react-slideshow-image": "^4.3.1",
-    "react-spinners": "^0.14.1"
+    "react-spinners": "^0.14.1",
+    "react-to-print": "^2.15.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

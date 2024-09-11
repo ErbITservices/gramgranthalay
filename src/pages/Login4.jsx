@@ -56,7 +56,7 @@ const Login4 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home2");
+        navigate("/Adl_ahemedabad_dashboard");
       } else {
         alert("Invalid data");
       }

@@ -8,23 +8,10 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 function Form() {
   const pdfref = useRef();
-  const downloadpdf = () => {
-    const input = pdfref.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a0", true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfheight = pdf.internal.pageSize.getHeight();
-      const imgwidth = canvas.width;
-      const imgheight = canvas.height;
-      const imgx = 200;
-      const imgy = 0;
-      console.log(pdfWidth);
-      console.log(imgwidth);
-      pdf.addImage(imgData, "PNG", imgx, imgy);
-      pdf.save("DataTable.pdf");
-    });
-  };
+  const downloadpdf = useReactToPrint({
+    content: () => pdfref.current,
+    documentTitle: "Ahevalform",
+  });
 
   const city = [
     "panchmahal",

@@ -56,7 +56,7 @@ const Login5 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home1");
+        navigate("/Adl_meshana_dashboard");
       } else {
         alert("Invalid data");
       }

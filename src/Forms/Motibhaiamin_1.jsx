@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Footer from "../components/Footer";
 import axios from "axios";
+
 import { FadeLoader } from "react-spinners";
 import NavBar from "../components/NavBar";
 
@@ -271,6 +272,11 @@ function Motibhaiamin_1() {
       )}
       {loader != "true" && (
         <form className="form " onSubmit={handleSubmit}>
+          <div>
+            <h1>મહિલા બાળ</h1>
+            
+          </div>
+
           <div className="row mb-3 col-sm-13 align-items-center">
             <div className=" col-2">
               <label className="col-sm-10 col-form-label">Library Name :</label>
@@ -2973,37 +2979,6 @@ function Motibhaiamin_1() {
               </div>
               <div className="col-2">
                 <h4>{data.select_95}</h4>
-              </div>
-            </div>
-            <div className="row mb-3 col-13 align-items-center">
-              <div className="col">
-                <label className="col-form-label col highlight">
-                  vyavasthatantrnu pradan :
-                </label>
-              </div>
-            </div>
-            <div className="row mb-3 col-sm-13 align-items-center">
-              <div className=" col">
-                <label className="col-sm-10 col-form-label">
-                  granthalay samitini rachana karel che? :
-                </label>
-              </div>
-              <div className="col">
-                <select
-                  required
-                  id="inputState"
-                  onClick={handleInput}
-                  name="select_1"
-                  value={data.select_1}
-                  onChange={handleInput}
-                  className="form-select"
-                >
-                  <option selected disabled value="">
-                    Select
-                  </option>
-                  <option value={2}>ha</option>
-                  <option value={0}>na</option>
-                </select>
               </div>
             </div>
 

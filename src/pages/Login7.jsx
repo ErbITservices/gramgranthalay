@@ -56,7 +56,7 @@ const Login7 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home1");
+        navigate("/Adl_bhavnagar_dashboard");
       } else {
         alert("Invalid data");
       }

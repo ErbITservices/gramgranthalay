@@ -55,7 +55,7 @@ const Login2 = () => {
         });
         console.log("dhh");
 
-        navigate("/Home2");
+        navigate("/Adl_vadodara_dashboard");
       } else {
         alert("Invalid data");
       }

@@ -4,10 +4,12 @@ import Footer from "../components/Footer";
 import Report from "../components/Report";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FadeLoader } from "react-spinners";
 
 function Scl_gandhinagar_dashboard() {
     const navigator = useNavigate();
-    const [data, setData] = useState();
+  const [data, setData] = useState();
+  const [loader, setloader] = useState("false");
     const [showdata, setshowdata] = useState("false");
 
   function Logout() {
@@ -15,15 +17,18 @@ function Scl_gandhinagar_dashboard() {
     localStorage.setItem("login", "");
     
     }
-    useEffect(() => {
+  useEffect(() => {
+      setloader("true")
       const dataget = async () => {
         try {
           const response = await axios.get(
             `http://localhost:5555/district/Gandhinagar`
           );
           console.log(response.data), setData(response.data);
+          setloader("false")
         } catch (error) {
           console.log(error);
+          setloader("false");
         }
       };
       dataget();
@@ -37,38 +42,55 @@ function Scl_gandhinagar_dashboard() {
     }
   return (
     <>
-      <NavBar titel={"ગ્રામ ગ્રંથાલયનુ પોર્ટલ"}></NavBar>
-
-      {showdata === "false" && (
-        <div class=" mb-3 btn-container">
-          <form class="container-fluid justify-content-start">
-            <button
-              onClick={handleshowdata}
-              class="btn m-3 button-25 "
-              type="button"
-            >
-              Report
-            </button>
-
-            <a href="/Addnew">
-              <button class="btn btn-success m-3" type="button">
-                નવી લાઇબ્રેરી ઉમેરો
-              </button>
-            </a>
-            <a href="/master">
-              <button class="btn btn-info m-3" type="button">
-                નિરીક્ષણ અહેવલ ફોમ
-              </button>
-            </a>
-
-            <button class="btn btn-danger m-3 " onClick={Logout} type="button">
-              Log Out
-            </button>
-          </form>
+      <NavBar ></NavBar>
+      {loader === "true" && (
+        <div className="loader">
+          <h1>Loading...</h1>
+          <FadeLoader color="#00008b" />
         </div>
       )}
-      {showdata === "true" && (
-        <Report handleback={handleback} arr={data} title={"Scl gandhinagar"} />
+      {loader === "false" && (
+        <div>
+          {showdata === "false" && (
+            <div class=" mb-3 btn-container">
+              <form class="container-fluid justify-content-start">
+                <button
+                  onClick={handleshowdata}
+                  class="btn m-3 button-25 "
+                  type="button"
+                >
+                  Report
+                </button>
+
+                <a href="/Addnew">
+                  <button class="btn btn-success m-3" type="button">
+                    નવી લાઇબ્રેરી ઉમેરો
+                  </button>
+                </a>
+                <a href="/master">
+                  <button class="btn btn-info m-3" type="button">
+                    નિરીક્ષણ અહેવલ ફોમ
+                  </button>
+                </a>
+
+                <button
+                  class="btn btn-danger m-3 "
+                  onClick={Logout}
+                  type="button"
+                >
+                  Log Out
+                </button>
+              </form>
+            </div>
+          )}
+          {showdata === "true" && (
+            <Report
+              handleback={handleback}
+              arr={data}
+              title={"Scl gandhinagar"}
+            />
+          )}
+        </div>
       )}
 
       <div>

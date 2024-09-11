@@ -25,13 +25,11 @@ function Motibhaiaminresult() {
       pdf.save("DataTable.pdf");
     });
   };
-    const [data, setdata] = useState();
-useEffect(() => {
-  const dataget = async () => {
-    
-  };
-  dataget();
-}, []);
+  const [data, setdata] = useState();
+  useEffect(() => {
+    const dataget = async () => {};
+    dataget();
+  }, []);
   const category = useRef();
   async function showresult() {
     console.log(category.current.value);
@@ -39,16 +37,14 @@ useEffect(() => {
       const response = await axios.get(
         `http://localhost:5555/${category.current.value}/`
       );
-        console.log(response.data), 
-        
-            response.data.sort(({ marks: a }, { marks: b }) => b - a);
-        setdata(response.data);
-        
+      console.log(response.data),
+        response.data.sort(({ marks: a }, { marks: b }) => b - a);
+      setdata(response.data);
     } catch (error) {
       console.log(error);
     }
   }
-  
+
   return (
     <>
       <NavBar></NavBar>
@@ -71,13 +67,13 @@ useEffect(() => {
                 <option selected value={""}>
                   Select
                 </option>
-                <option value={"Motibhaiamin1"}>Motibhaiamin1</option>
-                <option value={"Motibhaiamin2"}>Motibhaiamin2</option>
-                <option value={"Motibhaiamin3"}>Motibhaiamin3</option>
-                <option value={"Motibhaiamin4"}>Motibhaiamin4</option>
-                <option value={"Motibhaiamin5"}>Motibhaiamin5</option>
-                <option value={"Motibhaiamin6"}>Motibhaiamin6</option>
-                <option value={"Motibhaiamin7"}>Motibhaiamin7</option>
+                <option value={"Motibhaiamin1"}>મહિલા બાળ</option>
+                <option value={"Motibhaiamin2"}>શહેર ગ્રંથાલય</option>
+                <option value={"Motibhaiamin3"}>શહેર શાખા નગરકક્ષા</option>
+                <option value={"Motibhaiamin4"}>ગ્રામ ગ્રંથાલય</option>
+                <option value={"Motibhaiamin5"}>નગરકક્ષા ૧</option>
+                <option value={"Motibhaiamin6"}>નગરકક્ષા ૨</option>
+                <option value={"Motibhaiamin7"}>વિશીષ્ટ લાઇબ્રેરી</option>
               </select>
             </div>
             <div className=" col">
